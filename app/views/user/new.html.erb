@@ -1,0 +1,9 @@
+<h1>Đăng ký</h1>
+
+<%= form_for :user, url: '/signup' do |f| %>
+    <%= render 'error_messages' %> <br>
+    Name: <%= f.text_field :username %> <br>
+    Password: <%= f.password_field :password %> <br>
+    Password Confirmation: <%= f.password_field :password_confirmation %> <br>
+    <%= f.submit "Đăng ký" %>
+<% end %>

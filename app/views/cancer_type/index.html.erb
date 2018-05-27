@@ -1,0 +1,54 @@
+<div class="col-md-10">
+  <div id="banner" class="row" style="padding: 0px; overflow:hidden;">
+    <div class="col-xs-12">
+      <a class="navbar-brand logo" href="/">
+        <!-- place your image here -->
+        <%= image_tag "banner.png", alt: "company logo", style: "width: 100%;" %>
+      </a>
+    </div>
+  </div>
+
+  <% if @content.sub_contents.any? %>
+      <ul class="nav nav-tabs navbar-toggleable-md fixed-top navbar-light bg-faded" style="margin-top: 10px;">
+        <% first_subcontent = @content.sub_contents.first %>
+        <li class="nav-item">
+          <a class="nav-link active" href="/noi-dung/phu-luc/<%= first_subcontent.id %>"><%= first_subcontent.title %></a>
+        </li>
+        <% @content.sub_contents.offset(1).each do |sub_content| %>
+            <li class="nav-item"><a class="nav-link" href="/noi-dung/phu-luc/<%= sub_content.id %>"><%= sub_content.title %></a></li>
+        <% end %>
+      </ul>
+      <% @content = first_subcontent %>
+  <% end %>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="category_content">
+        <%= @content.content.html_safe if @content.content %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="left-side-info" class="col-md-2">
+  <div class="current-weather">
+    <a href="https://www.accuweather.com/vi/vn/hanoi/353412/weather-forecast/353412" class="aw-widget-legal">
+      <!--
+      By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+      -->
+    </a>
+
+    <div id="awcc1506096222231" class="aw-widget-current" data-locationkey="353412" data-unit="c" data-language="vi" data-useip="false" data-uid="awcc1506096222231"></div>
+    <div id="overlay"></div>
+    <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+  </div>
+
+  <!-- running news -->
+  <div id="running-news">
+    <% if @news %>
+        <h6><b>Tin tức</b></h6>
+        <span behavior="scroll" direction="up" style="word-wrap: break-word;"><%= @news.content.html_safe if @news.content %></span>
+    <% end %>
+  </div>
+  <!-- end runnig news -->
+</div>
