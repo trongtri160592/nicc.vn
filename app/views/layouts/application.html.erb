@@ -5,15 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, minimum-scale=1">
+  <%= javascript_include_tag 'ContentPage', defer: "defer" %>
+  <%= javascript_include_tag 'jquery', defer: "defer" %>
+  <%= javascript_include_tag 'jquery-ui', defer: "defer" %>
+  <%= javascript_include_tag 'Common', defer: "defer" %>
   <link rel="preconnect" crossorigin="" href="https://cdnjs.cloudflare.com/">
   <link rel="preconnect" crossorigin="" href="https://ajax.googleapis.com/">
   <link rel="preconnect" crossorigin="" href="https://fonts.gstatic.com/">
-
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'/>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-  <script src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/satelliteLib-5b3dcf1f2676c378b518a1583ef5355acd83cd3d.js"></script>
-
   <link rel="apple-touch-icon" sizes="180x180" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/apple-touch-icon.png?v=oLa52veKe8">
   <link rel="icon" type="image/png" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/favicon-32x32.png?v=oLa52veKe8" sizes="32x32">
   <link rel="icon" type="image/png" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/favicon-16x16.png?v=oLa52veKe8" sizes="16x16">
@@ -24,10 +22,7 @@
   <meta name="application-name" content="Cancer.gov">
   <meta name="msapplication-config" content="/publishedcontent/images/images/design-elements/icons/favicons/browserconfig.xml?v=oLa52veKe8">
   <meta name="theme-color" content="#ffffff">
-  <%= javascript_include_tag 'ContentPage', defer: "defer" %>
-  <%= javascript_include_tag 'jquery', defer: "defer" %>
-  <%= javascript_include_tag 'jquery-ui', defer: "defer" %>
-  <%= javascript_include_tag 'Common', defer: "defer" %>
+
   <link rel="canonical" href="https://www.cancer.gov/">
   <meta name="keywords" content="cancer,NCI,National Cancer Institute,cancer information">
   <meta name="description" content="Accurate, up-to-date, comprehensive cancer information from the U.S. government's principal agency for cancer research.">
@@ -2530,8 +2525,6 @@
 </footer>
 <!-- END FOOTER -->
 
-<script id="_fed_an_ua_tag" src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/Universal-Federated-Analytics-Min.js" defer="defer"></script>
-
 <!-- TO INSERT WEB ANALYTICS CODE. Every template should have this
 control else Web analytics scripts will not show up in the HTML-->
 
@@ -2548,80 +2541,6 @@ control else Web analytics scripts will not show up in the HTML-->
   <iframe id="_atssh839" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px none; left: 0px;" src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/sh.html"></iframe>
 </div>
 <style id="service-icons-0"></style>
-<!--<script language="JavaScript" type="text/javascript">-->
-<!--    <!---->
-<!--    s.channel = 'NCI Homepage';-->
-<!--    s.prop3 = '/';-->
-<!--    s.prop6 = 'Comprehensive Cancer Information';-->
-<!--    s.prop8 = 'english';-->
-<!--    s.prop10 = document.title;-->
-<!--    s.prop25 = '01/01/1980';-->
-<!--    s.prop44 = 'NCI Homepage';-->
-<!--    s.eVar2 = 'english';-->
-<!--    s.eVar44 = 'NCI Homepage';-->
-<!--    s.events = 'event1';-->
-
-<!--    var s_code = s.t();-->
-<!--    if (s_code)-->
-<!--        document.write(s_code);-->
-<!--    -->-->
-<!--</script>-->
-<!-- ***** End NCI Web Analytics ***** -->
-
-
-<!--<script type="text/javascript">_satellite.pageBottom();</script><!--BEGIN QUALTRICS SITE INTERCEPT-->-->
-<!--<script type="text/javascript">-->
-<!--    (function () {-->
-<!--        var g = function (e, h, f, g) {-->
-<!--            this.get = function (a) {-->
-<!--                for (var a = a + "=", c = document.cookie.split(";"), b = 0, e = c.length; b < e; b++) {-->
-<!--                    for (var d = c[b]; " " == d.charAt(0);) d = d.substring(1, d.length);-->
-<!--                    if (0 == d.indexOf(a)) return d.substring(a.length, d.length)-->
-<!--                }-->
-<!--                return null-->
-<!--            };-->
-<!--            this.set = function (a, c) {-->
-<!--                var b = "", b = new Date;-->
-<!--                b.setTime(b.getTime() + 6048E5);-->
-<!--                b = "; expires=" + b.toGMTString();-->
-<!--                document.cookie = a + "=" + c + b + "; path=/; "-->
-<!--            };-->
-<!--            this.check = function () {-->
-<!--                var a = this.get(f);-->
-<!--                if (a) a = a.split(":"); else if (100 != e) "v" == h && (e = Math.random() >= e / 100 ? 0 : 100), a = [h, e, 0], this.set(f, a.join(":")); else return !0;-->
-<!--                var c = a[1];-->
-<!--                if (100 == c) return !0;-->
-<!--                switch (a[0]) {-->
-<!--                    case "v":-->
-<!--                        return !1;-->
-<!--                    case "r":-->
-<!--                        return c = a[2] % Math.floor(100 / c), a[2]++, this.set(f, a.join(":")), !c-->
-<!--                }-->
-<!--                return !0-->
-<!--            };-->
-<!--            this.go = function () {-->
-<!--                if (this.check()) {-->
-<!--                    var a = document.createElement("script");-->
-<!--                    a.type = "text/javascript";-->
-<!--                    a.src = g + "&t=" + (new Date()).getTime();-->
-<!--                    document.body && document.body.appendChild(a)-->
-<!--                }-->
-<!--            };-->
-<!--            this.start = function () {-->
-<!--                var a = this;-->
-<!--                window.addEventListener ? window.addEventListener("load", function () {-->
-<!--                    a.go()-->
-<!--                }, !1) : window.attachEvent && window.attachEvent("onload", function () {-->
-<!--                    a.go()-->
-<!--                })-->
-<!--            }-->
-<!--        };-->
-<!--        try {-->
-<!--            (new g(100, "r", "QSI_S_SI_blNAE3KoV3SLMWh", "https://zn88jixcivzfb3vpp-nci.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_blNAE3KoV3SLMWh&Q_LOC=" + encodeURIComponent(window.location.href))).start()-->
-<!--        } catch (i) {-->
-<!--        }-->
-<!--    })();-->
-<!--</script>-->
 <div id="SI_blNAE3KoV3SLMWh"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
 <!--END SITE INTERCEPT-->
 

@@ -1,150 +1,72 @@
-<div class="col-md-3">
-  <div class="list-group">
-    <a class="list-group-item" href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Trang chủ</a>
-    <a class="list-group-item active" href="/quan-ly"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Danh mục</a>
-    <a class="list-group-item" href="/sponsors"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Tài trợ</a>
-    <a class="list-group-item" href="/registrars"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Danh sách
-      đăng ký</a>
-    <a class="list-group-item" href="/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Đăng
-      xuất</a>
-  </div>
-</div>
-<div class="col-md-9">
-  <% if !@content.errors.empty? %>
-      <div class="alert alert-error">
-        <ul>
-          <% @content.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-          <% end %>
-        </ul>
-
-      </div>
-  <% end %>
-
-  <% if @content.sub_contents.any? %>
-      <%= form_for @content, url: "/contents/edit/#{@content.id}", method: :post, html: {multipart: true, id: "content_new_form"} do |f| %>
-          <%= f.label :title, "Title" %> </br>
-          <%= f.text_field :title, class: "form-control" %> </br>
-
-          <%= f.label :english_title, "English Title" %> </br>
-          <%= f.text_field :english_title, class: "form-control" %> </br>
-
-          <%= f.label :image, "Ảnh đại diện" %> </br>
-          <%= f.file_field :image, accept: 'image/png,image/jpeg' %> </br></br>
-
-          <%= f.submit "Áp dụng", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
+<% if !@cancer_type.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @cancer_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
+    </ul>
 
-      <p style="margin-top: 15px;"><b>Danh mục phụ</b></p>
+  </div>
+<% end %>
 
-      <div class="col-md-9">
-        <a class="btn btn-primary" href="/contents/<%= @content.id %>/new"><i class="fa fa-plus" aria-hidden="true"></i></a></br>
-        <table class="table table-bordered table-striped">
-          <thead>.
-          <tr>
-            <th>Tên</th>
-            <th></th>
-            <th></th>
-          </tr>
-          </thead>
+<div id="english_content_hidden" style="display: none;">
+  <%= @cancer_type.description %>
+</div>
+<div id="content_hidden" style="display: none;">
+  <%= @cancer_type.description_english %>
+</div>
+<div id="content-new-form">
+  <%= form_for @cancer_type, url: cancer_type_edit_path(@cancer_type.id), method: :post do |f| %>
+    <%= f.label :name, "Tên" %> </br>
+    <%= f.text_field :name, class: "form-control" %> </br>
 
-          <tbody>
-          <% @content.sub_contents.each do |sub_contents| %>
-              <tr>
-                <td><%= sub_contents.title %></td>
-                <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/subcontents/edit/#{sub_contents.id}", class: "btn btn-primary" %></td>
-                <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/subcontents/#{sub_contents.id}", method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{sub_contents.title}?" %></td>
-              </tr>
-          <% end %>
-          </tbody>
+    <%= f.label :name, "Name" %> </br>
+    <%= f.text_field :name_english, class: "form-control" %> </br>
 
-        </table>
-      </div>
-  <% else %>
-      <div class="checkbox">
-        <input type="checkbox" id="sub-content-checkbox"><b>Có danh mục phụ không?</b></input>
-      </div>
+    <%= f.label :description, "Mô tả" %> </br>
+    <%= f.text_area :description, class: "content_editor" %> </br>
 
-      <div id="subcontent-new-form" style="display:none" >
-        <%= form_for :content, html: {multipart: true, id: "content_new_form"} do |f| %>
-            <%= hidden_field_tag :has_subcontent, value: 'true' %>
+    <%= f.label :description_english, "Description" %> </br>
+    <%= f.text_area :description_english, class: "content_editor" %> </br>
 
-            <%= f.label :title, "Tiêu đề" %> </br>
-            <%= f.text_field :title, class: "form-control" %> </br>
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+        var description = $("#content_hidden").text();
+        var description_english = $("#english_content_hidden").text();
+        CKEDITOR.on('instanceReady', function (ev) {
+            CKEDITOR.instances['cancer_type[description]'].setData(content);
+            CKEDITOR.instances['cancer_type[description_english]'].setData(description_english);
+        });
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/imageuploader/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/uploadimage/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/image2/', 'plugin.js');
+        CKEDITOR.replace('cancer_type[description]', {
+            height: '600px',
+            language: 'vi',
 
-            <%= f.label :english_title, "English title" %> </br>
-            <%= f.text_field :english_title, class: "form-control" %> </br>
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
 
-            <%= f.label :image, "Ảnh đại diện" %> </br>
-            <%= f.file_field :image, accept: 'image/png,image/jpeg' %> </br> </br>
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
 
-            <%= f.submit "Thêm tiêu đề phụ", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
-        <% end %>
-      </div>
+        });
+        CKEDITOR.replace('cancer_type[description_english]', {
+            height: '600px',
+            language: 'vi',
 
-      <div id="english_content_hidden" style="display: none;">
-        <%= @content.english_content %>
-      </div>
-      <div id="content_hidden" style="display: none;">
-        <%= @content.content %>
-      </div>
-      <div id="content-new-form">
-        <%= form_for @content, url: "/contents/edit/#{@content.id}", method: :post, html: {multipart: true, id: "content_new_form"} do |f| %>
-            <%= f.label :title, "Title" %> </br>
-            <%= f.text_field :title, class: "form-control" %> </br>
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
 
-            <%= f.label :english_title, "English Title" %> </br>
-            <%= f.text_field :english_title, class: "form-control" %> </br>
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
 
-            <%= f.label :image, "Ảnh đại diện" %> </br>
-            <%= f.file_field :image, accept: 'image/png,image/jpeg' %> </br> </br>
+        });
 
-            <%= f.label :content, "Nội dung" %> </br>
-            <%= f.text_area :content, class: "content_editor" %> </br>
-
-            <%= f.label :english_content, "Content" %> </br>
-            <%= f.text_area :english_content, class: "content_editor" %> </br>
-
-            <%= f.submit "Áp dụng", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
-            <script>
-                var content = $("#content_hidden").text();
-                var english_content = $("#english_content_hidden").text();
-                CKEDITOR.on('instanceReady', function (ev) {
-                    CKEDITOR.instances['content[content]'].setData(content);
-                    CKEDITOR.instances['content[english_content]'].setData(english_content);
-                });
-                CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/imageuploader/', 'plugin.js');
-                CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/uploadimage/', 'plugin.js');
-                CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/image2/', 'plugin.js');
-                CKEDITOR.replace('content[content]', {
-                    height: '600px',
-                    language: 'vi',
-
-                    stylesSet: [
-                        {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
-                        {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
-                    ],
-
-                    // Load the default contents.css file plus customizations for this sample.
-                    contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
-
-                });
-                CKEDITOR.replace('content[english_content]', {
-                    height: '600px',
-                    language: 'vi',
-
-                    stylesSet: [
-                        {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
-                        {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
-                    ],
-
-                    // Load the default contents.css file plus customizations for this sample.
-                    contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
-
-                });
-
-            </script>
-        <% end %>
-      </div>
-  <% end %> <!-- if subcontents.any? -->
+    </script>
+  <% end %>
 </div>
