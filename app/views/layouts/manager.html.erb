@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang quản lý</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'/>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+<div class="container m-t-md">
+  <div class="row">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <% if current_user %>
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item" href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Trang chủ</a>
+          <a class="list-group-item active" href="/edit/cancer-types"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
+            Cancer types</a>
+          <a class="list-group-item" href="/sponsors"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Tài trợ</a>
+          <a class="list-group-item" href="/registrars"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Danh
+            sách
+            đăng ký</a>
+          <a class="list-group-item" href="/news"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>&nbsp; News</a>
+          <a class="list-group-item" href="/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Đăng
+            xuất</a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <%= yield %>
+      </div>
+
+    <% else %>
+      <h1> Bạn phải <%= link_to "đăng nhập", "/admin" %> để xem được trang này</h1>
+    <% end %>
+  </div>
+</div>
+</body>
+</html>
