@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   # Manage content
   get '/manage-content', to: 'manager#index'
 
-  # Cancer types edit, new
-  get '/cancer-types/new', to: 'cancer_type#new'
-  post '/cancer-types/new', to: 'cancer_type#create'
-  get '/cancer-types/edit/:id', to: 'cancer_type#edit'
+  # Cancer types edit, new, update, destroy
+  get '/cancer-type/new', to: 'cancer_type#new', as: 'cancer_type_new'
+  post '/cancer-type/new', to: 'cancer_type#create'
+  get '/cancer-type/edit/:id', to: 'cancer_type#edit', as: 'cancer_type_edit'
+  post '/cancer-type/edit/:id', to: 'cancer_type#update'
+  get '/cancer-type/:id', to: 'cancer_type#show'
+  delete '/cancer-type/:id', to: 'cancer_type#destroy'
 end
