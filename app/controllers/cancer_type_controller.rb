@@ -3,7 +3,15 @@ class CancerTypeController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-
+    if I18n.locale == :en
+      @cancer_types_alphabetical = CancerType.all.order(:name_english)
+                                   .group_by{ |cancer_type| cancer_type.name_english[0] }
+      print(@cancer_types_alphabetical)
+    else
+      @cancer_types_alphabetical = CancerType.order(:name)
+                                       .collect{ |cancer_type| [cancer_type.name, cancer_type.id] }
+                                       .group_by{ |cancer_type| cancer_type.name[0] }
+    end
   end
 
   def show
