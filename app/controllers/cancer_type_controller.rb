@@ -1,6 +1,6 @@
 class CancerTypeController < ApplicationController
   layout 'manager', only: [:edit, :new]
-  before_action :authorize, except: [:index, :show]
+  before_action :authorize, except: [:index, :details]
 
   def index
     if I18n.locale == :en
@@ -14,8 +14,8 @@ class CancerTypeController < ApplicationController
     end
   end
 
-  def show
-
+  def details
+    @cancer_type = CancerType.find_by_id(params[:id])
   end
 
   def edit

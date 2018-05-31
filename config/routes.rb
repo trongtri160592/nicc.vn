@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post '/cancer-type/new', to: 'cancer_type#create'
   get '/cancer-type/edit/:id', to: 'cancer_type#edit', as: 'cancer_type_edit'
   post '/cancer-type/edit/:id', to: 'cancer_type#update'
-  get '/cancer-type/:id', to: 'cancer_type#show'
+  get '/cancer-type/:id', to: 'cancer_type#details', as: 'cancer_type_detail'
   delete '/cancer-type/:id', to: 'cancer_type#destroy'
   get '/types', to: 'cancer_type#index'
 end

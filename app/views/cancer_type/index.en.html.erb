@@ -23,24 +23,45 @@
     <!-- END PAGE TITLE -->
 
 
-
     <div class="page-options-container">
       <!-- PAGE OPTIONS -->
       <script type="text/javascript">
           var addthis_share = {
               title: "Cancer Types",
-              description: "A to Z list of cancer types"}
-      </script><script type="text/javascript">
-        var addthis_config = {
-            ui_language: "en",
-            ui_508_compliant: true}
-    </script><div id="PageOptionsControl1" class="large-5 columns page-options">
-      <ul>
-        <li class="po-print"><a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><img alt="Print" src="/publishedcontent/images/images/spacer.gif"></a></li><li class="po-email"><a title="Email" href="/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41', 'emailPopUp', 'height=525,width=492'); return false;"><img alt="Email" src="/publishedcontent/images/images/spacer.gif"></a></li><li class="po-facebook"><a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Facebook" src="/publishedcontent/images/images/spacer.gif"></a></li><li class="po-twitter"><a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Twitter" src="/publishedcontent/images/images/spacer.gif"></a></li><li class="po-googleplus"><a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Google+" src="/publishedcontent/images/images/spacer.gif"></a></li><li class="po-pinterest"><a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Pinterest" src="/publishedcontent/images/images/spacer.gif"></a></li>
-      </ul>
-    </div><script async="async" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ed7cc9f006efaac" type="text/javascript">
+              description: "A to Z list of cancer types"
+          }
+      </script>
+      <script type="text/javascript">
+          var addthis_config = {
+              ui_language: "en",
+              ui_508_compliant: true
+          }
+      </script>
+      <div id="PageOptionsControl1" class="large-5 columns page-options">
+        <ul>
+          <li class="po-print">
+            <a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><img alt="Print" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+          <li class="po-email">
+            <a title="Email" href="/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41', 'emailPopUp', 'height=525,width=492'); return false;"><img alt="Email" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+          <li class="po-facebook">
+            <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Facebook" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+          <li class="po-twitter">
+            <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Twitter" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+          <li class="po-googleplus">
+            <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Google+" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+          <li class="po-pinterest">
+            <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Pinterest" src="/publishedcontent/images/images/spacer.gif"></a>
+          </li>
+        </ul>
+      </div>
+      <script async="async" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ed7cc9f006efaac" type="text/javascript">
 
-    </script>
+      </script>
       <!-- END PAGE OPTIONS -->
     </div>
   </div>
@@ -48,393 +69,38 @@
   <!-- CARD CONTAINER -->
   <div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
     <div class="contentid-919848 slot-item only-SI">
-      <div class="rawHtml"><div class="row">
-        <div class="large-12 columns">
-          <p>Use the alphabet links to find and retrieve information about a particular type of cancer. (The A to Z list is also available <a href="/espanol/tipos">in Spanish</a>.)</p>
-          <div class="az-list">
-            <ul>
-              <% @cancer_types_alphabetical.keys.each do |letter| %>
-                <li><a href="#<%= letter.downcase %>"><%= letter.upcase %></a></li>
-              <% end %>
-              <li><a href="#a">A</a></li>
-              <li><a href="#b">B</a></li>
-              <li><a href="#c">C</a></li>
-              <li><a href="#d">D</a></li>
-              <li><a href="#e">E</a></li>
-              <li><a href="#f">F</a></li>
-              <li><a href="#g">G</a></li>
-              <li><a href="#h">H</a></li>
-              <li><a href="#i">I</a></li>
-              <li>J</li>
-              <li><a href="#k">K</a></li>
-              <li><a href="#l">L</a></li>
-              <li><a href="#m">M</a></li>
-              <li><a href="#n">N</a></li>
-              <li><a href="#o">O</a></li>
-              <li><a href="#p">P</a></li>
-              <li>Q</li>
-              <li><a href="#r">R</a></li>
-              <li><a href="#s">S</a></li>
-              <li><a href="#t">T</a></li>
-              <li><a href="#u">U</a></li>
-              <li><a href="#v">V</a></li>
-              <li><a href="#w">W</a></li>
-              <li>X</li>
-              <li><a href="#y">Y</a></li>
-              <li>Z</li>
-            </ul>
+      <div class="rawHtml">
+        <div class="row">
+          <div class="large-12 columns">
+            <p>Use the alphabet links to find and retrieve information about a particular type of cancer. (The A to Z
+              list is also available <a href="/vi/types">in Vietnamese</a>.)</p>
+            <div class="az-list">
+              <ul>
+                <% cancer_letters = @cancer_types_alphabetical.keys %>
+                <% ('A'..'Z').each do |letter| %>
+                  <% if cancer_letters.include?(letter) %>
+                    <li><a href="#<%= letter.downcase %>"><%= letter %></a></li>
+                  <% else %>
+                    <li><%= letter %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+            <div class="callout-box-right">
+              <p>There are more than 100 types of cancer. Types of cancer are usually named for the organs or tissues
+                where the cancers form, but they also may be described by the type of cell that formed them. </p>
+            </div>
+            <% @cancer_types_alphabetical.each do |letter, cancer_types| %>
+              <h3 id="<%= letter.downcase %>" tabindex="0"><%= letter %></h3>
+              <ul class="cancer-list">
+                <% cancer_types.each do |cancer_type| %>
+                  <li><%= link_to cancer_type.name_english, cancer_type_detail_path(id: cancer_type.id) %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </div>
-          <div class="callout-box-right">
-            <h4><a href="/about-cancer/understanding/what-is-cancer" onclick="s.linkTrackVars='prop66,prop67'; s.prop66='CancerTypes_WhatIsCancerBox_Heading'; s.prop67='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','CancerTypesIndexCallOut')">Learn More About Cancer Types</a></h4>
-            <p>There are more than 100 types of cancer. Types of cancer are usually named for the organs or tissues where the cancers form, but they also may be described by the type of cell that formed them. <a href="/about-cancer/understanding/what-is-cancer" onclick="s.linkTrackVars='prop66,prop67'; s.prop66='CancerTypes_WhatIsCancerBox_Text'; s.prop67='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','CancerTypesIndexCallOut')">Learn more</a> about cancer and types of cancer.</p>
-          </div>
-          <h3 id="a" tabindex="0">A</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/leukemia">Acute Lymphoblastic Leukemia (ALL)</a></li>
-            <li><a href="/types/leukemia">Acute Myeloid Leukemia (AML)</a></li>
-            <li><a href="/types/aya">Adolescents, Cancer in</a></li>
-            <li><a href="/types/adrenocortical">Adrenocortical Carcinoma</a>
-              <ul>
-                <li>Childhood Adrenocortical Carcinoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li><li>AIDS-Related Cancers
-            <ul>
-              <li><a href="/types/soft-tissue-sarcoma">Kaposi Sarcoma</a> (Soft Tissue Sarcoma)</li>
-              <li><a href="/types/lymphoma">AIDS-Related Lymphoma</a> (Lymphoma)</li>
-              <li><a href="/types/lymphoma">Primary CNS Lymphoma</a> (Lymphoma)</li>
-            </ul>
-          </li>
-            <li><a href="/types/anal">Anal Cancer</a></li>
-            <li>Appendix Cancer - see <a href="/types/gi-carcinoid-tumors">Gastrointestinal Carcinoid Tumors</a></li>
-            <li><a href="/types/brain">Astrocytomas, Childhood</a> (Brain Cancer)</li>
-            <li><a href="/types/brain">Atypical Teratoid/Rhabdoid Tumor, Childhood, Central Nervous System</a> (Brain Cancer)</li>
-          </ul>
-          <h3 id="b" tabindex="0">B</h3>
-          <ul class="cancer-list">
-            <li>Basal Cell Carcinoma of the Skin - see <a href="/types/skin">Skin Cancer</a></li>
-            <li><a href="/types/liver">Bile Duct Cancer</a></li>
-            <li><a href="/types/bladder">Bladder Cancer</a>
-              <ul>
-                <li>Childhood Bladder Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_64">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/bone">Bone Cancer</a> (includes Ewing Sarcoma and Osteosarcoma and Malignant Fibrous Histiocytoma)</li>
-            <li><a href="/types/brain">Brain Tumors</a></li>
-            <li><a href="/types/breast">Breast Cancer</a>
-              <ul>
-                <li>Childhood Breast Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li>Bronchial Tumors, Childhood - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-            <li>Burkitt Lymphoma - see <a href="/types/lymphoma">Non-Hodgkin Lymphoma</a></li>
-          </ul>
-          <h3 id="c" tabindex="0">C</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/gi-carcinoid-tumors">Carcinoid Tumor (Gastrointestinal)</a></li>
-            <ul>
-              <li>Childhood Carcinoid Tumors - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-            </ul>
-            <li><a href="/types/unknown-primary">Carcinoma of Unknown Primary</a>
-              <ul>
-              </ul>
-            </li>
-            <li>Central Nervous System
-              <ul>
-                <li><a href="/types/brain">Atypical Teratoid/Rhabdoid Tumor, Childhood</a> (Brain Cancer)</li>
-                <li><a href="/types/brain">Embryonal Tumors, Childhood</a> (Brain Cancer)</li>
-                <li><a href="/types/brain">Germ Cell Tumor, Childhood</a> (Brain Cancer)</li>
-                <li><a href="/types/lymphoma">Primary CNS Lymphoma</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/cervical">Cervical Cancer</a>
-              <ul>
-                <li>Childhood Cervical Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_64">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/childhood-cancers">Childhood Cancers</a></li>
-            <li><a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq">Cancers of Childhood, Unusual</a></li>
-            <li>Cholangiocarcinoma - see <a href="/types/liver/">Bile Duct Cancer</a></li>
-            <li> Chordoma, Childhood - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-            <li><a href="/types/leukemia">Chronic Lymphocytic Leukemia (CLL)</a></li>
-            <li><a href="/types/leukemia">Chronic Myelogenous Leukemia (CML)</a></li>
-            <li><a href="/types/myeloproliferative">Chronic Myeloproliferative Neoplasms</a></li>
-            <li><a href="/types/colorectal">Colorectal Cancer</a>
-              <ul>
-                <li>Childhood Colorectal Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/brain">Craniopharyngioma, Childhood</a> (Brain Cancer)</li>
-            <li>Cutaneous T-Cell Lymphoma - see <a href="/types/lymphoma">Lymphoma</a> (Mycosis Fungoides and Sézary Syndrome)</li>
-          </ul>
-          <h3 id="d" tabindex="0">D</h3>
-          <ul class="cancer-list">
-            <li>Ductal Carcinoma In Situ (DCIS) - see <a href="/types/breast">Breast Cancer</a></li>
-          </ul>
-          <h3 id="e" tabindex="0">E</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/brain">Embryonal Tumors, Central Nervous System, Childhood</a> (Brain Cancer)</li>
-            <li><a href="/types/uterine">Endometrial Cancer</a> (Uterine Cancer)</li>
-            <li><a href="/types/brain">Ependymoma, Childhood</a> (Brain Cancer)</li>
-            <li><a href="/types/esophageal">Esophageal Cancer</a>
-              <ul>
-                <li>Childhood Esophageal Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-
-            <li><a href="/types/head-and-neck">Esthesioneuroblastoma</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/bone">Ewing Sarcoma</a> (Bone Cancer)</li>
-            <li><a href="/types/extracranial-germ-cell">Extracranial Germ Cell Tumor, Childhood</a></li>
-            <li><a href="/types/extragonadal-germ-cell">Extragonadal Germ Cell Tumor</a></li>
-            <li>Eye Cancer
-              <ul>
-                <li>Childhood Intraocular Melanoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-                <li><a href="/types/eye">Intraocular Melanoma</a></li>
-                <li><a href="/types/retinoblastoma">Retinoblastoma</a></li>
-              </ul>
-            </li>
-          </ul>
-          <h3 id="f" tabindex="0">F</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/ovarian">Fallopian Tube Cancer</a></li>
-            <li><a href="/types/bone">Fibrous Histiocytoma of Bone, Malignant, and Osteosarcoma</a></li>
-          </ul>
-          <h3 id="g" tabindex="0">G</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/gallbladder">Gallbladder Cancer</a></li>
-            <li><a href="/types/stomach">Gastric (Stomach) Cancer</a>
-              <ul>
-                <li>Childhood Gastric (Stomach) Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/gi-carcinoid-tumors">Gastrointestinal Carcinoid Tumor</a></li>
-            <li><a href="/types/soft-tissue-sarcoma">Gastrointestinal Stromal Tumors (GIST)</a> (Soft Tissue Sarcoma)
-              <ul>
-                <li>Childhood Gastrointestinal Stromal Tumors - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li>Germ Cell Tumors
-              <ul>
-                <li><a href="/types/brain">Childhood Central Nervous System Germ Cell Tumors</a> (Brain Cancer)</li>
-                <li><a href="/types/extracranial-germ-cell">Childhood Extracranial Germ Cell Tumors</a></li>
-                <li><a href="/types/extragonadal-germ-cell">Extragonadal Germ Cell Tumors</a></li>
-                <li><a href="/types/ovarian">Ovarian Germ Cell Tumors</a></li>
-                <li><a href="/types/testicular">Testicular Cancer</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/gestational-trophoblastic">Gestational Trophoblastic Disease</a></li>
-          </ul>
-          <h3 id="h" tabindex="0">H</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/leukemia">Hairy Cell Leukemia</a></li>
-            <li><a href="/types/head-and-neck">Head and Neck Cancer</a></li>
-            <li>Heart Tumors, Childhood - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-            <li><a href="/types/liver">Hepatocellular (Liver) Cancer</a></li>
-            <li><a href="/types/langerhans">Histiocytosis, Langerhans Cell</a></li>
-            <li><a href="/types/lymphoma">Hodgkin Lymphoma</a></li>
-            <li><a href="/types/head-and-neck">Hypopharyngeal Cancer</a> (Head and Neck Cancer)</li>
-          </ul>
-          <h3 id="i" tabindex="0">I</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/eye">Intraocular Melanoma</a>
-              <ul>
-                <li>Childhood Intraocular Melanoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/pancreatic">Islet Cell Tumors, Pancreatic Neuroendocrine Tumors</a></li>
-          </ul>
-          <h3 id="k" tabindex="0">K</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/soft-tissue-sarcoma">Kaposi Sarcoma</a> (Soft Tissue Sarcoma)</li>
-            <li><a href="/types/kidney">Kidney (Renal Cell) Cancer</a></li>
-          </ul>
-          <h3 id="l" tabindex="0">L</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/langerhans">Langerhans Cell Histiocytosis</a></li>
-            <li><a href="/types/head-and-neck">Laryngeal Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/leukemia">Leukemia</a></li>
-            <li><a href="/types/head-and-neck">Lip and Oral Cavity Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/liver">Liver Cancer</a></li>
-            <li><a href="/types/lung">Lung Cancer</a> (Non-Small Cell and Small Cell)
-              <ul>
-                <li>Childhood Lung Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/lymphoma">Lymphoma</a>
-            </li></ul>
-          <h3 id="m" tabindex="0">M</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/breast">Male Breast Cancer</a></li>
-            <li><a href="/types/bone">Malignant Fibrous Histiocytoma of Bone and Osteosarcoma</a></li>
-            <li><a href="/types/skin">Melanoma</a>
-              <ul>
-                <li>Childhood Melanoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/eye">Melanoma, Intraocular (Eye)</a>
-              <ul>
-                <li>Childhood Intraocular Melanoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/skin">Merkel Cell Carcinoma</a> (Skin Cancer)</li>
-            <li><a href="/types/mesothelioma">Mesothelioma, Malignant</a>
-              <ul>
-                <li>Childhood Mesothelioma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/metastatic-cancer">Metastatic Cancer</a></li>
-            <li><a href="/types/head-and-neck">Metastatic Squamous Neck Cancer with Occult Primary</a> (Head and Neck Cancer)</li>
-
-            <li><a href="/types/midline/patient-child-midline-tract-carcinoma-treatment-pdq">Midline Tract Carcinoma With <i>NUT</i> Gene Changes</a></li>
-
-            <li><a href="/types/head-and-neck">Mouth Cancer</a> (Head and Neck Cancer)</li>
-            <li>Multiple Endocrine Neoplasia Syndromes - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-            <li><a href="/types/myeloma">Multiple Myeloma/Plasma Cell Neoplasms</a></li>
-            <li><a href="/types/lymphoma">Mycosis Fungoides</a> (Lymphoma)</li>
-            <li><a href="/types/myeloproliferative">Myelodysplastic Syndromes</a>, <a href="/types/myeloproliferative">Myelodysplastic/Myeloproliferative Neoplasms</a></li>
-            <li><a href="/types/leukemia">Myelogenous Leukemia, Chronic (CML)</a></li>
-            <li><a href="/types/leukemia">Myeloid Leukemia, Acute (AML)</a></li>
-            <li><a href="/types/myeloproliferative">Myeloproliferative Neoplasms, Chronic</a></li>
-          </ul>
-          <h3 id="n" tabindex="0">N</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/head-and-neck">Nasal Cavity and Paranasal Sinus Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/head-and-neck">Nasopharyngeal Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/neuroblastoma">Neuroblastoma</a></li>
-            <li><a href="/types/lymphoma">Non-Hodgkin Lymphoma</a></li>
-            <li><a href="/types/lung">Non-Small Cell Lung Cancer</a></li>
-          </ul>
-          <h3 id="o" tabindex="0">O</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/head-and-neck">Oral Cancer, Lip and Oral Cavity Cancer and Oropharyngeal Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/bone">Osteosarcoma and Malignant Fibrous Histiocytoma of Bone</a></li>
-            <li><a href="/types/ovarian">Ovarian Cancer</a>
-              <ul>
-                <li>Childhood Ovarian Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_64">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-          </ul>
-          <h3 id="p" tabindex="0">P</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/pancreatic">Pancreatic Cancer</a>
-              <ul>
-                <li>Childhood Pancreatic Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/pancreatic">Pancreatic Neuroendocrine Tumors (Islet Cell Tumors)</a></li>
-            <li><a href="/types/head-and-neck">Papillomatosis (Childhood Laryngeal)</a></li>
-            <li><a href="/types/pheochromocytoma">Paraganglioma</a>
-              <ul>
-                <li>Childhood Paraganglioma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/head-and-neck">Paranasal Sinus and Nasal Cavity Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/parathyroid">Parathyroid Cancer</a></li>
-            <li><a href="/types/penile">Penile Cancer</a></li>
-            <li><a href="/types/head-and-neck">Pharyngeal Cancer</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/pheochromocytoma">Pheochromocytoma</a>
-              <ul>
-                <li>Childhood Pheochromocytoma  - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/pituitary">Pituitary Tumor</a></li>
-            <li><a href="/types/myeloma">Plasma Cell Neoplasm/Multiple Myeloma</a></li>
-            <li>Pleuropulmonary Blastoma - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_58">Unusual Cancers of Childhood</a></li>
-            <li><a href="/types/breast">Pregnancy and Breast Cancer</a></li>
-            <li><a href="/types/lymphoma">Primary Central Nervous System (CNS) Lymphoma</a></li>
-            <li><a href="/types/ovarian">Primary Peritoneal Cancer</a></li>
-            <li><a href="/types/prostate">Prostate Cancer</a></li>
-          </ul>
-          <h3 id="r" tabindex="0">R</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/colorectal">Rectal Cancer</a></li>
-            <li><a href="/types/recurrent-cancer">Recurrent Cancer</a></li>
-            <li><a href="/types/kidney">Renal Cell (Kidney) Cancer</a></li>
-            <li><a href="/types/retinoblastoma">Retinoblastoma</a></li>
-            <li><a href="/types/soft-tissue-sarcoma">Rhabdomyosarcoma, Childhood</a> (Soft Tissue Sarcoma)</li>
-          </ul>
-          <h3 id="s" tabindex="0">S</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/head-and-neck">Salivary Gland Cancer</a> (Head and Neck Cancer)</li>
-            <li>Sarcoma
-              <ul>
-                <li><a href="/types/soft-tissue-sarcoma">Childhood Rhabdomyosarcoma</a> (Soft Tissue Sarcoma)</li>
-                <li><a href="/types/soft-tissue-sarcoma">Childhood Vascular Tumors</a> (Soft Tissue Sarcoma)</li>
-                <li><a href="/types/bone">Ewing Sarcoma</a> (Bone Cancer)</li>
-                <li><a href="/types/soft-tissue-sarcoma">Kaposi Sarcoma</a> (Soft Tissue Sarcoma)</li>
-                <li><a href="/types/bone">Osteosarcoma</a> (Bone Cancer)</li>
-                <li><a href="/types/soft-tissue-sarcoma">Soft Tissue Sarcoma</a></li>
-                <li><a href="/types/uterine">Uterine Sarcoma</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/lymphoma">Sézary Syndrome</a> (Lymphoma)</li>
-            <li><a href="/types/skin">Skin Cancer</a>
-              <ul>
-                <li>Childhood Skin Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/lung">Small Cell Lung Cancer</a></li>
-            <li><a href="/types/small-intestine">Small Intestine Cancer</a></li>
-            <li><a href="/types/soft-tissue-sarcoma">Soft Tissue Sarcoma</a></li>
-            <li>Squamous Cell Carcinoma of the Skin - see <a href="/types/skin">Skin Cancer</a></li>
-            <li><a href="/types/head-and-neck">Squamous Neck Cancer with Occult Primary, Metastatic</a> (Head and Neck Cancer)</li>
-            <li><a href="/types/stomach">Stomach (Gastric) Cancer</a>
-              <ul>
-                <li>Childhood Stomach (Gastric) Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_61">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-          </ul>
-          <h3 id="t" tabindex="0">T</h3>
-          <ul class="cancer-list">
-            <li>T-Cell Lymphoma, Cutaneous - see <a href="/types/lymphoma"> Lymphoma</a> (Mycosis Fungoides and Sèzary Syndrome)</li>
-            <li><a href="/types/testicular">Testicular Cancer</a>
-              <ul>
-                <li>Childhood Testicular Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_64">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li>Throat Cancer (Head and Neck Cancer)
-              <ul>
-                <li><a href="/types/head-and-neck">Nasopharyngeal Cancer</a></li>
-                <li><a href="/types/head-and-neck">Oropharyngeal Cancer</a></li>
-                <li><a href="/types/head-and-neck">Hypopharyngeal Cancer</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/thymoma">Thymoma and Thymic Carcinoma</a>
-            </li><li><a href="/types/thyroid">Thyroid Cancer</a></li>
-            <li><a href="/types/kidney">Transitional Cell Cancer of the Renal Pelvis and Ureter</a> (Kidney (Renal Cell) Cancer)</li>
-          </ul>
-          <h3 id="u" tabindex="0">U</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/unknown-primary">Unknown Primary, Carcinoma of</a>
-              <ul>
-                <li>Childhood Cancer of Unknown Primary - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_67">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq">Unusual Cancers of Childhood</a></li>
-            <li><a href="/types/kidney">Ureter and Renal Pelvis, Transitional Cell Cancer</a> (Kidney (Renal Cell) Cancer</li>
-            <li><a href="/types/urethral">Urethral Cancer</a></li>
-            <li><a href="/types/uterine">Uterine Cancer, Endometrial</a></li>
-            <li><a href="/types/uterine">Uterine Sarcoma</a></li>
-          </ul>
-          <h3 id="v" tabindex="0">V</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/vaginal">Vaginal Cancer</a>
-              <ul>
-                <li>Childhood Vaginal Cancer - see <a href="/types/childhood-cancers/patient/unusual-cancers-childhood-pdq#section/_64">Unusual Cancers of Childhood</a></li>
-              </ul>
-            </li>
-            <li><a href="/types/soft-tissue-sarcoma/hp">Vascular Tumors</a> (Soft Tissue Sarcoma)</li>
-            <li><a href="/types/vulvar">Vulvar Cancer</a></li>
-          </ul>
-          <h3 id="w" tabindex="0">W</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/kidney">Wilms Tumor and Other Childhood Kidney Tumors</a></li>
-          </ul>
-          <h3 id="y" tabindex="0">Y</h3>
-          <ul class="cancer-list">
-            <li><a href="/types/aya">Young Adults, Cancer in</a></li>
-          </ul>
         </div>
-      </div></div>
+      </div>
     </div>
   </div>
   <!-- END CARD CONTAINER -->

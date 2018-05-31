@@ -76,35 +76,15 @@
               list is also available <a href="/espanol/tipos">in Spanish</a>.)</p>
             <div class="az-list">
               <ul>
-                <% @cancer_types_alphabetical.each do |letter| %>
-                  <li><a href="#<%= letter.lower_case %>"><%= letter %></a></li>
+                <% cancer_letters = @cancer_types_alphabetical.keys %>
+                <% 'A..Z'.each do |letter| %>
+                  <% if cancer_letters.include(letter) %>
+                    <li><a href="#<%= letter.lower_case %>"><%= letter %></a></li>
+                  <% else %>
+                    <li><%= letter %></li>
+                  <% end %>
                 <% end %>
-                <li><a href="#a">A</a></li>
-                <li><a href="#b">B</a></li>
-                <li><a href="#c">C</a></li>
-                <li><a href="#d">D</a></li>
-                <li><a href="#e">E</a></li>
-                <li><a href="#f">F</a></li>
-                <li><a href="#g">G</a></li>
-                <li><a href="#h">H</a></li>
-                <li><a href="#i">I</a></li>
-                <li>J</li>
-                <li><a href="#k">K</a></li>
-                <li><a href="#l">L</a></li>
-                <li><a href="#m">M</a></li>
-                <li><a href="#n">N</a></li>
-                <li><a href="#o">O</a></li>
-                <li><a href="#p">P</a></li>
-                <li>Q</li>
-                <li><a href="#r">R</a></li>
-                <li><a href="#s">S</a></li>
-                <li><a href="#t">T</a></li>
-                <li><a href="#u">U</a></li>
-                <li><a href="#v">V</a></li>
-                <li><a href="#w">W</a></li>
-                <li>X</li>
-                <li><a href="#y">Y</a></li>
-                <li>Z</li>
+
               </ul>
             </div>
             <div class="callout-box-right">

@@ -1,0 +1,64 @@
+<div class="main-content" id="content">
+  <!-- slots -->
+  <div class="row">
+    <div class="large-12 columns cthp-padding">
+      <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs cthp-breadcrumb">
+        <div class="contentid-870117 slot-item only-SI">
+          <ul class="breadcrumbs">
+            <li><a href="/">Home</a></li>
+            <li class="last-breadcrumb"><a href="/types">Cancer Types</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END "row" -->
+  </div>
+  <div class="cthp-content cthp-patient-content" tabindex="0">
+    <div class="row">
+      <div class="large-12 columns resize-content cthp-padding">
+
+        <!-- PAGE TITLE -->
+        <h1><span><%= @cancer_type.name_english %></span></h1>
+
+        <!-- END PAGE TITLE -->
+
+        <div class="page-options-container">
+          <!-- PAGE OPTIONS -->
+          <div id="PageOptionsControl1" class="page-options no-resize">
+            <ul>
+              <li class="po-print">
+                <a title="Print" onclick="printThisPage();" href="#"><img alt="Print" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+              <li class="po-email">
+                <a title="Email" href="/common/popUps/PopEmail.aspx?title=Liver+and+Bile+Duct+Cancer%e2%80%94Patient+Version&amp;docurl=%2ftypes%2fliver&amp;language=en&amp;a=-1W904301754&amp;b=1159m2" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Liver+and+Bile+Duct+Cancer%e2%80%94Patient+Version&amp;docurl=%2ftypes%2fliver&amp;language=en&amp;a=-1W904301754&amp;b=1159m2', 'emailPopUp', 'height=525,width=492'); return false;"><img alt="Email" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+              <li class="po-facebook">
+                <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Facebook" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+              <li class="po-twitter">
+                <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Twitter" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+              <li class="po-googleplus">
+                <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Google+" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+              <li class="po-pinterest">
+                <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Pinterest" src="/publishedcontent/images/images/spacer.gif"></a>
+              </li>
+            </ul>
+          </div>
+          <script>
+              function printThisPage() {
+                  window.print();
+              }
+          </script>
+          <!-- END PAGE OPTIONS -->
+        </div>
+
+        <!-- Does this contain intro text, OnThisPage, article image, sections, & endnotes? -->
+        <div id="cancer_description">
+          <%= @cancer_type.description_english.to_s.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
