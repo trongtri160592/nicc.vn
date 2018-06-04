@@ -13,5 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require jquery-ui
+//= require Common
+//= require ContentPage
+//= require HomePage
 

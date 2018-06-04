@@ -1,0 +1,72 @@
+<% if !@research.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @research.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+<div id="english_content_hidden" style="display: none;">
+  <%= @research.description %>
+</div>
+<div id="content_hidden" style="display: none;">
+  <%= @research.description_english %>
+</div>
+<div id="content-new-form">
+  <%= form_for @research, url: research_edit_path(@research.id), method: :post do |f| %>
+    <%= f.label :title, "Tiêu đề" %> </br>
+    <%= f.text_field :title, class: "form-control" %> </br>
+
+    <%= f.label :research_category, "Phân loại nghiên cứu" %></br>
+    <%= f.collection_select :research_category_id, ResearchCategory.all, :id, :name, {}, {class: "form_control"} %> </br>
+
+    <%= f.label :description, "Mô tả" %> </br>
+    <%= f.text_area :description, class: "content_editor" %> </br>
+
+    <%= f.label :description_english, "Description" %> </br>
+    <%= f.text_area :description_english, class: "content_editor" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+        var description = $("#content_hidden").text();
+        var description_english = $("#english_content_hidden").text();
+        CKEDITOR.on('instanceReady', function (ev) {
+            CKEDITOR.instances['research[description]'].setData(content);
+            CKEDITOR.instances['research[description_english]'].setData(description_english);
+        });
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/imageuploader/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/uploadimage/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('imageuploader', '/ckeditor/plugins/image2/', 'plugin.js');
+        CKEDITOR.replace('research[description]', {
+            height: '600px',
+            language: 'vi',
+
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
+
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+        });
+        CKEDITOR.replace('research[description_english]', {
+            height: '600px',
+            language: 'vi',
+
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
+
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+        });
+
+    </script>
+  <% end %>
+</div>

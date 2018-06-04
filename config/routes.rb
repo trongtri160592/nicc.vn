@@ -23,4 +23,15 @@ Rails.application.routes.draw do
   get '/cancer-type/:id', to: 'cancer_type#details', as: 'cancer_type_detail'
   delete '/cancer-type/:id', to: 'cancer_type#destroy'
   get '/types', to: 'cancer_type#index'
+
+  # Research edit, new, update, destroy, index
+  get '/manage-research', to: 'research#manage', as: 'research_manage'
+  get '/research/new', to: 'research#new', as: 'research_new'
+  post '/research/new', to: 'research#create'
+  get '/research/edit/:id', to: 'research#edit', as: 'research_edit'
+  post '/research/edit/:id', to: 'research#update'
+  delete '/research/:id', to: 'research#destroy'
+  get '/research/categories/:id', to: 'research#category', as: 'research_category'
+  get '/research', to: 'research#index'
+  get '/research/:id', to: 'research#details', as: 'research_details'
 end

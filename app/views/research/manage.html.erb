@@ -1,0 +1,21 @@
+<a class="btn btn-primary" href="/research/new"><i class="fa fa-plus" aria-hidden="true"></i></a></br>
+<table class="table table-bordered table-striped">
+  <thead>.
+  <tr>
+    <th>Tên nghiên cứu</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @researches.each do |research| %>
+    <tr>
+      <td><%= research.title %></td>
+      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/research/edit/#{research.id}", class: "btn btn-primary" %></td>
+      <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/research/#{research.id}", method: :delete, class: "btn btn-danger", confirm: "Có phải bạn muốn xóa '#{research.title}'?" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>

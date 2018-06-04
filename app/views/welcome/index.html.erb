@@ -1,345 +1,328 @@
-  <!-- Begin MAIN CONTENT AREA -->
-  <div class="main-content" id="content" tabindex="0">
+<!-- Begin MAIN CONTENT AREA -->
+<div class="main-content" id="content" tabindex="0">
 
 
-    <!-- PUBLIC ARCHIVE BANNER -->
-    <div id="cgvPublicArchiveBannerSl" class="row collapse">
-      <div class="contentid-172410 slot-item only-SI large-12 columns">
+  <!-- PUBLIC ARCHIVE BANNER -->
+  <div id="cgvPublicArchiveBannerSl" class="row collapse">
+    <div class="contentid-172410 slot-item only-SI large-12 columns">
 
+    </div>
+  </div>
+  <!-- END PUBLIC ARCHIVE BANNER -->
+
+
+  <!-- HERO SLOT -->
+  <div id="nvcgSlHeroHeader" class="row hero-slot">
+    <div class="contentid-898668 slot-item only-SI large-12 columns hero">
+      <div class="rawHtml">
+        <div class="row">
+          <div class="hero-text columns large-12">
+            <p>Viện ung thư quốc gia là trung tâm chuyên sâu cấp quốc gia và khu vực về phòng chống và điều trị nhiều
+              loại ung thư</p></div>
+        </div>
+        <picture>
+          <!--            <source media="(max-width: 1024px)" srcset="/PublishedContent/Images/images/design-elements/heroes/Hero_image_home_tablet.__v1.jpg">-->
+          <%= image_tag 'Hero_image_home_desktop.jpg' %>
+        </picture>
       </div>
     </div>
-    <!-- END PUBLIC ARCHIVE BANNER -->
+  </div>
+  <!-- END HERO SLOT -->
+
+  <div class="row">
 
 
-    <!-- HERO SLOT -->
-    <div id="nvcgSlHeroHeader" class="row hero-slot">
-      <div class="contentid-898668 slot-item only-SI large-12 columns hero">
-        <div class="rawHtml">
-          <div class="row">
-            <div class="hero-text columns large-12"><p>NCI is the nation's leader in cancer research</p></div>
-          </div>
-          <picture>
-<!--            <source media="(max-width: 1024px)" srcset="/PublishedContent/Images/images/design-elements/heroes/Hero_image_home_tablet.__v1.jpg">-->
-<!--            <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/Hero_image_home_desktop.jpg" alt="Doctors in lab coats collaborating">-->
-          </picture>
-        </div>
+    <div class="page-options-container">
+      <!-- PAGE OPTIONS -->
+      <script type="text/javascript">
+          var addthis_share = {
+              title: "Comprehensive Cancer Information"
+          }
+      </script>
+      <script type="text/javascript">
+          var addthis_config = {
+              ui_language: "en",
+              ui_508_compliant: true
+          }
+      </script>
+      <div id="PageOptionsControl1" class="large-5 columns page-options">
+        <ul>
+          <li class="po-print">
+            <a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Print' %></a>
+          </li>
+          <li class="po-email">
+            <a title="Email" href="https://www.cancer.gov/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2', 'emailPopUp', 'height=525,width=492'); return false;"><%= image_tag 'spacer.gif', alt: 'Email' %></a>
+          </li>
+          <li class="po-facebook">
+            <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Facebook' %></a>
+          </li>
+          <li class="po-twitter">
+            <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Twitter' %></a>
+          </li>
+          <li class="po-googleplus">
+            <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Google+' %></a>
+          </li>
+          <li class="po-pinterest">
+            <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Pinterest' %></a>
+          </li>
+        </ul>
       </div>
+
+      <!-- END PAGE OPTIONS -->
+      <div class="floating-delighter floating-delighter--cts">
+        <a href="#" class="floating-delighter__link">
+          <div class="floating-delighter__icon">
+          </div>
+          <div class="floating-delighter__label">Find a Clinical Trial</div>
+        </a></div>
     </div>
-    <!-- END HERO SLOT -->
+  </div>
 
-    <div class="row">
+  <!-- CARD CONTAINER -->
+  <div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
+    <div class="contentid-896091 slot-item first-SI">
 
-
-      <div class="page-options-container">
-        <!-- PAGE OPTIONS -->
-        <script type="text/javascript">
-            var addthis_share = {
-                title: "Comprehensive Cancer Information"
-            }
-        </script>
-        <script type="text/javascript">
-            var addthis_config = {
-                ui_language: "en",
-                ui_508_compliant: true
-            }
-        </script>
-        <div id="PageOptionsControl1" class="large-5 columns page-options">
-          <ul>
-            <li class="po-print">
-              <a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Print' %></a>
-            </li>
-            <li class="po-email">
-              <a title="Email" href="https://www.cancer.gov/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2', 'emailPopUp', 'height=525,width=492'); return false;"><%= image_tag 'spacer.gif', alt: 'Email' %></a>
-            </li>
-            <li class="po-facebook">
-              <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Facebook' %></a>
-            </li>
-            <li class="po-twitter">
-              <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Twitter' %></a>
-            </li>
-            <li class="po-googleplus">
-              <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Google+' %></a>
-            </li>
-            <li class="po-pinterest">
-              <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Pinterest' %></a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- END PAGE OPTIONS -->
-        <div class="floating-delighter floating-delighter--cts">
-          <a href="https://www.cancer.gov/about-cancer/treatment/clinical-trials/search" class="floating-delighter__link">
-            <div class="floating-delighter__icon">
-            </div>
-            <div class="floating-delighter__label">Find a Clinical Trial</div>
-          </a></div>
+      <div class="feature-primary-title">
+        <h3>
+          Featured Content
+        </h3>
       </div>
+      <!-- BEGIN FEATURE PRIMARY CARDS ROW -->
+      <div id="ctl33_nvcgSlLayoutFeatureA" class="row feature-primary flex-columns">
+        <div class="contentid-267255 slot-item first-SI equalheight large-4 columns card gutter">
+
+          <div class="feature-card cgvTopicPage">
+            <a href="https://www.cancer.gov/research/nci-role/cancer-centers">
+              <div class="image-hover">
+                <!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/cancer-centers-banner-feature-card-feature.jpg" alt="">-->
+              </div>
+              <h3>Learn About NCI-Designated Cancer Centers</h3>
+              <p>There are now 70 NCI Cancer Centers serving as the backbone of NCI’s programs for studying and
+                controlling cancer. </p>
+            </a>
+          </div>
+
+        </div>
+        <div class="contentid-1080192 slot-item equalheight large-4 columns card gutter">
+
+          <div class="feature-card cgvCustomLink">
+            <a href="https://www.cancer.gov/research/nci-role">
+              <div class="image-hover">
+                <!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/what-we-do-feature-card.gif" alt="">-->
+              </div>
+              <h3>May is National Cancer Research Month</h3>
+              <p>Learn how NCI drives the cancer
+                research enterprise by supporting and convening researchers, paying for
+                facilities and systems, and much more.</p>
+            </a>
+          </div>
+
+        </div>
+        <div class="contentid-1111557 slot-item last-SI equalheight large-4 columns card gutter">
+
+          <div class="feature-card cgvArticle">
+            <a href="https://www.cancer.gov/about-nci/organization/ccct/ctrp/collaborative">
+              <div class="image-hover">
+                <!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/Finding-Cancer-Trials-Collaborative-feature-card.jpg" alt="">-->
+              </div>
+              <h3>Finding Cancer Trials Collaborative</h3>
+              <p>Let's collaborate! NCI wants to hear
+                from data experts, patient advocates, and others about how our clinical
+                trial data might serve you better.</p>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <!-- END FEATURE PRIMARY CARDS CARDS ROW -->
     </div>
+    <div class="contentid-896093 slot-item">
 
-    <!-- CARD CONTAINER -->
-    <div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
-      <div class="contentid-896091 slot-item first-SI">
+      <!-- BEGIN CARDS ROW -->
+      <div class="accordion">
+        <div id="ctl35_nvcgSlLayoutGuideB" class="nvcgSlLayoutGuideB row guide-card guide-card--home flex-columns">
+          <div class="contentid-896094 slot-item first-SI equalheight large-4 columns card gutter">
 
-        <div class="feature-primary-title">
-          <h3>
-            Featured Content
-          </h3>
-        </div>
-        <!-- BEGIN FEATURE PRIMARY CARDS ROW -->
-        <div id="ctl33_nvcgSlLayoutFeatureA" class="row feature-primary flex-columns">
-          <div class="contentid-267255 slot-item first-SI equalheight large-4 columns card gutter">
+            <h2>
+              Resources For
+            </h2>
 
-            <div class="feature-card cgvTopicPage">
-              <a href="https://www.cancer.gov/research/nci-role/cancer-centers">
-                <div class="image-hover">
-<!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/cancer-centers-banner-feature-card-feature.jpg" alt="">-->
-                </div>
-                <h3>Learn About NCI-Designated Cancer Centers</h3>
-                <p>There are now 70 NCI Cancer Centers serving as the backbone of NCI’s programs for studying and
-                  controlling cancer. </p>
-              </a>
-            </div>
+            <ul>
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/patients">Patients</a></li>
 
-          </div>
-          <div class="contentid-1080192 slot-item equalheight large-4 columns card gutter">
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/caregivers">Caregivers</a>
+              </li>
 
-            <div class="feature-card cgvCustomLink">
-              <a href="https://www.cancer.gov/research/nci-role">
-                <div class="image-hover">
-<!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/what-we-do-feature-card.gif" alt="">-->
-                </div>
-                <h3>May is National Cancer Research Month</h3>
-                <p>Learn how NCI drives the cancer
-                  research enterprise by supporting and convening researchers, paying for
-                  facilities and systems, and much more.</p>
-              </a>
-            </div>
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/hp">Health Professionals</a>
+              </li>
+
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/researchers">Researchers</a>
+              </li>
+
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/advocates">Advocates &amp;
+                Policymakers</a></li>
+
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/international-partners">International
+                Partners</a></li>
+
+              <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/industry">Industry</a></li>
+            </ul>
 
           </div>
-          <div class="contentid-1111557 slot-item last-SI equalheight large-4 columns card gutter">
+          <div class="contentid-896095 slot-item equalheight large-4 columns card gutter">
 
-            <div class="feature-card cgvArticle">
-              <a href="https://www.cancer.gov/about-nci/organization/ccct/ctrp/collaborative">
-                <div class="image-hover">
-<!--                  <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/Finding-Cancer-Trials-Collaborative-feature-card.jpg" alt="">-->
-                </div>
-                <h3>Finding Cancer Trials Collaborative</h3>
-                <p>Let's collaborate! NCI wants to hear
-                  from data experts, patient advocates, and others about how our clinical
-                  trial data might serve you better.</p>
-              </a>
-            </div>
+            <h2>
+              About Cancer
+            </h2>
+
+            <ul>
+              <li>
+                <a class="arrow-link" href="https://www.cancer.gov/about-cancer/understanding/what-is-cancer">What is
+                  Cancer</a></li>
+              <li>
+                <a class="arrow-link" href="https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis">Prognosis</a>
+              </li>
+              <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/treatment">Treatment &amp; Clinical
+                Trials</a></li>
+              <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/treatment/clinical-trials/search">Find
+                a Clinical Trial</a></li>
+              <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/coping">Coping with Cancer</a></li>
+              <li><a class="arrow-link" href="https://www.cancer.gov/publications/pdq">PDQ® Cancer Information</a>
+              </li>
+              <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer">Learn more about cancer</a></li>
+            </ul>
 
           </div>
-        </div>
-        <!-- END FEATURE PRIMARY CARDS CARDS ROW -->
-      </div>
-      <div class="contentid-896093 slot-item">
+          <div class="contentid-896096 slot-item last-SI equalheight large-4 columns card gutter">
 
-        <!-- BEGIN CARDS ROW -->
-        <div class="accordion">
-          <div id="ctl35_nvcgSlLayoutGuideB" class="nvcgSlLayoutGuideB row guide-card guide-card--home flex-columns">
-            <div class="contentid-896094 slot-item first-SI equalheight large-4 columns card gutter">
+            <h2>
+              Find a Cancer Type
+            </h2>
 
-              <h2>
-                Resources For
-              </h2>
+            <ul class="cancer-types">
+              <% ('A'..'Z').each do |letter| %>
+                <% if @available_letters.include?(letter) %>
+                  <li><%= link_to letter, "/types/##{letter}" %></li>
+                <% else %>
+                  <li><span><%= letter %></span></li>
+                <% end %>
+              <% end %>
+            </ul>
 
-              <ul>
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/patients">Patients</a></li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/caregivers">Caregivers</a>
-                </li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/hp">Health Professionals</a>
-                </li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/researchers">Researchers</a>
-                </li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/advocates">Advocates &amp;
-                  Policymakers</a></li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/international-partners">International
-                  Partners</a></li>
-
-                <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/industry">Industry</a></li>
-              </ul>
-
-            </div>
-            <div class="contentid-896095 slot-item equalheight large-4 columns card gutter">
-
-              <h2>
-                About Cancer
-              </h2>
-
-              <ul>
-                <li>
-                  <a class="arrow-link" href="https://www.cancer.gov/about-cancer/understanding/what-is-cancer">What is
-                    Cancer</a></li>
-                <li>
-                  <a class="arrow-link" href="https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis">Prognosis</a>
-                </li>
-                <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/treatment">Treatment &amp; Clinical
-                  Trials</a></li>
-                <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/treatment/clinical-trials/search">Find
-                  a Clinical Trial</a></li>
-                <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer/coping">Coping with Cancer</a></li>
-                <li><a class="arrow-link" href="https://www.cancer.gov/publications/pdq">PDQ® Cancer Information</a>
-                </li>
-                <li><a class="arrow-link" href="https://www.cancer.gov/about-cancer">Learn more about cancer</a></li>
-              </ul>
-
-            </div>
-            <div class="contentid-896096 slot-item last-SI equalheight large-4 columns card gutter">
-
-              <h2>
-                Find a Cancer Type
-              </h2>
-
-              <ul class="cancer-types">
-                <li><a href="https://www.cancer.gov/types/#a">A</a></li>
-                <li><a href="https://www.cancer.gov/types/#b">B</a></li>
-                <li><a href="https://www.cancer.gov/types/#c">C</a></li>
-                <li><a href="https://www.cancer.gov/types/#d">D</a></li>
-                <li><a href="https://www.cancer.gov/types/#e">E</a></li>
-                <li><a href="https://www.canc er.gov/types/#f">F</a></li>
-                <li><a href="https://www.cancer.gov/types/#g">G</a></li>
-                <li><a href="https://www.cancer.gov/types/#h">H</a></li>
-                <li><a href="https://www.cancer.gov/types/#i">I</a></li>
-                <li><span>J</span></li>
-                <li><a href="https://www.cancer.gov/types/#k">K</a></li>
-                <li><a href="https://www.cancer.gov/types/#l">L</a></li>
-                <li><a href="https://www.cancer.gov/types/#m">M</a></li>
-                <li><a href="https://www.cancer.gov/types/#n">N</a></li>
-                <li><a href="https://www.cancer.gov/types/#o">O</a></li>
-                <li><a href="https://www.cancer.gov/types/#p">P</a></li>
-                <li><span>Q</span></li>
-                <li><a href="https://www.cancer.gov/types/#r">R</a></li>
-                <li><a href="https://www.cancer.gov/types/#s">S</a></li>
-                <li><a href="https://www.cancer.gov/types/#t">T</a></li>
-                <li><a href="https://www.cancer.gov/types/#u">U</a></li>
-                <li><a href="https://www.cancer.gov/types/#v">V</a></li>
-                <li><a href="https://www.cancer.gov/types/#w">W</a></li>
-                <li><span>X</span></li>
-                <li><a href="https://www.cancer.gov/types/#y">Y</a></li>
-                <li><span>Z</span></li>
-              </ul>
-
-            </div>
           </div>
         </div>
-        <!-- END CARDS ROW -->
       </div>
-      <div class="contentid-1026939 slot-item">
-        <div class="rawHtml"><!-- Begin Social Media row -->
-
-          <div class="row social-media-title">
-            <h2>Follow Us</h2>
-          </div>
-          <div class="social-media-row row">
-            <div class="social-media-card">
-              <div class="social-media-icon">
-                <a href="https://twitter.com/thenci" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Twitter Image'; s.prop59='Join the Conversation:1'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')"><%= image_tag 'twitter-circle-icon.svg', alt: 'Twitter logo' %> </a>
-              </div>
-              <div class="social-media-text">
-                <h3>
-                  <a href="https://twitter.com/thenci" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Twitter'; s.prop59='Join the Conversation:1'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')">Twitter</a><a class="icon-exit-notification" title="Exit Disclaimer" href="https://www.cancer.gov/policies/linking"><span class="hidden">Exit Disclaimer</span></a>
-                </h3>
-              </div>
-            </div>
-            <div class="social-media-card">
-              <div class="social-media-icon">
-                <a href="https://www.facebook.com/cancer.gov" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Facebook Image'; s.prop59='Join the Conversation:2'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')"><%= image_tag 'facebook-circle-icon.svg', alt: 'Facebook logo' %></a>
-              </div>
-              <div class="social-media-text">
-                <h3>
-                  <a href="https://www.facebook.com/cancer.gov" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Facebook'; s.prop59='Join the Conversation:2'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')">Facebook</a><a class="icon-exit-notification" title="Exit Disclaimer" href="https://www.cancer.gov/policies/linking"><span class="hidden">Exit Disclaimer</span></a>
-                </h3>
-
-              </div>
-            </div>
-            <div class="social-media-card">
-              <div class="social-media-icon">
-                <a href="https://www.linkedin.com/company/3424/" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='LinkedIn Image'; s.prop59='Join the Conversation:3'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')"><%= image_tag 'linkedin-circle-icon.svg', alt: 'Linkedin logo' %></a>
-              </div>
-              <div class="social-media-text">
-                <h3>
-                  <a href="https://www.linkedin.com/company/3424/" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='LinkedIn'; s.prop59='Join the Conversation:3'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')">LinkedIn</a><a class="icon-exit-notification" title="Exit Disclaimer" href="https://www.cancer.gov/policies/linking"><span class="hidden">Exit Disclaimer</span></a>
-                </h3>
-
-              </div>
-            </div>
-            <div class="social-media-card">
-              <div class="social-media-icon">
-                <a href="https://www.instagram.com/nationalcancerinstitute/" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Instagram Image'; s.prop59='Join the Conversation:4'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')"><%= image_tag 'instagram-circle-icon.svg', alt: 'Instagram logo' %></a>
-              </div>
-              <div class="social-media-text">
-                <h3>
-                  <a href="https://www.instagram.com/nationalcancerinstitute/" onclick="s.linkTrackVars='prop57,prop58,prop59,prop60'; s.prop57='Join the Conversation'; s.prop58='Instagram'; s.prop59='Join the Conversation:4'; s.prop60='www.cancer.gov' + location.pathname.toLowerCase(); s.tl(this,'o','Join the Conversation')">Instagram</a><a class="icon-exit-notification" title="Exit Disclaimer" href="https://www.cancer.gov/policies/linking"><span class="hidden">Exit Disclaimer</span></a>
-                </h3>
-
-              </div>
-            </div>
-          </div>
-          <!-- End Social Media row --></div>
-      </div>
-      <div class="contentid-896097 slot-item">
-
-        <!-- BEGIN MULTIMEDIA, SECONDARY FEATURE ROW -->
-        <div class="multimedia-slot">
-          <div class="row multimedia flex-columns">
-            <div id="ctl39_nvcgSlLayoutMultimediaA" class="equalheight small-8 columns card">
-              <div class="contentid-1112790 slot-item only-SI">
-
-                <div class="multimedia-feature-card $content_type">
-                  <figure class="video  ">
-                    <div id="ytplayer-YWH9DNfgYPs" class="flex-video widescreen" data-video-id="YWH9DNfgYPs" data-video-title="Paying for Clinical Trials">
-                      <noscript><p>
-                        <a href="https://www.youtube.com/watch?v=YWH9DNfgYPs" target="_blank" title="Paying for Clinical Trials">
-                          View this video on YouTube. </a></p></noscript>
-                      <div class="video-preview--container" tabindex="0">
-<!--                        <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/hqdefault.jpg" alt="Paying for Clinical Trials" class="video-preview--preview-img">-->
-                        <div class="video-preview--play-button">
-                          <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
-                            <path class="play-button--bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
-                            <path d="M 45,24 27,14 27,34" fill="#fff"></path>
-                          </svg>
-                        </div>
-                        <p>Paying for Clinical Trials</p></div>
-                    </div>
-                  </figure>
-                  <p class="mmfc-video-caption">
-                  </p>
-                  <p>Learn about the different types of costs related to taking part in a clinical trial, and who is
-                    expected to pay for which costs.</p>
-                  <p></p>
-                </div>
-
-              </div>
-            </div>
-            <div id="ctl39_nvcgSlLayoutFeatureB" class="equalheight small-4 columns card">
-              <div class="contentid-941434 slot-item only-SI">
-
-                <div class="feature-card cgvTopicPage">
-                  <a href="https://www.cancer.gov/about-nci/leadership">
-                    <div class="image-hover">
-<!--                      <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/senior-leadership-illustration-feature-card.gif" alt="">-->
-                    </div>
-                    <h3>Senior Leaders</h3>
-                    <p>Information about NCI Director Norman Sharpless, M.D., and other senior NCI leaders.</p>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- BEGIN THUMBNAIL SECTION -->
-
-        <!-- END THUMBNAIL SECTION -->
-      </div>
+      <!-- END CARDS ROW -->
     </div>
-    <!-- END CARD CONTAINER -->
+    <div class="contentid-1026939 slot-item">
+      <div class="rawHtml"><!-- Begin Social Media row -->
 
-  </div> <!-- End MAIN CONTENT AREA -->
+        <div class="row social-media-title">
+          <h2>Mạng xã hội</h2>
+        </div>
+        <div class="social-media-row row">
+          <div class="social-media-card">
+            <div class="social-media-icon">
+              <a href="#"><%= image_tag 'twitter-circle-icon.svg', alt: 'Twitter logo' %> </a>
+            </div>
+            <div class="social-media-text">
+              <h3>
+                <a href="#">Twitter</a>
+              </h3>
+            </div>
+          </div>
+          <div class="social-media-card">
+            <div class="social-media-icon">
+              <a href="#"><%= image_tag 'facebook-circle-icon.svg', alt: 'Facebook logo' %></a>
+            </div>
+            <div class="social-media-text">
+              <h3>
+                <a href="#">Facebook</a>
+              </h3>
+
+            </div>
+          </div>
+          <div class="social-media-card">
+            <div class="social-media-icon">
+              <a href="#"><%= image_tag 'linkedin-circle-icon.svg', alt: 'Linkedin logo' %></a>
+            </div>
+            <div class="social-media-text">
+              <h3>
+                <a href="#">LinkedIn</a>
+              </h3>
+
+            </div>
+          </div>
+          <div class="social-media-card">
+            <div class="social-media-icon">
+              <a href="#"><%= image_tag 'instagram-circle-icon.svg', alt: 'Instagram logo' %></a>
+            </div>
+            <div class="social-media-text">
+              <h3>
+                <a href="#">Instagram</a>
+              </h3>
+
+            </div>
+          </div>
+        </div>
+        <!-- End Social Media row --></div>
+    </div>
+    <div class="contentid-896097 slot-item">
+
+      <!-- BEGIN MULTIMEDIA, SECONDARY FEATURE ROW -->
+      <div class="multimedia-slot">
+        <div class="row multimedia flex-columns">
+          <div id="ctl39_nvcgSlLayoutMultimediaA" class="equalheight small-8 columns card">
+            <div class="contentid-1112790 slot-item only-SI">
+
+              <div class="multimedia-feature-card $content_type">
+                <figure class="video  ">
+                  <div id="ytplayer-YWH9DNfgYPs" class="flex-video widescreen" data-video-id="YWH9DNfgYPs" data-video-title="Paying for Clinical Trials">
+                    <noscript><p>
+                      <a href="https://www.youtube.com/watch?v=YWH9DNfgYPs" target="_blank" title="Paying for Clinical Trials">
+                        View this video on YouTube. </a></p></noscript>
+                    <div class="video-preview--container" tabindex="0">
+                      <!--                        <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/hqdefault.jpg" alt="Paying for Clinical Trials" class="video-preview--preview-img">-->
+                      <div class="video-preview--play-button">
+                        <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                          <path class="play-button--bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                          <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                        </svg>
+                      </div>
+                      <p>Paying for Clinical Trials</p></div>
+                  </div>
+                </figure>
+                <p class="mmfc-video-caption">
+                </p>
+                <p>Learn about the different types of costs related to taking part in a clinical trial, and who is
+                  expected to pay for which costs.</p>
+                <p></p>
+              </div>
+
+            </div>
+          </div>
+          <div id="ctl39_nvcgSlLayoutFeatureB" class="equalheight small-4 columns card">
+            <div class="contentid-941434 slot-item only-SI">
+
+              <div class="feature-card cgvTopicPage">
+                <a href="https://www.cancer.gov/about-nci/leadership">
+                  <div class="image-hover">
+                    <!--                      <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/senior-leadership-illustration-feature-card.gif" alt="">-->
+                  </div>
+                  <h3>Senior Leaders</h3>
+                  <p>Information about NCI Director Norman Sharpless, M.D., and other senior NCI leaders.</p>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BEGIN THUMBNAIL SECTION -->
+
+      <!-- END THUMBNAIL SECTION -->
+    </div>
+  </div>
+  <!-- END CARD CONTAINER -->
+
+</div> <!-- End MAIN CONTENT AREA -->

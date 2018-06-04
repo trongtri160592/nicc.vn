@@ -1,0 +1,41 @@
+<% if !@research.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @research.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div id="content-new-form">
+  <%= form_with model: @research, url: research_new_path do |f| %>
+    <%= f.label :title, "Tiêu đề" %> </br>
+    <%= f.text_field :title, class: "form-control" %> </br>
+
+    <%= f.label :research_category, "Phân loại nghiên cứu" %></br>
+    <%= f.collection_select :research_category_id, ResearchCategory.all, :id, :name, {}, {class: "form_control"} %> </br>
+
+    <%= f.label :description, "Mô tả" %> </br>
+    <%= f.text_area :description, class: "content_editor" %> </br>
+
+    <%= f.label :description_english, "Description" %> </br>
+    <%= f.text_area :description_english, class: "content_editor" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+        CKEDITOR.replace('research[description]', {
+            height: '600px',
+            language: 'vi'
+        });
+        CKEDITOR.replace('research[description_english]', {
+            height: '600px',
+            language: 'en'
+        });
+        CKEDITOR.editorConfig = function (config) {
+            config.extraPlugins = 'imageuploader';
+            config.language = 'en';
+        }
+    </script>
+  <% end %>
+</div>

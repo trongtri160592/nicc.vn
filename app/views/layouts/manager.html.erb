@@ -23,9 +23,13 @@
       <div class="col-md-3">
         <div class="list-group">
           <a class="list-group-item" href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Trang chủ</a>
-          <a class="list-group-item active" href="/manage-content"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
+          <a class="list-group-item
+            <% if manage_category == "type" %> active
+            <% end %>" href="/manage-content"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
             Cancer types</a>
-          <a class="list-group-item" href="/sponsors"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Tài trợ</a>
+          <a class="list-group-item
+            <% if manage_category == "research" %> active
+            <% end %>" href="/manage-research"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Nghiên cứu và đào tạo</a>
           <a class="list-group-item" href="/registrars"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Danh
             sách
             đăng ký</a>

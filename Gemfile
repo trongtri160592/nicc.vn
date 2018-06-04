@@ -64,3 +64,5 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
+
+#

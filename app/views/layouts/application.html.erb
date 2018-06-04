@@ -5,25 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, minimum-scale=1">
-  <%= javascript_include_tag 'ContentPage', defer: "defer" %>
-  <%= javascript_include_tag 'jquery', defer: "defer" %>
-  <%= javascript_include_tag 'jquery-ui', defer: "defer" %>
-  <%= javascript_include_tag 'Common', defer: "defer" %>
-  <link rel="preconnect" crossorigin="" href="https://cdnjs.cloudflare.com/">
-  <link rel="preconnect" crossorigin="" href="https://ajax.googleapis.com/">
-  <link rel="preconnect" crossorigin="" href="https://fonts.gstatic.com/">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/apple-touch-icon.png?v=oLa52veKe8">
-  <link rel="icon" type="image/png" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/favicon-32x32.png?v=oLa52veKe8" sizes="32x32">
-  <link rel="icon" type="image/png" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/favicon-16x16.png?v=oLa52veKe8" sizes="16x16">
-  <link rel="manifest" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/manifest.json?v=oLa52veKe8">
-  <link rel="mask-icon" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/safari-pinned-tab.svg?v=oLa52veKe8" color="#c0143c">
-  <link rel="shortcut icon" href="https://www.cancer.gov/publishedcontent/images/images/design-elements/icons/favicons/favicon.ico?v=oLa52veKe8">
-  <meta name="apple-mobile-web-app-title" content="Cancer.gov">
-  <meta name="application-name" content="Cancer.gov">
-  <meta name="msapplication-config" content="/publishedcontent/images/images/design-elements/icons/favicons/browserconfig.xml?v=oLa52veKe8">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="canonical" href="https://www.cancer.gov/">
+  <link rel="canonical" href="/">
   <meta name="keywords" content="cancer,NCI,National Cancer Institute,cancer information">
   <meta name="description" content="Accurate, up-to-date, comprehensive cancer information from the U.S. government's principal agency for cancer research.">
   <meta name="content-language" content="en">
@@ -33,13 +17,8 @@
   <meta property="og:title" content="Comprehensive Cancer Information">
   <meta property="og:description" content="Accurate, up-to-date, comprehensive cancer information from the U.S. government's principal agency for cancer research.">
   <meta property="og:type" content="Website">
-  <meta property="og:site_name" content="National Cancer Institute">
-  <meta property="og:url" content="https://www.cancer.gov/">
-  <meta property="og:image" content="https://www.cancer.gov/PublishedContent/Images/images/design-elements/heroes/hero-image-home-social.__v50024734.jpg">
+  <meta property="og:site_name" content="Vietnam National Cancer Institute">
   <meta name="twitter:card" content="summary">
-  <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
-  <link href="https://www.cancer.gov/espanol" hreflang="es" rel="alternate">
-  <link href="https://www.cancer.gov/" hreflang="en" rel="alternate">
   <style type="text/css">.at-icon {
     fill: #fff;
     border: 0
@@ -783,7 +762,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: 'defer' %>
 </head>
 <body id="Body1" class="ncihome" data-cde-contenttype="ncihome" data-cde-pagetemplate="NVCGHomePageTemplate" data-cde-templatetheme="default" data-cde-contentid="13019">
 <div class="skip"><a title="Skip to content" href="#content">Skip to content</a></div>
@@ -797,7 +776,7 @@
   <div id="nvcgSlSiteBanner" class="row">
     <div class="contentid-911584 slot-item only-SI nci-logo-pages large-12 columns">
 
-      <a href="/"><%= image_tag 'nci-logo-full.svg', alt: 'National Cancer Institute', width: '60%' %> </a>
+      <a href="/"><%= image_tag 'NCILogongang-2.png', alt: 'National Cancer Institute', width: '60%' %> </a>
     </div>
   </div>
 </header>
@@ -1429,7 +1408,7 @@
                 </li>
                 <li class="nav-item lvl-1 has-children item-3">
                   <div class="nav-item-title">
-                    <a href="https://www.cancer.gov/research" id="accessible-megamenu-1526307612015-5" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612015-6" aria-expanded="false">Research</a>
+                    <a href="/research" id="accessible-megamenu-1526307612015-5" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612015-6" aria-expanded="false">Nghiên cứu và đào tạo</a>
                     <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                     </button>
                   </div>

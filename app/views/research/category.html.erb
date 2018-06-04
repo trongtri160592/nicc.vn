@@ -1,0 +1,73 @@
+<div class="main-content" id="content" tabindex="0">
+  <div class="row general-page-body-container collapse">
+    <div class="large-12 columns">
+      <div class="row">
+        <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
+          <div class="contentid-870117 slot-item only-SI">
+            <ul class="breadcrumbs">
+              <li><a href="/">Trang chủ</a></li>
+              <li><a href="/research">Nghiên cứu và đào tạo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- END "row" -->
+    </div> <!-- END "large-12 columns" -->
+    <div class="row">
+      <!--    SECTION NAVIGATION -->
+      <div id="nvcgSlSectionNav" class="medium-3 columns local-navigation">
+        <div class="contentid-916491 slot-item only-SI">
+          <div class="section-nav">
+            <ul>
+              <li class="level-0 has-children">
+                <div>
+                  Phân loại nghiên cứu
+                </div>
+                <ul>
+                  <% @categories.each do |category| %>
+                    <% if category.id == @category.id %>
+                      <li class="level-1 contains-current">
+                        <div class="current-page">
+                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                        </div>
+                      </li>
+                    <% else %>
+                      <li class="level-1">
+                        <div>
+                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                        </div>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--    END SECTION NAVIGATION -->
+      <div class="medium-9 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
+        <!-- ********************************* BEGIN List of research ********************************** -->
+        <div class="contentid-1034469 slot-item last-SI">
+          <div class="dynamic list">
+            <ul>
+              <% if @category.research.length == 0 %>
+                <span>Thư mục hiện chưa có tài liệu.</span>
+              <% end %>
+              <% @category.research.each do |research| %>
+                <li class="general-list-item general list-item">
+                  <div class="title-and-desc title desc container">
+                    <%= link_to "#{research.title}", research_details_url(id: research.id), class: "title" %>
+                    <div class="description">
+                      <!--                      <div class="date"> December 28, 2016</div>-->
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <!-- ********************************* END List of research ********************************** -->
+      </div> <!-- END Main -->
+    </div> <!-- END "row" -->
+  </div> <!-- END "row general-page-body-container collapse" -->
+</div>
