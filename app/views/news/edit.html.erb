@@ -1,0 +1,69 @@
+<% if !@news.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @news.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+<div id="english_content_hidden" style="display: none;">
+  <%= @news.content %>
+</div>
+<div id="content_hidden" style="display: none;">
+  <%= @news.content_english %>
+</div>
+<div id="content-new-form">
+  <%= form_for @news, url: news_edit_path(@news.id), method: :post do |f| %>
+    <%= f.label :title, "Tiêu đề" %> </br>
+    <%= f.text_field :title, class: "form-control" %> </br>
+
+    <%= f.label :title_english, "Title" %> </br>
+    <%= f.text_field :title_english, class: "form-control" %> </br>
+
+    <%= f.label :content, "Mô tả" %> </br>
+    <%= f.text_area :content, class: "content_editor" %> </br>
+
+    <%= f.label :content_english, "Content" %> </br>
+    <%= f.text_area :content_english, class: "content_editor" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "lesson_upload", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+        var content = $("#content_hidden").text();
+        var content_english = $("#english_content_hidden").text();
+        CKEDITOR.on('instanceReady', function (ev) {
+            CKEDITOR.instances['news[content]'].setData(content);
+            CKEDITOR.instances['news[content_english]'].setData(description_english);
+        });
+        CKEDITOR.replace('news[content]', {
+            height: '600px',
+            language: 'vi',
+
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
+
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+        });
+        CKEDITOR.replace('news[content_english]', {
+            height: '600px',
+            language: 'vi',
+
+            stylesSet: [
+                {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+                {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+            ],
+
+            // Load the default contents.css file plus customizations for this sample.
+            contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+        });
+
+    </script>
+  <% end %>
+</div>

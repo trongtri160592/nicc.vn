@@ -1,0 +1,51 @@
+<div class="main-content" id="content" tabindex="0">
+  <div class="row general-page-body-container collapse">
+    <div class="large-12 columns">
+      <div class="row">
+        <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
+          <div class="contentid-870117 slot-item only-SI">
+            <ul class="breadcrumbs">
+              <li><a href="/">Trang chủ</a></li>
+              <li><a href="/news">Tin tức và sự kiện</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- END "row" -->
+    </div> <!-- END "large-12 columns" -->
+    <div class="row">
+      <!--    END SECTION NAVIGATION -->
+      <div class="medium-12 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
+        <!-- ********************************* BEGIN Research description ********************************** -->
+        <article>
+
+          <!-- PUBLIC ARCHIVE BANNER -->
+          <div id="cgvPublicArchiveBannerSl" class="row collapse">
+            <div class="contentid-172410 slot-item only-SI large-12 columns">
+
+            </div>
+          </div>
+          <!-- END PUBLIC ARCHIVE BANNER -->
+
+
+          <!-- BANNER SLOT -->
+
+          <!-- END BANNER SLOT -->
+
+          <div class="resize-content">
+
+            <!-- PAGE TITLE -->
+            <h1><span><%= @news.title %></span></h1>
+            <!-- END PAGE TITLE -->
+
+            <div id="cgvBody">
+              <div class="contentid-915637 slot-item only-SI">
+                <%= @news.content.to_s.html_safe %>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- ********************************* END news details ********************************** -->
+      </div> <!-- END Main -->
+    </div> <!-- END "row" -->
+  </div> <!-- END "row general-page-body-container collapse" -->
+</div>

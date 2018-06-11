@@ -1,0 +1,41 @@
+<div class="main-content" id="content" tabindex="0">
+  <div class="row general-page-body-container collapse">
+    <div class="large-12 columns">
+      <div class="row">
+        <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
+          <div class="contentid-870117 slot-item only-SI">
+            <ul class="breadcrumbs">
+              <li><a href="/">Trang chủ</a></li>
+              <li><a href="/news">Tin tức và sự kiện</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- END "row" -->
+    </div> <!-- END "large-12 columns" -->
+    <div class="row">
+      <div class="medium-12 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
+        <!-- ********************************* BEGIN List of news ********************************** -->
+        <div class="contentid-1034469 slot-item last-SI">
+          <div class="dynamic list">
+            <ul>
+              <% if @news_arr.length == 0 %>
+                <span>Thư mục hiện chưa có tài liệu.</span>
+              <% end %>
+              <% @news_arr.each do |news| %>
+                <li class="general-list-item general list-item">
+                  <div class="title-and-desc title desc container">
+                    <%= link_to "#{news.title}", news_details_url(id: news.id), class: "title" %>
+                    <div class="description">
+                      <!--                      <div class="date"> December 28, 2016</div>-->
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <!-- ********************************* END List of news ********************************** -->
+      </div> <!-- END Main -->
+    </div> <!-- END "row" -->
+  </div> <!-- END "row general-page-body-container collapse" -->
+</div>

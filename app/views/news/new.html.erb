@@ -1,0 +1,41 @@
+<% if !@news.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @news.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div id="content-new-form">
+  <%= form_with model: @news, url: news_new_path do |f| %>
+    <%= f.label :title, "Tiêu đề" %> </br>
+    <%= f.text_field :title, class: "form-control" %> </br>
+
+    <%= f.label :title_english, "Title" %> </br>
+    <%= f.text_field :title_english, class: "form-control" %> </br>
+
+    <%= f.label :content, "Mô tả" %> </br>
+    <%= f.text_area :content, class: "content_editor" %> </br>
+
+    <%= f.label :content_english, "Content" %> </br>
+    <%= f.text_area :content_english, class: "content_editor" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+        CKEDITOR.replace('news[content]', {
+            height: '600px',
+            language: 'vi'
+        });
+        CKEDITOR.replace('news[content_english]', {
+            height: '600px',
+            language: 'en'
+        });
+        CKEDITOR.editorConfig = function (config) {
+            config.extraPlugins = 'imageuploader';
+            config.language = 'en';
+        }
+    </script>
+  <% end %>
+</div>

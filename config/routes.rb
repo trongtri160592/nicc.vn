@@ -34,4 +34,14 @@ Rails.application.routes.draw do
   get '/research/categories/:id', to: 'research#category', as: 'research_category'
   get '/research', to: 'research#index'
   get '/research/:id', to: 'research#details', as: 'research_details'
+
+  # News edit, new, update, destroy, index
+  get '/manage-news', to: 'news#manage', as: 'news_manage'
+  get '/news/new', to: 'news#new', as: 'news_new'
+  post '/news/new', to: 'news#create'
+  get '/news/edit/:id', to: 'news#edit', as: 'news_edit'
+  post '/news/edit/:id', to: 'news#update'
+  delete '/news/:id', to: 'news#destroy'
+  get '/news', to: 'news#index'
+  get '/news/:id', to: 'news#details', as: 'news_details'
 end
