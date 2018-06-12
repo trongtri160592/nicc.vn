@@ -1,0 +1,82 @@
+<div class="main-content" id="content" tabindex="0">
+  <div class="row general-page-body-container collapse">
+    <div class="large-12 columns">
+      <div class="row">
+        <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
+          <div class="contentid-870117 slot-item only-SI">
+            <ul class="breadcrumbs">
+              <li><a href="/">Trang chủ</a></li>
+              <li><a href="/research">Nghiên cứu và đào tạo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- END "row" -->
+    </div> <!-- END "large-12 columns" -->
+    <div class="row">
+      <!--    SECTION NAVIGATION -->
+      <div id="nvcgSlSectionNav" class="medium-3 columns local-navigation">
+        <div class="contentid-916491 slot-item only-SI">
+          <div class="section-nav">
+            <ul>
+              <li class="level-0 has-children">
+                <div>
+                  Phân loại nghiên cứu
+                </div>
+                <ul>
+                  <% ResearchCategory.all.each do |category| %>
+                    <% if category.id == @research.research_category.id %>
+                      <li class="level-1 contains-current">
+                        <div class="current-page">
+                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                        </div>
+                      </li>
+                    <% else %>
+                      <li class="level-1">
+                        <div>
+                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                        </div>
+                      </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--    END SECTION NAVIGATION -->
+      <div class="medium-9 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
+        <!-- ********************************* BEGIN Research description ********************************** -->
+        <article>
+
+          <!-- PUBLIC ARCHIVE BANNER -->
+          <div id="cgvPublicArchiveBannerSl" class="row collapse">
+            <div class="contentid-172410 slot-item only-SI large-12 columns">
+
+            </div>
+          </div>
+          <!-- END PUBLIC ARCHIVE BANNER -->
+
+
+          <!-- BANNER SLOT -->
+
+          <!-- END BANNER SLOT -->
+
+          <div class="resize-content">
+
+            <!-- PAGE TITLE -->
+            <h1><span><%= @research.title %></span></h1>
+            <!-- END PAGE TITLE -->
+
+            <div id="cgvBody">
+              <div class="contentid-915637 slot-item only-SI">
+                <%= @research.description.to_s.html_safe %>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- ********************************* END Research details ********************************** -->
+      </div> <!-- END Main -->
+    </div> <!-- END "row" -->
+  </div> <!-- END "row general-page-body-container collapse" -->
+</div>

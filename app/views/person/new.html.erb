@@ -1,0 +1,27 @@
+<% if !@person.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div id="content-new-form">
+  <%= form_with model: @person, url: person_new_path do |f| %>
+    <%= f.label :name, "Tên" %> </br>
+    <%= f.text_field :name, class: "form-control" %> </br>
+
+    <%= f.label :leadership_id, "Phân loại" %></br>
+    <%= f.collection_select :leadership_id, Leadership.all, :id, :position, {}, {class: "form_control"} %> </br>
+
+    <%= f.label :background, "Mô tả" %> </br>
+    <%= f.text_area :background, class: "content_editor", rows: 4 %> </br>
+
+    <%= f.label :portrait, "Chân dung" %> </br>
+    <%= f.file_field :portrait, class: "form-control" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+  <% end %>
+</div>

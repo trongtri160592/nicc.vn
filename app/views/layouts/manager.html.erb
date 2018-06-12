@@ -29,8 +29,17 @@
             Cancer types</a>
           <a class="list-group-item
             <% if manage_category == "research" %> active
-            <% end %>" href="/manage-research"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Nghiên cứu và đào tạo</a>
-          <a class="list-group-item" href="/manage-news"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Tin tức và sự kiện</a>
+            <% end %>" href="/manage-research"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Nghiên cứu và
+            đào tạo</a>
+          <a class="list-group-item
+             <% if manage_category == "news" %> active
+             <% end %>"
+             href="/manage-news"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Tin
+            tức và sự kiện</a>
+          <a class="list-group-item
+             <% if manage_category == "person" %> active
+             <% end %>"
+             href="/manage-hr"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Nhân sự</a>
           <a class="list-group-item" href="/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Đăng
             xuất</a>
         </div>

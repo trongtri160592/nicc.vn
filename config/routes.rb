@@ -44,4 +44,15 @@ Rails.application.routes.draw do
   delete '/news/:id', to: 'news#destroy'
   get '/news', to: 'news#index'
   get '/news/:id', to: 'news#details', as: 'news_details'
+
+  # Human resources
+  get '/manage-hr', to: 'person#manage', as: 'person_manage'
+  get '/person/new', to: 'person#new', as: 'person_new'
+  post '/person/new', to: 'person#create'
+  get '/person/edit/:id', to: 'person#edit', as: 'person_edit'
+  post '/person/edit/:id', to: 'person#update'
+  delete '/person/:id', to: 'person#destroy'
+  get '/person/position/:id', to: 'person#position', as: 'person_position'
+  get '/person', to: 'person#index'
+  get '/person/:id', to: 'person#details', as: 'person_details'
 end

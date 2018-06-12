@@ -1,0 +1,21 @@
+<a class="btn btn-primary" href="/person/new"><i class="fa fa-plus" aria-hidden="true"></i></a></br>
+<table class="table table-bordered table-striped">
+  <thead>.
+  <tr>
+    <th>Tên</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= person.name%></td>
+      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/person/edit/#{person.id}", class: "btn btn-primary" %></td>
+      <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/person/#{person.id}", method: :delete, class: "btn btn-danger", confirm: "Có phải bạn muốn xóa '#{person.name}'?" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
