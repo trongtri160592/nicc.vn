@@ -13,3 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( ContentPage.js jquery.js jquery-ui.js Common.js)
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
