@@ -55,4 +55,12 @@ Rails.application.routes.draw do
   get '/person/position/:id', to: 'person#position', as: 'person_position'
   get '/person', to: 'person#index'
   get '/person/:id', to: 'person#details', as: 'person_details'
+
+  # Partner
+  get '/manage-partner', to: 'partner#manage', as: 'partner_manage'
+  get '/partner/new', to: 'partner#new', as: 'partner_new'
+  post '/partner/new', to: 'partner#create'
+  get '/partner/edit/:id', to: 'partner#edit', as: 'partner_edit'
+  post '/partner/edit/:id', to: 'partner#update'
+  delete '/partner/:id', to: 'partner#destroy'
 end

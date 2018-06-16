@@ -34,17 +34,6 @@
 
     <div class="page-options-container">
       <!-- PAGE OPTIONS -->
-      <script type="text/javascript">
-          var addthis_share = {
-              title: "Comprehensive Cancer Information"
-          }
-      </script>
-      <script type="text/javascript">
-          var addthis_config = {
-              ui_language: "en",
-              ui_508_compliant: true
-          }
-      </script>
       <div id="PageOptionsControl1" class="large-5 columns page-options">
         <ul>
           <li class="po-print">
@@ -322,7 +311,48 @@
 
       <!-- END THUMBNAIL SECTION -->
     </div>
+    <div class="contentid-898670 slot-item last-SI">
+      <div class="rawHtml">
+        <div class="row carousel-title">
+          <div class="large-6 columns">
+            <h2>Đối tác</h2>
+          </div>
+          <div class="large-6 columns arrows arrows-for-other-nci-sites clearfix">
+            <button type="button" class="previous">
+              <span style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Previous</span>
+            </button>
+            <button type="button" class="next">
+              <span style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="slider">
+              <% partners = Partner.all %>
+              <% if partners.length > 0 %>
+                <% partners.each do |partner| %>
+                  <li>
+                    <a href="
+                      <% partner.website %>" class="blue-circles container" style='
+                    background-image: url("<%= partner.logo %>");
+                        background-size:     cover;                      /* <------ */
+                        background-repeat:   no-repeat;
+                        background-position: center center;              /* optional, center the image */
+                    '>
+                      <p class="site-link"><%= partner.name %></p>
+                    </a>
+                  </li>
+                <% end %>
+              <% else %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- END CARD CONTAINER -->
+</div>
+<!-- END CARD CONTAINER -->
 
 </div> <!-- End MAIN CONTENT AREA -->

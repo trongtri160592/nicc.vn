@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
 
   protected
   def manage_category
-    "type"
+    "homepage"
   end
 end

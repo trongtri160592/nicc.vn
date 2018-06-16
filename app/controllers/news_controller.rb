@@ -24,7 +24,7 @@ class NewsController < ApplicationController
   def create
     @news = News.new(news_params)
     if @news.save
-      redirect_to news_manage_path, notice: "Research: '#{@news.title}' has been uploaded."
+      redirect_to news_manage_path, notice: "News: '#{@news.title}' has been uploaded."
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class NewsController < ApplicationController
   end
 
   def update
-    @news = Research.find_by_id(params[:id])
+    @news = News.find_by_id(params[:id])
     if @news && @news.update_attributes(news_params)
       flash[:success] = "Bạn đã sửa đổi '#{@news.title}' thành công"
     else

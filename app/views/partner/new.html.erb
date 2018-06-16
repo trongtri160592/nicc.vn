@@ -1,0 +1,24 @@
+<% if !@partner.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @partner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div id="content-new-form">
+  <%= form_with model: @partner, url: partner_new_path do |f| %>
+    <%= f.label :name, "Tên" %> </br>
+    <%= f.text_field :name, class: "form-control" %> </br>
+
+    <%= f.label :website, "Website" %> </br>
+    <%= f.text_field :website, class: "form-control" %> </br>
+
+    <%= f.label :logo, "Logo" %> </br>
+    <%= f.file_field :logo, class: "control" %> </br>
+
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+  <% end %>
+</div>
