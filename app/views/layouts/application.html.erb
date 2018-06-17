@@ -1284,84 +1284,23 @@
                 <ul class="mobile-item">
                   <li class="lvl-2 has-children">
                     <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/aya">Adolescents and Young Adults with Cancer</a>
+                      <a href="#">Các loại ung thư phổ biến</a>
                       <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                       </button>
                     </div>
                     <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/aya/research">Reports, Research, and Literature</a>
-                        </div>
-                      </li>
+                      <% CancerType.where(is_common: 1).first(3).each do |cancer_type| %>
+                        <li class="lvl-3">
+                          <div class="nav-item-title">
+                            <%= link_to cancer_type.name, cancer_type_detail_path(id: cancer_type.id) %>
+                          </div>
+                        </li>
+                      <% end %>
                     </ul>
                   </li>
                   <li class="lvl-2">
                     <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/by-body-location">Cancers by Body Location/System</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/childhood-cancers">Childhood Cancers</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/childhood-cancers/late-effects-pdq">Late Effects of
-                            Childhood Cancer Treatment</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/childhood-cancers/pediatric-care-pdq">Pediatric
-                            Supportive Care</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/childhood-cancers/patient/unusual-cancers-childhood-pdq">Unusual
-                            Cancers of Childhood Treatment</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/childhood-cancers/pediatric-genomics-hp-pdq">Childhood
-                            Cancer Genomics</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/childhood-cancers/research">Study Findings</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/metastatic-cancer">Metastatic Cancer</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/types/metastatic-cancer/research">Metastatic Cancer
-                            Research</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/common-cancers">Common Cancer Types</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/types/recurrent-cancer">Recurrent Cancer</a>
+                      <%= link_to "Tất cả các loại ung thư (A-Z)", cancer_type_index_path %>
                     </div>
                   </li>
                 </ul>
@@ -1369,40 +1308,20 @@
                   <div class="sub-nav-group-wrapper">
                     <div class="sub-nav-group-subwrapper">
                       <ul class="sub-nav-group cancer-types-border-container" style="height: 221.6px;">
-                        <li><a href="https://www.cancer.gov/types/common-cancers" class="sub-nav-group-header">Common
-                          Cancer Types</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/types/bladder">Bladder Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/breast">Breast Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/colorectal">Colorectal Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/kidney">Kidney (Renal Cell) Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/leukemia">Leukemia</a></li>
-                          </ul>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/types/liver">Liver Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/lung">Lung Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/lymphoma">Lymphoma</a></li>
-                            <li><a href="https://www.cancer.gov/types/pancreatic">Pancreatic Cancer</a></li>
-                          </ul>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/types/prostate">Prostate Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/skin">Skin Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/thyroid">Thyroid Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/uterine">Uterine Cancer</a></li>
-                          </ul>
+                        <li><a href="#" class="sub-nav-group-header">Các loại ung thư phổ biến</a>
+                          <% CancerType.where(is_common: 1).first(12).in_groups_of(4, false).each do |common_arr| %>
+                            <ul>
+                              <% common_arr.each do |cancer_type| %>
+                                <li><%= link_to cancer_type.name, cancer_type_detail_path(id: cancer_type.id) %></li>
+                              <% end %>
+                            </ul>
+                          <% end %>
                         </li>
                       </ul>
                       <ul class="sub-nav-group">
-                        <li><a href="/types" class="sub-nav-group-header">All Cancer Types</a>
+                        <li><a href="/types" class="sub-nav-group-header">Tất cả các loại ung thư</a>
                           <ul>
-                            <li><a href="/types">A to Z List of Cancers</a></li>
-                            <li><a href="https://www.cancer.gov/types/by-body-location">Cancers by Body Location</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/types/childhood-cancers">Childhood Cancers</a></li>
-                            <li><a href="https://www.cancer.gov/types/aya">Adolescent &amp; Young Adult Cancers</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/types/metastatic-cancer">Metastatic Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/types/recurrent-cancer">Recurrent Cancer</a></li>
+                            <li><a href="/types">Danh sách từ A-Z</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -1424,294 +1343,23 @@
                   </button>
                 </div>
                 <ul class="mobile-item">
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/research/nci-role">NCI’s Role in Cancer Research</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/intramural">Intramural Research</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/extramural">Extramural Research</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/bioinformatics">Bioinformatics and
-                            Cancer</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/cancer-centers">NCI-Designated Cancer
-                            Centers</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/fnlcr">Frederick National Laboratory for
-                            Cancer Research </a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/partners-collaborators">Partners &amp;
-                            Collaborators</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/nci-role/spotlight">Spotlight on Scientists</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/research/areas">Research Areas</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/biology">Cancer Biology Research</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/genomics">Cancer Genomics Research</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/causes">Research on Causes of Cancer</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/diagnosis">Cancer Diagnosis Research </a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/prevention">Cancer Prevention Research </a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/screening">Screening &amp; Early
-                            Detection</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/treatment">Cancer Treatment Research</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/public-health">Cancer &amp; Public Health</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/disparities">Cancer Health Disparities</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/childhood">Childhood Cancers</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/clinical-trials">Clinical Trials</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/areas/global-health">Global Cancer Research</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/research/key-initiatives">Key Initiatives</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/key-initiatives/ras">The RAS Initiative</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/key-initiatives/moonshot-cancer-initiative">Cancer
-                            Moonshot℠</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/key-initiatives/immunotherapy">Immunotherapy</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/research/progress">Progress</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/progress/annual-report-nation">Annual Report to the
-                            Nation</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/progress/250-years-milestones">Milestones in Cancer
-                            Research and Discovery</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/progress/discovery">Stories of Discovery</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/research/resources">Research Tools, Specimens, and Data</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/resources/conducting">Conducting Clinical
-                            Trials</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/resources/statistical-tools">Statistical Tools and
-                            Data</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/resources/terminology">Terminology Resources</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/resources/data-catalog">NCI Data Catalog</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/research/resources/cryoem">Cryo-EM</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                  <% ResearchCategory.all.each do |category| %>
+                    <li class="lvl-2 has-children">
+                      <div class="nav-item-title">
+                        <%= link_to category.name, research_category_path(id: category.id) %>>
+                      </div>
+                    </li>
+                  <% end %>
                 </ul>
                 <div aria-expanded="false" aria-haspopup="true" class="sub-nav-mega mega-menu-scroll" id="accessible-megamenu-1526307612015-6" role="group" aria-hidden="true" aria-labelledby="accessible-megamenu-1526307612015-5">
                   <div class="sub-nav-group-wrapper">
                     <div class="sub-nav-group-subwrapper">
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/research/nci-role" class="sub-nav-group-header">NCI's Role
-                          in Cancer Research</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/research/nci-role/intramural">Intramural Research</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/research/nci-role/extramural">Extramural Research</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/research/nci-role/bioinformatics">Bioinformatics and
-                              Cancer</a></li>
-                            <li>
-                              <a href="https://www.cancer.gov/research/nci-role/cancer-centers">NCI-Designated Cancer
-                                Centers</a></li>
-                            <li><a href="https://www.cancer.gov/research/nci-role/fnlcr">Frederick National Lab</a>
-                            </li>
-                            <li>
-                              <a href="https://www.cancer.gov/research/nci-role/partners-collaborators">Partners &amp;
-                                Collaborators</a></li>
-                            <li>
-                              <a href="https://www.cancer.gov/research/nci-role/spotlight">Spotlight on Scientists</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/research/areas" class="sub-nav-group-header">NCI Research
-                          Areas</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/research/areas/biology">Cancer Biology</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/genomics">Cancer Genomics</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/causes">Causes of Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/diagnosis">Diagnosis</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/prevention">Prevention</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/screening">Screening &amp; Early
-                              Detection</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/treatment">Treatment</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/public-health">Cancer &amp; Public
-                              Health</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/disparities">Cancer Health
-                              Disparities</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/childhood">Childhood Cancer</a></li>
-                            <li><a href="https://www.cancer.gov/research/areas/clinical-trials">Clinical Trials</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/research/areas/global-health">Global Health</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/research/key-initiatives" class="sub-nav-group-header">Key
-                          Initiatives</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/research/key-initiatives/moonshot-cancer-initiative">Cancer
-                              Moonshot</a></li>
-                            <li>
-                              <a href="https://www.cancer.gov/about-nci/organization/ccg/research/computational-genomics/gdc">Genomic
-                                Data Commons</a></li><!--
-			<li><a href="https://ncorp.cancer.gov/">NCI Community Oncology Research Program</a></li>
--->
-                            <li><a href="https://www.cancer.gov/research/areas/clinical-trials/nctn">National Clinical
-                              Trials Network</a></li>
-                            <li><a href="https://www.cancer.gov/research/key-initiatives/ras">RAS Initiative</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li>
-                          <a href="https://www.cancer.gov/research/progress" class="sub-nav-group-header">Progress</a>
-                          <ul>
-                            <li>
-                              <a href="https://www.cancer.gov/research/progress/annual-report-nation">Annual Report to
-                                the Nation</a></li>
-                            <li><a href="https://www.cancer.gov/research/progress/discovery">Stories of Discovery</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <br><br>
-                        <li><a href="https://www.cancer.gov/research/resources" class="sub-nav-group-header">Research
-                          Tools, Specimens, and Data</a></li>
-                      </ul>
+                      <% ResearchCategory.all.each do |category| %>
+                        <ul class="sub-nav-group">
+                          <li><%= link_to category.name, research_category_path, class: "sub-nav-group-header" %>
+                          </li>
+                        </ul>
+                      <% end %>
                     </div>
                   </div>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
@@ -2261,8 +1909,5 @@ var s_account = AnalyticsMapping.GetSuites("nciglobal,ncienterprise");
 
 <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-front ui-autocomplete sitewide-search-menu" style="display: none;"></ul>
 <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-<!--<script type="text/javascript" src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/a.js"></script>-->
-<!--<script type="text/javascript" src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/a_002.js"></script>-->
-<!--<script src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/Asset.php" defer="defer"></script>-->
 </body>
 </html>

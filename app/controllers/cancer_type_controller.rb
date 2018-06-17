@@ -5,10 +5,10 @@ class CancerTypeController < ApplicationController
   def index
     if I18n.locale == :en
       @cancer_types_alphabetical = CancerType.all.order(:name_english)
-                                   .group_by{ |cancer_type| cancer_type.name_english[0] }
+                                   .group_by{ |cancer_type| cancer_type.name_english[0].upcase }
     else
       @cancer_types_alphabetical = CancerType.order(:name)
-                                   .group_by{ |cancer_type| cancer_type.name[0] }
+                                   .group_by{ |cancer_type| cancer_type.name[0].upcase }
     end
   end
 
@@ -58,6 +58,6 @@ class CancerTypeController < ApplicationController
 
   private
   def cancer_type_params
-    params.require(:cancer_type).permit(:name, :name_english, :description, :description_english)
+    params.require(:cancer_type).permit(:name, :name_english, :description, :description_english, :is_common)
   end
 end
