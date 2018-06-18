@@ -23,6 +23,9 @@
     <%= f.label :title_english, "Title" %> </br>
     <%= f.text_field :title_english, class: "form-control" %> </br>
 
+	<%= f.label :thumbnail, "Ảnh đại diện" %> </br>
+    <%= f.file_field :thumbnail, class: "form-control" %> </br>
+	
     <%= f.label :content, "Mô tả" %> </br>
     <%= f.text_area :content, class: "content_editor" %> </br>
 

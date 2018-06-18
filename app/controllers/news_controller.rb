@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
-  layout 'manager', except: [:index, :details]
-  before_action :authorize, except: [:index, :details]
+  layout 'manager', except: [:index, :details, :filter]
+  before_action :authorize, except: [:index, :details, :filter]
 
   def index
     @news_arr = News.all
@@ -11,6 +11,11 @@ class NewsController < ApplicationController
     if !@news
       render 'error/404', status: '404 Not Found'
     end
+  end
+  
+  def filter
+	@news_arr = News.where('extract(year from created_at) = ?', params[:year])
+	render 'index'
   end
 
   def manage
@@ -60,6 +65,6 @@ class NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news).permit(:title, :title_english, :content, :content_english)
+    params.require(:news).permit(:title, :title_english, :thumbnail, :content, :content_english)
   end
 end

@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   delete '/news/:id', to: 'news#destroy'
   get '/news', to: 'news#index'
   get '/news/:id', to: 'news#details', as: 'news_details'
+  get '/news/filter(/:year)', to: 'news#filter', as: 'news_filter'
 
   # Human resources
   get '/manage-hr', to: 'person#manage', as: 'person_manage'
