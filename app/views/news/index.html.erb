@@ -12,32 +12,54 @@
         </div>
       </div> <!-- END "row" -->
     </div> <!-- END "large-12 columns" -->
-    <div class="row">
-      <div class="medium-12 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
-        <!-- ********************************* BEGIN List of news ********************************** -->
-        <div class="contentid-1034469 slot-item last-SI">
-          <div class="dynamic list">
+    <div class="row news">
+      <div id="ctl32_nvcgSlLayoutGeneralA" class="large-8 columns card gutter">
+        <div class="contentid-37163 slot-item first-SI">
+          <div class="dynamic list has-images">
             <ul>
               <% if @news_arr.length == 0 %>
                 <span>Thư mục hiện chưa có tài liệu.</span>
               <% end %>
               <% @news_arr.each do |news| %>
                 <li class="general-list-item general list-item">
+                  <div class="list-item-image image container">
+                    <%= link_to image_tag(news.thumbnail.url), news_details_path(id: news.id), class: "item-image image" %>
+                  </div>
                   <div class="title-and-desc title desc container">
-                    <%= link_to "#{news.title}", news_details_url(id: news.id), class: "title" %>
+                    <%= link_to news.title, news_details_path(id: news.id), class: "title" %>
+
                     <div class="description">
-                      <!--                      <div class="date"> December 28, 2016</div>-->
+                      <div class="date"> <%= news.created_at.strftime("%d-%m-%Y") %></div>
+                      <%= Nokogiri::HTML.parse(news.content).css('p').first.text.html_safe %>
                     </div>
                   </div>
                 </li>
               <% end %>
             </ul>
           </div>
+          <div>
+          </div>
         </div>
-        <!-- ********************************* END List of news ********************************** -->
-      </div> <!-- END Main -->
-    </div> <!-- END "row" -->
-	
-	
+      </div>
+      <div id="ctl32_nvcgSlLayoutGeneralB" class="large-4 columns gutter accordion">
+        <div class="contentid-936279 slot-item last-SI">
+          <div class="rawHtml"><!-- News Raw HTML - Archive -->
+            <div class="row card">
+              <h2>Thư viện tin tức</h2>
+              <ul>
+                <% news_by_year = News.all.order(created_at: :desc)
+                    .group_by {|news| news.created_at.year} %>
+                <% news_by_year.keys.each do |year| %>
+                  <li>
+                    <%= link_to year, news_filter_path(year: year) %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div> <!-- END "row general-page-body-container collapse" -->
 </div>

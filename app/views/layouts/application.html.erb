@@ -1378,8 +1378,8 @@
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                   </button>
                 </div>
-				<% news_by_year = News.all.order(created_at: :desc)
-                                   .group_by{ |news| news.created_at.year } %>
+                <% news_by_year = News.all.order(created_at: :desc)
+                    .group_by {|news| news.created_at.year} %>
                 <ul class="mobile-item">
                   <li class="lvl-2 has-children">
                     <div class="nav-item-title">
@@ -1388,13 +1388,13 @@
                       </button>
                     </div>
                     <ul class="mobile-item">
-					  <% news_by_year.keys.each do |year| %>
-						<li class="lvl-3">
-                        <div class="nav-item-title">
-                          <%= link_to year, news_filter_path(year: year) %>
-                        </div>
-						</li>
-					  <% end %>
+                      <% news_by_year.keys.each do |year| %>
+                        <li class="lvl-3">
+                          <div class="nav-item-title">
+                            <%= link_to year, news_filter_path(year: year) %>
+                          </div>
+                        </li>
+                      <% end %>
                     </ul>
                   </li>
                 </ul>
@@ -1405,9 +1405,9 @@
                         <li>
                           <a href="#" class="sub-nav-group-header">Sắp xếp theo năm</a>
                           <ul>
-							<% news_by_year.keys.each do |year| %>
-                            <li><%= link_to year, news_filter_path(year: year) %></li>
-							<% end %>
+                            <% news_by_year.keys.each do |year| %>
+                              <li><%= link_to year, news_filter_path(year: year) %></li>
+                            <% end %>
                           </ul>
                         </li>
                       </ul>
@@ -1429,23 +1429,23 @@
                   </button>
                 </div>
                 <ul class="mobile-item">
-					<% Leadership.all.each do |leadership| %>
-					  <li class="lvl-2 has-children">
-						<div class="nav-item-title">
-						  <%= link_to leadership.position, person_position_path(id: leadership.id) %>
-						</div>
-					  </li>
-					<% end %>
+                  <% Leadership.all.each do |leadership| %>
+                    <li class="lvl-2 has-children">
+                      <div class="nav-item-title">
+                        <%= link_to leadership.position, person_position_path(id: leadership.id) %>
+                      </div>
+                    </li>
+                  <% end %>
                 </ul>
                 <div aria-expanded="false" aria-haspopup="true" class="sub-nav-mega mega-menu-scroll" id="accessible-megamenu-1526307612033-12" role="group" aria-hidden="true" aria-labelledby="accessible-megamenu-1526307612033-11">
                   <div class="sub-nav-group-wrapper">
                     <div class="sub-nav-group-subwrapper">
-						<% Leadership.all.each do |leadership| %>
-						  <ul class="sub-nav-group">
+                      <% Leadership.all.each do |leadership| %>
+                        <ul class="sub-nav-group">
                           <li><%= link_to leadership.position, person_position_path(id: leadership.id), class: "sub-nav-group-header" %>
                           </li>
                         </ul>
-						<% end %>
+                      <% end %>
                     </div>
                   </div>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
