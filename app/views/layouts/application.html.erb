@@ -1356,7 +1356,7 @@
                     <div class="sub-nav-group-subwrapper">
                       <% ResearchCategory.all.each do |category| %>
                         <ul class="sub-nav-group">
-                          <li><%= link_to category.name, research_category_path, class: "sub-nav-group-header" %>
+                          <li><%= link_to category.name, research_category_path(id: category.id), class: "sub-nav-group-header" %>
                           </li>
                         </ul>
                       <% end %>
@@ -1512,229 +1512,23 @@
                   </button>
                 </div>
                 <ul class="mobile-item">
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/overview">NCI Overview</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/overview/history">History</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/overview/contributing">Contributing to Cancer
-                            Research</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/leadership">Leadership</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/leadership/director">Director's Page</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/leadership/nci-deputy-director">Deputy Director's
-                            Page</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/leadership/previous">Previous NCI Directors</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/organization">NCI Organization</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/advisory-boards">Advisory Boards and Review Groups</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/budget">Budget &amp; Appropriations</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/budget/about-annual-plan">About the Annual
-                            Plan &amp; Budget Proposal</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/budget/congressional-justification">NCI
-                            Congressional Justification</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/budget/fact-book">NCI Budget Fact Book</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/careers">Careers at NCI</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/visit">Visitor Information</a>
-                    </div>
-                  </li>
-                  <li class="lvl-2 has-children">
-                    <div class="nav-item-title">
-                      <a href="https://www.cancer.gov/about-nci/legislative">Legislative Activities</a>
-                      <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
-                      </button>
-                    </div>
-                    <ul class="mobile-item">
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/hearings">Hearings &amp;
-                            Testimonies </a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/current-congress">Current
-                            Congress </a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/history">Legislative History</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/committees">Committees of Interest</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/resources">Legislative Resources</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/recent-public-laws">Recent Public
-                            Laws</a>
-                        </div>
-                      </li>
-                      <li class="lvl-3">
-                        <div class="nav-item-title">
-                          <a href="https://www.cancer.gov/about-nci/legislative/contact">Contact</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+					<% Leadership.all.each do |leadership| %>
+					  <li class="lvl-2 has-children">
+						<div class="nav-item-title">
+						  <%= link_to leadership.position, person_position_path(id: leadership.id) %>
+						</div>
+					  </li>
+					<% end %>
                 </ul>
                 <div aria-expanded="false" aria-haspopup="true" class="sub-nav-mega mega-menu-scroll" id="accessible-megamenu-1526307612033-12" role="group" aria-hidden="true" aria-labelledby="accessible-megamenu-1526307612033-11">
                   <div class="sub-nav-group-wrapper">
                     <div class="sub-nav-group-subwrapper">
-                      <ul class="sub-nav-group">
-                        <li>
-                          <a href="https://www.cancer.gov/about-nci/overview" class="sub-nav-group-header">Overview &amp;
-                            Mission</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/about-nci/overview/history">History of NCI</a></li>
-                            <li>
-                              <a href="https://www.cancer.gov/about-nci/overview/contributing">Contributing to Cancer
-                                Research</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/about-nci/leadership" class="sub-nav-group-header">Senior
-                          Leadership</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/about-nci/leadership/director">Director</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/leadership/nci-deputy-director">Deputy
-                              Director</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/leadership/previous">Previous Directors</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/about-nci/organization" class="sub-nav-group-header">NCI
-                          Organization</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/about-nci/organization">Divisions, Offices &amp;
-                              Centers</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/about-nci/advisory-boards" class="sub-nav-group-header">Advisory
-                          Boards &amp; Review Groups</a></li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li>
-                          <a href="https://www.cancer.gov/about-nci/budget" class="sub-nav-group-header">Budget &amp;
-                            Appropriations</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/about-nci/budget/">Current Year Budget</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/budget/plan">Annual Plan &amp; Budget
-                              Proposal</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/budget/congressional-justification">Congressional
-                              Justification</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/budget/fact-book">NCI Budget Fact Book</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/about-nci/legislative" class="sub-nav-group-header">Legislative
-                          Activities</a>
-                          <ul>
-                            <li><a href="https://www.cancer.gov/about-nci/legislative/hearings">Hearings &amp;
-                              Testimonies</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/legislative/current-congress">Current
-                              Congress</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/legislative/history">Legislative History</a>
-                            </li>
-                            <li><a href="https://www.cancer.gov/about-nci/legislative/committees">Committees of
-                              Interest</a></li>
-                            <li><a href="https://www.cancer.gov/about-nci/legislative/resources">Legislative
-                              Resources</a></li>
-                            <li>
-                              <a href="https://www.cancer.gov/about-nci/legislative/recent-public-laws">Recent Public
-                                Laws</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li>
-                          <a href="https://www.cancer.gov/about-nci/careers" class="sub-nav-group-header">Careers</a>
-                        </li>
-                      </ul>
-                      <ul class="sub-nav-group">
-                        <li><a href="https://www.cancer.gov/about-nci/visit" class="sub-nav-group-header">Visitor
-                          Information</a></li>
-                      </ul>
+						<% Leadership.all.each do |leadership| %>
+						  <ul class="sub-nav-group">
+                          <li><%= link_to leadership.position, person_position_path(id: leadership.id), class: "sub-nav-group-header" %>
+                          </li>
+                        </ul>
+						<% end %>
                     </div>
                   </div>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
