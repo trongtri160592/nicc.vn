@@ -1,21 +1,33 @@
 <a class="btn btn-primary" href="/news/new"><i class="fa fa-plus" aria-hidden="true"></i></a></br>
+<%= form_tag news_update_featured_path, method: :put do %>
 <table class="table table-bordered table-striped">
   <thead>.
   <tr>
     <th>Tiêu đề</th>
     <th></th>
     <th></th>
+    <th>Tin nổi bật</th>
   </tr>
   </thead>
 
   <tbody>
-  <% @news_arr.each do |news| %>
-    <tr>
-      <td><%= news.title %></td>
-      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/news/edit/#{news.id}", class: "btn btn-primary" %></td>
-      <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/news/#{news.id}", method: :delete, class: "btn btn-danger", confirm: "Có phải bạn muốn xóa '#{news.title}'?" %></td>
-    </tr>
-  <% end %>
+
+    <% @news_arr.each do |news| %>
+      <%= fields_for "news[]", news do |f| %>
+        <tr>
+          <td><%= news.title %></td>
+          <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/news/edit/#{news.id}", class: "btn btn-primary" %></td>
+          <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/news/#{news.id}", method: :delete, class: "btn btn-danger", confirm: "Có phải bạn muốn xóa '#{news.title}'?" %></td>
+          <td><%= f.check_box :featured, {}, 1, 0 %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
   </tbody>
 
 </table>
+  <div class="actions">
+    <%= submit_tag "Lưu thay đổi", class: "btn btn-primary" %> <br><br>
+  </div>
+<% end %>
+<%= will_paginate @news_arr %>

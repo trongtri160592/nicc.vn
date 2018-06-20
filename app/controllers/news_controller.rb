@@ -19,7 +19,7 @@ class NewsController < ApplicationController
   end
 
   def manage
-    @news_arr = News.all
+    @news_arr = News.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new
@@ -46,6 +46,11 @@ class NewsController < ApplicationController
     else
       flash[:danger] = "Bạn đã sửa đổi '#{@news.title}' thất bại"
     end
+    redirect_to news_manage_path
+  end
+
+  def update_featured
+    @news = News.update(params[:news].keys, params[:news].values)
     redirect_to news_manage_path
   end
 

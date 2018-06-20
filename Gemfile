@@ -67,3 +67,5 @@ gem 'bcrypt'
 
 # Use to upload image
 gem 'carrierwave'
+
+gem 'will_paginate', '~> 3.1.0'

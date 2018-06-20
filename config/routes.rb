@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   # News edit, new, update, destroy, index
   get '/manage-news', to: 'news#manage', as: 'news_manage'
+  put '/manage-news', to: 'news#update_featured', as: 'news_update_featured'
   get '/news/new', to: 'news#new', as: 'news_new'
   post '/news/new', to: 'news#create'
   get '/news/edit/:id', to: 'news#edit', as: 'news_edit'
@@ -64,4 +65,8 @@ Rails.application.routes.draw do
   get '/partner/edit/:id', to: 'partner#edit', as: 'partner_edit'
   post '/partner/edit/:id', to: 'partner#update'
   delete '/partner/:id', to: 'partner#destroy'
+
+  # About
+  get '/about-us', to: 'about#summary', as: 'about_summary'
+  get '/about-us/responsibilities', to: 'about#responsibilities', as: 'about_responsibilities'
 end

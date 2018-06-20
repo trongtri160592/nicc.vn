@@ -22,7 +22,7 @@ class ResearchController < ApplicationController
   end
 
   def manage
-    @researches = Research.all
+    @researches = Research.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new

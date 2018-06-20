@@ -3326,9 +3326,7 @@ $(document).on('turbolinks:load', function() {
                         "z-index": n.options.zIndex,
                         position: "fixed",
                         top: -1 == n.options.bottom ? C() : "",
-                        bottom: -1 == n.options.bottom ? "" : n.options.bottom,
-                        "margin-left": "0px"
-                    }, n.options.dontSetWidth || (cssOptions.width = c.css("width")), c.css(cssOptions), c.addClass(n.options.baseClassName), n.options.className && c.addClass(n.options.className), o = "fixed"
+                        bottom: -1 == n.options.bottom ? "" : n.options.bottom}, n.options.dontSetWidth || (cssOptions.width = c.css("width")), c.css(cssOptions), c.addClass(n.options.baseClassName), n.options.className && c.addClass(n.options.className), o = "fixed"
                 }
             }
 
