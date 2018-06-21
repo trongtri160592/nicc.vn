@@ -107,28 +107,13 @@
         <div class="contentid-896094 slot-item first-SI equalheight large-4 columns card gutter">
 
           <h2>
-            Resources For
+            Đề tài nghiên cứu
           </h2>
 
           <ul>
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/patients">Patients</a></li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/caregivers">Caregivers</a>
-            </li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/hp">Health Professionals</a>
-            </li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/researchers">Researchers</a>
-            </li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/advocates">Advocates &amp;
-              Policymakers</a></li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/international-partners">International
-              Partners</a></li>
-
-            <li><a class="arrow-link-white" href="https://www.cancer.gov/resources-for/industry">Industry</a></li>
+			<% ResearchCategory.all.each do |category| %>
+		      <li><%= link_to category.name, research_category_path(id: category.id), class: "arrow-link-white" %></li>
+			<% end %>
           </ul>
 
         </div>
