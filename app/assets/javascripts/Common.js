@@ -1111,8 +1111,8 @@
     }, function (t, e, i) {
         "use strict";
         var n = i(221), o = (i.n(n), i(3)), r = i.n(o), s = {
-            href: "/about-cancer/treatment/clinical-trials/search",
-            innerHTML: '\n        <div class="floating-delighter__icon">\n        </div>\n        <div class="floating-delighter__label">Find a Clinical Trial</div>\n    ',
+            href: "/search",
+            innerHTML: '\n        <div class="floating-delighter__icon">\n        </div>\n        <div class="floating-delighter__label">Tìm kiếm</div>\n    ',
             classList: ["floating-delighter--cts"]
         }, a = {
             "/about-cancer/treatment/clinical-trials": {
