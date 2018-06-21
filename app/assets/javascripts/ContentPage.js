@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+
     webpackJsonp([0], [, function (e, t, n) {
         "use strict";
         var r = n(13), o = n(43), i = Object.prototype.toString;
@@ -2690,4 +2690,3 @@ $(document).on('turbolinks:load', function() {
             }
         }, o = [n(0)], void 0 === (i = "function" == typeof(r = a) ? r.apply(t, o) : r) || (e.exports = i)
     }], [185]);
-});

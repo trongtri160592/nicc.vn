@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+
     webpackJsonp([3], {
         112: function (o, e, r) {
             var s;
@@ -71,4 +71,3 @@ $(document).on('turbolinks:load', function () {
         }, 223: function (o, e) {
         }
     }, [219]);
-});

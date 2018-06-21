@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+
     !function (t) {
         var e = window.webpackJsonp;
         window.webpackJsonp = function (i, r, s) {
@@ -3246,7 +3246,7 @@ $(document).on('turbolinks:load', function() {
                     e || (t = $(".fixedtotop").outerHeight(), $(".fixedtotop").scrollToFixed({
                         spacerClass: "fixedtotop-spacer",
                         fixed: function () {
-                            $(".fixedtotop-spacer").height(t)
+                            $(".fixedtotop-spacer").height(t);
                         }
                     }), $(".headroom-area").headroom({
                         offset: 205,
@@ -4878,4 +4878,3 @@ $(document).on('turbolinks:load', function() {
             }
         }.call(e, i, e, t)) || (t.exports = n)
     }]);
-});
