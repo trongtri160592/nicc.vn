@@ -14,6 +14,8 @@ class CancerTypeController < ApplicationController
 
   def details
     @cancer_type = CancerType.find_by_id(params[:id])
+	set_meta_tags @cancer_type
+	set_meta_tags title: 'abc'
   end
 
   def new

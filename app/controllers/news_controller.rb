@@ -8,6 +8,7 @@ class NewsController < ApplicationController
 
   def details
     @news = News.find_by_id(params[:id])
+	set_meta_tags @news
     if !@news
       render 'error/404', status: '404 Not Found'
     end
