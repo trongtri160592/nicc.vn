@@ -69,3 +69,6 @@ gem 'bcrypt'
 gem 'carrierwave'
 
 gem 'will_paginate', '~> 3.1.0'
+
+# Use for SEO
+gem 'meta-tags'

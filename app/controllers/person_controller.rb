@@ -3,12 +3,13 @@ class PersonController < ApplicationController
   before_action :authorize, except: [:index, :position, :details]
 
   def index
-    redirect_to person_position_path(Leadership.first.id) if Leadership.first
+    redirect_to person_position_path(id: Leadership.first.id) if Leadership.first
   end
 
   def position
     @positions = Leadership.all
     @position = Leadership.find_by_id(params[:id])
+    @people = @position.people.paginate(:page => params[:page], :per_page => 7)
     if !@position
       render 'error/404', status: '404 Not Found'
     end
@@ -69,6 +70,6 @@ class PersonController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:name, :portrait, :leadership_id, :background)
+    params.require(:person).permit(:name, :portrait, :leadership_id, :background, :background_english)
   end
 end

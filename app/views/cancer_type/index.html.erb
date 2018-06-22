@@ -15,55 +15,13 @@
     <div class="large-7 columns">
 
       <!-- PAGE TITLE -->
-      <h1><span>Cancer Types</span></h1>
+      <h1><span>Các loại ung thư</span></h1>
 
       <!-- END PAGE TITLE -->
 
     </div>
     <!-- END PAGE TITLE -->
 
-
-    <div class="page-options-container">
-      <!-- PAGE OPTIONS -->
-      <script type="text/javascript">
-          var addthis_share = {
-              title: "Cancer Types",
-              description: "A to Z list of cancer types"
-          }
-      </script>
-      <script type="text/javascript">
-          var addthis_config = {
-              ui_language: "en",
-              ui_508_compliant: true
-          }
-      </script>
-      <div id="PageOptionsControl1" class="large-5 columns page-options">
-        <ul>
-          <li class="po-print">
-            <a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><img alt="Print" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-          <li class="po-email">
-            <a title="Email" href="/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer+Types&amp;docurl=%2ftypes&amp;language=en&amp;a=-1656F890698&amp;b=613e41', 'emailPopUp', 'height=525,width=492'); return false;"><img alt="Email" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-          <li class="po-facebook">
-            <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Facebook" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-          <li class="po-twitter">
-            <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><img alt="Twitter" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-          <li class="po-googleplus">
-            <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Google+" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-          <li class="po-pinterest">
-            <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><img alt="Pinterest" src="/publishedcontent/images/images/spacer.gif"></a>
-          </li>
-        </ul>
-      </div>
-      <script async="async" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ed7cc9f006efaac" type="text/javascript">
-
-      </script>
-      <!-- END PAGE OPTIONS -->
-    </div>
   </div>
 
   <!-- CARD CONTAINER -->
@@ -72,8 +30,7 @@
       <div class="rawHtml">
         <div class="row">
           <div class="large-12 columns">
-            <p>Use the alphabet links to find and retrieve information about a particular type of cancer. (The A to Z
-              list is also available <a href="/vi/types">in Vietnamese</a>.)</p>
+            <p>Sử dụng bảng chữ cái để tìm thông tin về một loại ung thư cụ thể. (Danh sách bẳng <a href="/en/types">tiếng Anh</a>.)</p>
             <div class="az-list">
               <ul>
                 <% cancer_letters = @cancer_types_alphabetical.keys %>
@@ -87,14 +44,13 @@
               </ul>
             </div>
             <div class="callout-box-right">
-              <p>There are more than 100 types of cancer. Types of cancer are usually named for the organs or tissues
-                where the cancers form, but they also may be described by the type of cell that formed them. </p>
+              <p>Hiện tại có hơn 100 loại ung thư. Tên của loại ung thư được đặt theo mô hoặc cơ quan ung thư hình thành, nhưng đội khi chúng cũng được đặt theo tên tế bào tạo nên chúng. </p>
             </div>
             <% @cancer_types_alphabetical.each do |letter, cancer_types| %>
               <h3 id="<%= letter.downcase %>" tabindex="0"><%= letter %></h3>
               <ul class="cancer-list">
                 <% cancer_types.each do |cancer_type| %>
-                  <li><%= link_to cancer_type.name_english, cancer_type_detail_path(id: cancer_type.id) %></li>
+                  <li><%= link_to cancer_type.name, cancer_type_detail_path(id: cancer_type.id) %></li>
                 <% end %>
               </ul>
             <% end %>

@@ -5,8 +5,8 @@
         <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
           <div class="contentid-870117 slot-item only-SI">
             <ul class="breadcrumbs">
-              <li><%= link_to 'Trang chủ', root_path  %></li>
-              <li><%= link_to 'Nghiên cứu và đào tạo', research_path %></li>
+              <li><%= link_to 'Homepage', root_path  %></li>
+              <li><%= link_to 'Research and training', research_path %></li>
             </ul>
           </div>
         </div>
@@ -27,13 +27,13 @@
                     <% if category.id == @research.research_category.id %>
                       <li class="level-1 contains-current">
                         <div class="current-page">
-                          <%= link_to category.name, research_category_path(id: category.id) %>
+                          <%= link_to category.name_english, research_category_path(id: category.id) %>
                         </div>
                       </li>
                     <% else %>
                       <li class="level-1">
                         <div>
-                          <%= link_to category.name, research_category_path(id: category.id) %>
+                          <%= link_to category.name_english, research_category_path(id: category.id) %>
                         </div>
                       </li>
                     <% end %>
@@ -70,7 +70,7 @@
 
             <div id="cgvBody">
               <div class="contentid-915637 slot-item only-SI">
-                <%= @research.description.to_s.html_safe %>
+                <%= @research.description_english.to_s.html_safe %>
               </div>
             </div>
           </div>

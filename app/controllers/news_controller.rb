@@ -3,20 +3,20 @@ class NewsController < ApplicationController
   before_action :authorize, except: [:index, :details, :filter]
 
   def index
-    @news_arr = News.all
+    @news_arr = News.paginate(:page => params[:page], :per_page => 7)
   end
 
   def details
     @news = News.find_by_id(params[:id])
-	set_meta_tags @news
+    set_meta_tags @news
     if !@news
       render 'error/404', status: '404 Not Found'
     end
   end
-  
+
   def filter
-	@news_arr = News.where('extract(year from created_at) = ?', params[:year])
-	render 'index'
+    @news_arr = News.where('extract(year from created_at) = ?', params[:year]).paginate(:page => params[:page], :per_page => 7)
+    render 'index'
   end
 
   def manage
@@ -64,6 +64,7 @@ class NewsController < ApplicationController
   end
 
   protected
+
   def manage_category
     "news"
   end

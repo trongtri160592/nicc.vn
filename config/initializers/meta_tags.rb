@@ -31,4 +31,5 @@ MetaTags.configure do |config|
   # config.property_tags.push(
   #   'x-hearthstone:deck',
   # )
+  DEFAULT_META = YAML.load_file(Rails.root.join("config/meta.yml"))
 end

@@ -5,8 +5,8 @@
         <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
           <div class="contentid-870117 slot-item only-SI">
             <ul class="breadcrumbs">
-              <li><a href="/">Trang chủ</a></li>
-              <li><a href="/person">Nhân sự</a></li>
+              <li><%= link_to 'Homepage', root_path %></li>
+              <li class="last-breadcrumb"><%= link_to 'Human resources', person_path %></li>
             </ul>
           </div>
         </div>
@@ -20,20 +20,20 @@
             <ul>
               <li class="level-0 has-children">
                 <div>
-                  Phân loại nghiên cứu
+                  Leaders and employees
                 </div>
                 <ul>
-                  <% ResearchCategory.all.each do |category| %>
-                    <% if category.id == @research.research_category.id %>
+                  <% @positions.each do |position| %>
+                    <% if position.id == @position.id %>
                       <li class="level-1 contains-current">
                         <div class="current-page">
-                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                          <%= link_to position.position_english, person_position_path(id: position.id) %>
                         </div>
                       </li>
                     <% else %>
                       <li class="level-1">
                         <div>
-                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                          <%= link_to position.position_english, person_position_path(id: position.id) %>
                         </div>
                       </li>
                     <% end %>
@@ -46,36 +46,26 @@
       </div>
       <!--    END SECTION NAVIGATION -->
       <div class="medium-9 columns contentzone has-section-nav" id="main" tabindex="0" role="main">
-        <!-- ********************************* BEGIN Research description ********************************** -->
-        <article>
-
-          <!-- PUBLIC ARCHIVE BANNER -->
-          <div id="cgvPublicArchiveBannerSl" class="row collapse">
-            <div class="contentid-172410 slot-item only-SI large-12 columns">
-
-            </div>
-          </div>
-          <!-- END PUBLIC ARCHIVE BANNER -->
-
-
-          <!-- BANNER SLOT -->
-
-          <!-- END BANNER SLOT -->
-
-          <div class="resize-content">
-
-            <!-- PAGE TITLE -->
-            <h1><span><%= @research.title %></span></h1>
-            <!-- END PAGE TITLE -->
-
-            <div id="cgvBody">
-              <div class="contentid-915637 slot-item only-SI">
-                <%= @research.description.to_s.html_safe %>
+        <!-- ********************************* BEGIN List of person ********************************** -->
+        <div class="contentid-1034469 slot-item last-SI">
+          <% if @people.length == 0 %>
+            <span> There's no employee at this position</span>
+          <% else %>
+            <% @people.each do |person| %>
+              <div class="row vertical-space">
+                <div class="large-3 columns">
+                  <img alt="<%= person.name %>" src="<%= person.portrait.url %>">
+                </div>
+                <div class="large-9 columns">
+                  <h3 id="ui-id-3"><%= person.name %></a></h3>
+                  <p><%= person.background_english %></p>
+                </div>
               </div>
-            </div>
-          </div>
-        </article>
-        <!-- ********************************* END Research details ********************************** -->
+            <% end %>
+          <% end %>
+        </div>
+        <%= will_paginate @people, class: "flickr_pagination" %>
+        <!-- ********************************* END List of person ********************************** -->
       </div> <!-- END Main -->
     </div> <!-- END "row" -->
   </div> <!-- END "row general-page-body-container collapse" -->

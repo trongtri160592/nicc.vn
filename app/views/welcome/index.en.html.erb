@@ -1,0 +1,305 @@
+<!-- Begin MAIN CONTENT AREA -->
+<div class="main-content" id="content" tabindex="0">
+
+
+  <!-- PUBLIC ARCHIVE BANNER -->
+  <div id="cgvPublicArchiveBannerSl" class="row collapse">
+    <div class="contentid-172410 slot-item only-SI large-12 columns">
+
+    </div>
+  </div>
+  <!-- END PUBLIC ARCHIVE BANNER -->
+
+
+  <!-- HERO SLOT -->
+  <div id="nvcgSlHeroHeader" class="row hero-slot">
+    <div class="contentid-898668 slot-item only-SI large-12 columns hero">
+      <div class="rawHtml">
+        <div class="row">
+          <div class="hero-text columns large-12">
+            <p>VNCI is the Vietnam's leader in cancer research</p></div>
+        </div>
+        <picture>
+          <!--            <source media="(max-width: 1024px)" srcset="/PublishedContent/Images/images/design-elements/heroes/Hero_image_home_tablet.__v1.jpg">-->
+          <%= image_tag 'Hero_image_home_desktop.jpg' %>
+        </picture>
+      </div>
+    </div>
+  </div>
+  <!-- END HERO SLOT -->
+
+  <div class="row">
+
+
+    <div class="page-options-container">
+      <!-- PAGE OPTIONS -->
+      <div id="PageOptionsControl1" class="large-5 columns page-options">
+        <ul>
+          <li class="po-print">
+            <a title="Print" onclick="NCIAnalytics.PrintLink(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Print' %></a>
+          </li>
+          <li class="po-email">
+            <a title="Email" href="https://www.cancer.gov/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2" onclick="NCIAnalytics.eMailLink(this); dynPopWindow('/common/popUps/PopEmail.aspx?title=Cancer.gov+Home+Page&amp;docurl=%2f&amp;language=en&amp;a=19546808J91&amp;b=331u2', 'emailPopUp', 'height=525,width=492'); return false;"><%= image_tag 'spacer.gif', alt: 'Email' %></a>
+          </li>
+          <li class="po-facebook">
+            <a class="addthis_button_facebook add_this_btn at300b" title="Facebook" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Facebook' %></a>
+          </li>
+          <li class="po-twitter">
+            <a class="addthis_button_twitter add_this_btn at300b" title="Twitter" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#"><%= image_tag 'spacer.gif', alt: 'Twitter' %></a>
+          </li>
+          <li class="po-googleplus">
+            <a class="addthis_button_google_plusone_share add_this_btn at300b" title="Google+" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Google+' %></a>
+          </li>
+          <li class="po-pinterest">
+            <a class="addthis_button_pinterest_share add_this_btn at300b" title="Pinterest" onclick="NCIAnalytics.BookmarkShareClick(this);" href="#" target="_blank"><%= image_tag 'spacer.gif', alt: 'Pinterest' %></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- END PAGE OPTIONS -->
+    </div>
+  </div>
+
+  <!-- CARD CONTAINER -->
+  <div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
+    <div class="contentid-896091 slot-item first-SI">
+
+      <div class="feature-primary-title">
+        <h3>
+          Các tin nổi bật
+        </h3>
+      </div>
+      <!-- BEGIN FEATURE PRIMARY CARDS ROW -->
+      <div id="ctl33_nvcgSlLayoutFeatureA" class="row feature-primary flex-columns">
+        <% @featured_news.each do |featured_news| %>
+
+          <div class="slot-item first-SI equalheight large-4 columns card gutter">
+
+            <div class="feature-card cgvTopicPage">
+
+              <a href="<%= news_details_path(id: featured_news.id) %>">
+                <div class="image-hover">
+                  <img src="<%= featured_news.thumbnail.url %>" alt="" style="width: 100%;">
+                </div>
+                <h3><%= featured_news.title_english %></h3>
+              </a>
+            </div>
+
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+    <!-- END FEATURE PRIMARY CARDS CARDS ROW -->
+  </div>
+  <div class="contentid-896093 slot-item">
+
+    <!-- BEGIN CARDS ROW -->
+    <div class="accordion">
+      <div id="ctl35_nvcgSlLayoutGuideB" class="nvcgSlLayoutGuideB row guide-card guide-card--home flex-columns">
+        <div class="contentid-896094 slot-item first-SI equalheight large-4 columns card gutter">
+
+          <h2>
+            Researches
+          </h2>
+
+          <ul>
+            <% ResearchCategory.all.each do |category| %>
+              <li><%= link_to category.name_english, research_category_path(id: category.id), class: "arrow-link-white" %></li>
+            <% end %>
+          </ul>
+
+        </div>
+        <div class="contentid-896095 slot-item equalheight large-4 columns card gutter">
+
+          <h2>
+            About us
+          </h2>
+
+          <ul>
+            <li>
+              <%= link_to 'Summary', about_summary_path, class: 'arrow-link' %>
+            </li>
+            <li>
+              <%= link_to 'Responsibilities', about_responsibilities_path, class: 'arrow-link' %>
+            </li>
+            <li>
+              <%= link_to 'Human resources', person_path, class: 'arrow-link' %>
+            </li>
+          </ul>
+
+        </div>
+        <div class="contentid-896096 slot-item last-SI equalheight large-4 columns card gutter">
+
+          <h2>
+            Find a cancer type
+          </h2>
+
+          <ul class="cancer-types">
+            <% ('A'..'Z').each do |letter| %>
+              <% if @available_letters.include?(letter) %>
+                <li><%= link_to letter, "/types/##{letter}" %></li>
+              <% else %>
+                <li><span><%= letter %></span></li>
+              <% end %>
+            <% end %>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- END CARDS ROW -->
+  </div>
+  <div class="contentid-1026939 slot-item">
+    <div class="rawHtml"><!-- Begin Social Media row -->
+
+      <div class="row social-media-title">
+        <h2>Social media</h2>
+      </div>
+      <div class="social-media-row row">
+        <div class="social-media-card">
+          <div class="social-media-icon">
+            <a href="#"><%= image_tag 'twitter-circle-icon.svg', alt: 'Twitter logo' %> </a>
+          </div>
+          <div class="social-media-text">
+            <h3>
+              <a href="#">Twitter</a>
+            </h3>
+          </div>
+        </div>
+        <div class="social-media-card">
+          <div class="social-media-icon">
+            <a href="#"><%= image_tag 'facebook-circle-icon.svg', alt: 'Facebook logo' %></a>
+          </div>
+          <div class="social-media-text">
+            <h3>
+              <a href="#">Facebook</a>
+            </h3>
+
+          </div>
+        </div>
+        <div class="social-media-card">
+          <div class="social-media-icon">
+            <a href="#"><%= image_tag 'linkedin-circle-icon.svg', alt: 'Linkedin logo' %></a>
+          </div>
+          <div class="social-media-text">
+            <h3>
+              <a href="#">LinkedIn</a>
+            </h3>
+
+          </div>
+        </div>
+        <div class="social-media-card">
+          <div class="social-media-icon">
+            <a href="#"><%= image_tag 'instagram-circle-icon.svg', alt: 'Instagram logo' %></a>
+          </div>
+          <div class="social-media-text">
+            <h3>
+              <a href="#">Instagram</a>
+            </h3>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Social Media row --></div>
+  </div>
+  <div class="contentid-896097 slot-item">
+
+    <!-- BEGIN MULTIMEDIA, SECONDARY FEATURE ROW -->
+    <div class="multimedia-slot">
+      <div class="row multimedia flex-columns">
+        <div id="ctl39_nvcgSlLayoutMultimediaA" class="equalheight small-8 columns card">
+          <div class="contentid-1112790 slot-item only-SI">
+
+            <div class="multimedia-feature-card $content_type">
+              <figure class="video  ">
+                <div id="ytplayer-YWH9DNfgYPs" class="flex-video widescreen" data-video-id="YWH9DNfgYPs" data-video-title="Paying for Clinical Trials">
+                  <noscript><p>
+                    <a href="https://www.youtube.com/watch?v=YWH9DNfgYPs" target="_blank" title="Paying for Clinical Trials">
+                      View this video on YouTube. </a></p></noscript>
+                  <div class="video-preview--container" tabindex="0">
+                    <!--                        <img src="Comprehensive%20Cancer%20Information%20-%20National%20Cancer%20Institute_files/hqdefault.jpg" alt="Paying for Clinical Trials" class="video-preview--preview-img">-->
+                    <div class="video-preview--play-button">
+                      <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                        <path class="play-button--bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                      </svg>
+                    </div>
+                    <p>Paying for Clinical Trials</p></div>
+                </div>
+              </figure>
+              <p class="mmfc-video-caption">
+              </p>
+              <p>Learn about the different types of costs related to taking part in a clinical trial, and who is
+                expected to pay for which costs.</p>
+              <p></p>
+            </div>
+
+          </div>
+        </div>
+        <div id="ctl39_nvcgSlLayoutFeatureB" class="equalheight small-4 columns card">
+          <div class="contentid-941434 slot-item only-SI">
+
+            <div class="feature-card cgvTopicPage">
+              <a href="/person">
+                <div class="image-hover">
+                  <%= image_tag 'leadership.jpg', alt: "Lãnh đạo" %>
+                </div>
+                <h3>Senior leaders</h3>
+                <p>Information about former and current leader of institute.</p>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN THUMBNAIL SECTION -->
+
+    <!-- END THUMBNAIL SECTION -->
+  </div>
+  <div class="contentid-898670 slot-item last-SI">
+    <div class="rawHtml">
+      <div class="row carousel-title">
+        <div class="large-6 columns">
+          <h2>Partnership</h2>
+        </div>
+        <div class="large-6 columns arrows arrows-for-other-nci-sites clearfix">
+          <button type="button" class="previous">
+            <span style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Previous</span>
+          </button>
+          <button type="button" class="next">
+            <span style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="slider">
+            <% partners = Partner.all %>
+            <% if partners.length > 0 %>
+              <% partners.each do |partner| %>
+                <li>
+                  <a href="
+                      <% partner.website %>" class="container" style='
+                  background-image: url("<%= partner.logo %>");
+                      background-size:     cover;                      /* <------ */
+                      background-repeat:   no-repeat;
+                      background-position: center center;              /* optional, center the image */
+                  '>
+                    <p class="site-link"><%= partner.name %></p>
+                  </a>
+                </li>
+              <% end %>
+            <% else %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- END CARD CONTAINER -->
+
+</div> <!-- End MAIN CONTENT AREA -->

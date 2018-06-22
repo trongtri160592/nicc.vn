@@ -3,13 +3,13 @@ class ResearchController < ApplicationController
   before_action :authorize, except: [:index, :category, :details]
 
   def index
-    redirect_to research_category_path(ResearchCategory.first.id) if ResearchCategory.first
+    redirect_to research_category_path(id: ResearchCategory.first.id) if ResearchCategory.first
   end
 
   def category
     @categories = ResearchCategory.all
     @category = ResearchCategory.find_by_id(params[:id])
-	@researches = @category.research.paginate(:page => params[:page], :per_page => 20)
+    @researches = @category.research.paginate(:page => params[:page], :per_page => 7)
     if !@category
       render 'error/404', status: '404 Not Found'
     end
@@ -17,7 +17,7 @@ class ResearchController < ApplicationController
 
   def details
     @research = Research.find_by_id(params[:id])
-	set_meta_tags @research
+    set_meta_tags @research
     if !@research
       render 'error/404', status: '404 Not Found'
     end
@@ -63,8 +63,13 @@ class ResearchController < ApplicationController
   end
 
   protected
+
   def manage_category
     "research"
+  end
+
+  def page_title
+    "Nghiên cứu và đào tạo"
   end
 
   private

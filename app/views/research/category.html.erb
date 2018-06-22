@@ -5,8 +5,8 @@
         <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
           <div class="contentid-870117 slot-item only-SI">
             <ul class="breadcrumbs">
-              <li><a href="/">Trang chủ</a></li>
-              <li><a href="/research">Nghiên cứu và đào tạo</a></li>
+              <li><%= link_to 'Trang chủ', root_path  %></li>
+              <li><%= link_to 'Nghiên cứu và đào tạo', research_path %></li>
             </ul>
           </div>
         </div>
@@ -27,13 +27,13 @@
                     <% if category.id == @category.id %>
                       <li class="level-1 contains-current">
                         <div class="current-page">
-                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                          <%= link_to category.name, research_category_path(id: category.id) %>
                         </div>
                       </li>
                     <% else %>
                       <li class="level-1">
                         <div>
-                          <a href="/research/categories/<%= category.id %>"><%= category.name %></a>
+                          <%= link_to category.name, research_category_path(id: category.id) %>
                         </div>
                       </li>
                     <% end %>
@@ -65,7 +65,7 @@
               <% end %>
             </ul>
           </div>
-		  <%= will_paginate @researches %>
+          <%= will_paginate @researches, class: "flickr_pagination" %>
         </div>
         <!-- ********************************* END List of research ********************************** -->
       </div> <!-- END Main -->

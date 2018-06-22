@@ -27,7 +27,7 @@
   <div id="nvcgSlSiteBanner" class="row">
     <div class="contentid-911584 slot-item only-SI nci-logo-pages large-12 columns">
 
-      <a href="/"><%= image_tag 'NCILogongang-2.png', alt: 'National Cancer Institute', width: '60%' %> </a>
+      <%= link_to (image_tag 'NCILogongang-2.png', alt: 'National Cancer Institute', width: '60%'), root_path %>
     </div>
   </div>
 </header>
@@ -62,7 +62,7 @@
           <div class="navigation">
             <div class="mobile-menu-bar">
               <button type="button" class="open-panel nav-header menu-btn">Menu</button>
-              <button type="button" class="nav-search">Tìm kiếm</button>
+              <button type="button" class="nav-search">Search</button>
             </div>
             <nav id="mega-nav" role="navigation">
               <ul class="menu nav-menu">
@@ -72,12 +72,12 @@
                   <li class="nav-item lvl-1 has-children item-2">
                 <% end %>
                 <div class="nav-item-title">
-                  <a href="/about-us">Giới thiệu</a>
+                  <%= link_to 'About us', '/about-us' %>
                 </div>
                 <ul class="mobile-item">
                   <li class="lvl-2">
                     <div class="nav-item-title">
-                      <%= link_to "Giới thiệu chung", about_summary_path %>
+                      <%= link_to "Summary", about_summary_path %>
                     </div>
                   </li>
                 </ul>
@@ -88,15 +88,15 @@
                   <li class="nav-item lvl-1 has-children item-2">
                 <% end %>
                 <div class="nav-item-title">
-                  <a href="/types" id="accessible-megamenu-1526307612004-3" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612004-4" aria-expanded="false" class="">Các
-                    loại ung thư</a>
+                  <%= link_to 'Cancer types', cancer_type_index_path %>
+
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                   </button>
                 </div>
                 <ul class="mobile-item">
                   <li class="lvl-2 has-children">
                     <div class="nav-item-title">
-                      <a href="#">Các loại ung thư phổ biến</a>
+                      <a href="#">Common cancer types</a>
                       <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                       </button>
                     </div>
@@ -104,7 +104,7 @@
                       <% CancerType.where(is_common: 1).first(3).each do |cancer_type| %>
                         <li class="lvl-3">
                           <div class="nav-item-title">
-                            <%= link_to cancer_type.name, cancer_type_detail_path(id: cancer_type.id) %>
+                            <%= link_to cancer_type.name_english, cancer_type_detail_path(id: cancer_type.id) %>
                           </div>
                         </li>
                       <% end %>
@@ -112,7 +112,7 @@
                   </li>
                   <li class="lvl-2">
                     <div class="nav-item-title">
-                      <%= link_to "Tất cả các loại ung thư (A-Z)", cancer_type_index_path %>
+                      <%= link_to "All cancer types (A-Z)", cancer_type_index_path %>
                     </div>
                   </li>
                 </ul>
@@ -120,20 +120,20 @@
                   <div class="sub-nav-group-wrapper">
                     <div class="sub-nav-group-subwrapper">
                       <ul class="sub-nav-group cancer-types-border-container">
-                        <li><a href="#" class="sub-nav-group-header">Các loại ung thư phổ biến</a>
+                        <li><a href="#" class="sub-nav-group-header">Common cancer types</a>
                           <% CancerType.where(is_common: 1).first(12).in_groups_of(4, false).each do |common_arr| %>
                             <ul>
                               <% common_arr.each do |cancer_type| %>
-                                <li><%= link_to cancer_type.name, cancer_type_detail_path(id: cancer_type.id) %></li>
+                                <li><%= link_to cancer_type.name_english, cancer_type_detail_path(id: cancer_type.id) %></li>
                               <% end %>
                             </ul>
                           <% end %>
                         </li>
                       </ul>
                       <ul class="sub-nav-group">
-                        <li><a href="/types" class="sub-nav-group-header">Tất cả các loại ung thư</a>
+                        <li><%= link_to 'All cancer types', cancer_type_index_path, class: 'sub-nav-group-header' %>
                           <ul>
-                            <li><a href="/types">Danh sách từ A-Z</a></li>
+                            <li><%= link_to 'List of types A-Z', cancer_type_index_path %></li>
                           </ul>
                         </li>
                       </ul>
@@ -149,8 +149,7 @@
                   <li class="nav-item lvl-1 has-children item-3">
                 <% end %>
                 <div class="nav-item-title">
-                  <a href="/research" id="accessible-megamenu-1526307612015-5" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612015-6" aria-expanded="false">Nghiên
-                    cứu và đào tạo</a>
+                  <%= link_to 'Research and training', research_path %>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                   </button>
                 </div>
@@ -158,7 +157,7 @@
                   <% ResearchCategory.all.each do |category| %>
                     <li class="lvl-2 has-children">
                       <div class="nav-item-title">
-                        <%= link_to category.name, research_category_path(id: category.id) %>>
+                        <%= link_to category.name_english, research_category_path(id: category.id) %>>
                       </div>
                     </li>
                   <% end %>
@@ -168,7 +167,7 @@
                     <div class="sub-nav-group-subwrapper">
                       <% ResearchCategory.all.each do |category| %>
                         <ul class="sub-nav-group">
-                          <li><%= link_to category.name, research_category_path(id: category.id), class: "sub-nav-group-header" %>
+                          <li><%= link_to category.name_english, research_category_path(id: category.id), class: "sub-nav-group-header" %>
                           </li>
                         </ul>
                       <% end %>
@@ -184,9 +183,7 @@
                   <li class="nav-item lvl-1 has-children item-5">
                 <% end %>
                 <div class="nav-item-title">
-                  <a href="/news" id="accessible-megamenu-1526307612025-9" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612025-10" aria-expanded="false">Tin
-                    tức &amp;
-                    Sự kiện</a>
+                  <%= link_to 'News and event', news_path %>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                   </button>
                 </div>
@@ -195,7 +192,7 @@
                 <ul class="mobile-item">
                   <li class="lvl-2 has-children">
                     <div class="nav-item-title">
-                      <a href="#">Sắp xếp theo năm</a>
+                      <a href="#">Sort by year</a>
                       <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                       </button>
                     </div>
@@ -215,7 +212,7 @@
                     <div class="sub-nav-group-subwrapper">
                       <ul class="sub-nav-group">
                         <li>
-                          <a href="#" class="sub-nav-group-header">Sắp xếp theo năm</a>
+                          <a href="#" class="sub-nav-group-header">Sort by year</a>
                           <ul>
                             <% news_by_year.keys.each do |year| %>
                               <li><%= link_to year, news_filter_path(year: year) %></li>
@@ -235,8 +232,7 @@
                   <li class="nav-item lvl-1 has-children item-6">
                 <% end %>
                 <div class="nav-item-title">
-                  <a href="/person" id="accessible-megamenu-1526307612033-11" aria-haspopup="true" aria-controls="accessible-megamenu-1526307612033-12" aria-expanded="false">Nhân
-                    sự</a>
+                  <%= link_to 'Human resources', person_path %>
                   <button class="toggle" aria-expanded="false" type="button"><span class="hidden">Expand</span>
                   </button>
                 </div>
@@ -244,7 +240,7 @@
                   <% Leadership.all.each do |leadership| %>
                     <li class="lvl-2 has-children">
                       <div class="nav-item-title">
-                        <%= link_to leadership.position, person_position_path(id: leadership.id) %>
+                        <%= link_to leadership.position_english, person_position_path(id: leadership.id) %>
                       </div>
                     </li>
                   <% end %>
@@ -254,7 +250,7 @@
                     <div class="sub-nav-group-subwrapper">
                       <% Leadership.all.each do |leadership| %>
                         <ul class="sub-nav-group">
-                          <li><%= link_to leadership.position, person_position_path(id: leadership.id), class: "sub-nav-group-header" %>
+                          <li><%= link_to leadership.position_english, person_position_path(id: leadership.id), class: "sub-nav-group-header" %>
                           </li>
                         </ul>
                       <% end %>

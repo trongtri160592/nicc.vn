@@ -5,8 +5,8 @@
         <div id="cgvSlBreadcrumb" class="medium-8 columns bcrumbs">
           <div class="contentid-870117 slot-item only-SI">
             <ul class="breadcrumbs">
-              <li><%= link_to 'Trang chủ', root_path %></li>
-              <li class="last-breadcrumb"><%= link_to 'Tin tức và sự kiện', news_path %></li>
+              <li><%= link_to 'Home', root_path %></li>
+              <li class="last-breadcrumb"><%= link_to 'News and event', news_path %></li>
             </ul>
           </div>
         </div>
@@ -18,7 +18,7 @@
           <div class="dynamic list has-images">
             <ul>
               <% if @news_arr.length == 0 %>
-                <span>Thư mục hiện chưa có tài liệu.</span>
+                <span>There's no document in this category.</span>
               <% end %>
               <% @news_arr.each do |news| %>
                 <li class="general-list-item general list-item">
@@ -26,11 +26,11 @@
                     <%= link_to image_tag(news.thumbnail.url), news_details_path(id: news.id), class: "item-image image" %>
                   </div>
                   <div class="title-and-desc title desc container">
-                    <%= link_to news.title, news_details_path(id: news.id), class: "title" %>
+                    <%= link_to news.title_english, news_details_path(id: news.id), class: "title" %>
 
                     <div class="description">
                       <div class="date"> <%= news.created_at.strftime("%d-%m-%Y") %></div>
-                      <%= Nokogiri::HTML.parse(news.content).css('p').first.text.html_safe %>
+                      <%= Nokogiri::HTML.parse(news.content_english).css('p').first.text.html_safe %>
                     </div>
                   </div>
                 </li>
@@ -46,7 +46,7 @@
         <div class="contentid-936279 slot-item last-SI">
           <div class="rawHtml"><!-- News Raw HTML - Archive -->
             <div class="row card">
-              <h2>Thư viện tin tức</h2>
+              <h2>News archive</h2>
               <ul>
                 <% news_by_year = News.all.order(created_at: :desc)
                     .group_by {|news| news.created_at.year} %>
