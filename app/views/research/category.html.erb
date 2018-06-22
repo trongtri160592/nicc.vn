@@ -53,7 +53,7 @@
               <% if @category.research.length == 0 %>
                 <span>Thư mục hiện chưa có tài liệu.</span>
               <% end %>
-              <% @category.research.each do |research| %>
+              <% @researches.each do |research| %>
                 <li class="general-list-item general list-item">
                   <div class="title-and-desc title desc container">
                     <%= link_to "#{research.title}", research_details_url(id: research.id), class: "title" %>
@@ -65,6 +65,7 @@
               <% end %>
             </ul>
           </div>
+		  <%= will_paginate @researches %>
         </div>
         <!-- ********************************* END List of research ********************************** -->
       </div> <!-- END Main -->

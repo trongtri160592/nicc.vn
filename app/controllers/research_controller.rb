@@ -9,6 +9,7 @@ class ResearchController < ApplicationController
   def category
     @categories = ResearchCategory.all
     @category = ResearchCategory.find_by_id(params[:id])
+	@researches = @category.research.paginate(:page => params[:page], :per_page => 20)
     if !@category
       render 'error/404', status: '404 Not Found'
     end
