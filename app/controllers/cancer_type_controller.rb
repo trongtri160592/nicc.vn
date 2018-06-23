@@ -24,7 +24,7 @@ class CancerTypeController < ApplicationController
   def create
     @cancer_type = CancerType.new(cancer_type_params)
     if @cancer_type.save
-      redirect_to "/manage-content", notice: "Cancer type: '#{@cancer_type.name}' has been uploaded."
+      redirect_to "/manage-content", turbolinks: false, notice: "Cancer type: '#{@cancer_type.name}' has been uploaded."
     else
       render 'new'
     end

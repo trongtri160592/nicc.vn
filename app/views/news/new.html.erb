@@ -1,15 +1,7 @@
-<% if !@news.errors.empty? %>
-  <div class="alert alert-error">
-    <ul>
-      <% @news.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="error-model"></div>
 
 <div id="content-new-form">
-  <%= form_with model: @news, url: news_new_path do |f| %>
+  <%= form_with model: @news, url: news_new_path, local: true do |f| %>
     <%= f.label :title, "Tiêu đề" %> </br>
     <%= f.text_field :title, class: "form-control" %> </br>
 

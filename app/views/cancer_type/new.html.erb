@@ -9,7 +9,7 @@
 <% end %>
 
 <div id="content-new-form">
-  <%= form_with model: @cancer_type, url: cancer_type_new_path do |f| %>
+  <%= form_with model: @cancer_type, url: cancer_type_new_path, local: true do |f| %>
     <%= f.label :name, "Tên" %> </br>
     <%= f.text_field :name, class: "form-control" %> </br>
 
