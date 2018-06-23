@@ -2052,31 +2052,6 @@
         Object.defineProperty(t, "__esModule", {value: !0}), n.d(t, "init", function () {
             return a
         });
-        var r = n(190), o = function (e) {
-            var t = e.dataset, n = t.videoId, o = t.videoTitle, i = document.createElement("div");
-            i.classList.add("video-preview--container"), i.setAttribute("tabIndex", "0");
-            var a = "https://img.youtube.com/vi/" + n + "/hqdefault.jpg", s = new Image;
-            s.src = a, s.alt = o, s.classList.add("video-preview--preview-img"), i.appendChild(s);
-            var c = document.createElement("div");
-            c.innerHTML = '\n\t<svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">\n\t\t<path class="play-button--bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>\n\t\t<path d="M 45,24 27,14 27,34" fill="#fff"></path>\n\t</svg>\n\t', c.classList.add("video-preview--play-button"), i.appendChild(c);
-            var l = document.createElement("p"), u = document.createTextNode(o);
-            l.appendChild(u), i.appendChild(l), e.appendChild(i);
-            var d = function () {
-                return function (e, t, n) {
-                    var r = document.documentElement.lang || "en",
-                        o = "https://www.youtube-nocookie.com/embed/" + t + "?rel=0" + ("es" === r ? "&hl=es" : "&hl=en") + "&showinfo=1&autoplay=1",
-                        i = document.createElement("iframe");
-                    i.setAttribute("frameborder", "0"), i.setAttribute("allowFullscreen", ""), i.setAttribute("src", o), i.setAttribute("title", n), i.setAttribute("alt", n), e.innerHTML = "", e.appendChild(i), i.focus()
-                }(e, n, o)
-            }, p = Object(r.c)({fn: d, keys: ["Enter", " "]});
-            e.addEventListener("click", d, !1), e.addEventListener("keydown", p, !1)
-        }, i = !1, a = function () {
-            i || (Object(r.b)(".flex-video").filter(function (e) {
-                return !Object(r.a)(e, "yt-carousel")
-            }).forEach(function (e) {
-                return o(e)
-            }), i = !0)
-        }
     }, function (e, t, n) {
         "use strict";
         var r = n(35);

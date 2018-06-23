@@ -271,9 +271,9 @@
         <div class="contentid-911752 slot-item last-SI">
           <div class="rawHtml">
             <div class="search" role="search">
-              <form action="/search/results" method="post" id="siteSearchForm" name="siteSearchForm" onsubmit="NCIAnalytics.SiteWideSearch(this);">
+              <form action="#" method="post" id="siteSearchForm" name="siteSearchForm" onsubmit="NCIAnalytics.SiteWideSearch(this);">
                 <label class="hidden" for="swKeyword">Search</label>
-                <input placeholder="search" class="searchString ui-autocomplete-input" id="swKeyword" maxlength="255" name="swKeyword" onblur="bSearchBoxBool=false;" onfocus="bSearchBoxBool=true;" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" type="text">
+                <input placeholder="Tìm kiếm" class="searchString ui-autocomplete-input" id="swKeyword" maxlength="255" name="swKeyword" onblur="bSearchBoxBool=false;" onfocus="bSearchBoxBool=true;" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" type="text">
                 <button class="searchSubmit" id="sitesearch" onclick="return siteSearchSubmit();" type="submit">
                   <span class="hidden">Search</span>
                 </button>
@@ -299,114 +299,20 @@
 
       <div class="site-footer__container">
         <div class="site-footer__header">
-          <h1>National Cancer Institute <span>at the National Institutes of Health</span></h1>
+          <h1>Viện ung thư quốc gia Việt Nam <span>43 Quán Sứ, Hoàn Kiếm, Hà Nội</span></h1>
         </div>
         <div class="site-footer__nav">
-          <div class="site-footer__icons">
-            <h2>FOLLOW US</h2>
-            <ul>
-              <li>
-                <a class="facebook icon" onclick="NCIAnalytics.FooterLink(this, 'Facebook');" href="#">
-                  <span class="hidden">Facebook</span> </a></li>
-              <li>
-                <a class="twitter icon" onclick="NCIAnalytics.FooterLink(this, 'Twitter');" href="#">
-                  <span class="hidden">Twitter</span> </a></li>
-              <li>
-                <a class="instagram icon no-exit-notification" onclick="NCIAnalytics.FooterLink(this, 'Instagram');" href="#">
-                  <span class="hidden">Instagram</span> </a></li>
-              <li>
-                <a class="youtube icon" onclick="NCIAnalytics.FooterLink(this, 'YouTube');" href="#">
-                  <span class="hidden">YouTube</span> </a></li>
-              <li>
-                <a class="googleplus icon" onclick="NCIAnalytics.FooterLink(this, 'Google+');" href="#">
-                  <span class="hidden">Google+</span> </a></li>
-              <li>
-                <a class="linkedin icon" onclick="NCIAnalytics.FooterLink(this, 'LinkedIn');" href="#">
-                  <span class="hidden">LinkedIn</span> </a></li>
-              <li>
-                <a class="govdelivery icon" onclick="NCIAnalytics.FooterLink(this, 'GovDelivery');" href="https://public.govdelivery.com/accounts/USNIHNCI/subscriber/new">
-                  <span class="hidden">GovDelivery</span> </a></li>
-              <li>
-                <a class="rss icon" onclick="NCIAnalytics.FooterLink(this, 'RSS');" href="https://www.cancer.gov/syndication/rss">
-                  <span class="hidden">RSS</span> </a></li>
-            </ul>
-          </div>
           <div class="site-footer__contact">
-            <h2>CONTACT INFORMATION</h2>
+            <h2>Liên hệ</h2>
             <ul>
-              <li><a onclick="NCIAnalytics.FooterLink(this, 'Contact Us');" href="https://www.cancer.gov/contact">Contact
-                Us</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'LiveHelp Chat'); window.open('https://livehelp.cancer.gov', 'LiveHelp','scrollbars=yes,resizable=yes,menubar=yes,toolbar=yes,location=yes,width=650,height=600'); return false;" href="https://livehelp.cancer.gov/">LiveHelp
-                  Online Chat</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__info">
-            <h2>MORE INFORMATION</h2>
-            <ul>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'About Website');" href="https://www.cancer.gov/about-website">About
-                  This Website</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Cancer.gov en Espanol');" href="https://www.cancer.gov/espanol">Cancer.gov
-                  en español</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Multimedia');" href="https://www.cancer.gov/multimedia">Multimedia</a>
-              </li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Publications');" href="https://www.cancer.gov/publications">Publications</a>
-              </li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Site Map');" href="https://www.cancer.gov/about-website/sitemap">Site
-                  Map</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Digital Standards');" href="https://www.cancer.gov/digital-standards">Digital
-                  Standards for NCI Websites</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__policies">
-            <h2>POLICIES</h2>
-            <ul>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Accessibility');" href="https://www.cancer.gov/policies/accessibility">Accessibility</a>
-              </li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Comments');" href="https://www.cancer.gov/policies/comments">Comment
-                  Policy</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Disclaimer');" href="https://www.cancer.gov/policies/disclaimer">Disclaimer</a>
-              </li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'FOIA');" href="https://www.cancer.gov/policies/foia">FOIA</a>
-              </li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Privacy and Security');" href="https://www.cancer.gov/policies/privacy-security">Privacy &amp;
-                  Security</a></li>
-              <li>
-                <a onclick="NCIAnalytics.FooterLink(this, 'Reuse');" href="https://www.cancer.gov/policies/copyright-reuse">Reuse &amp;
-                  Copyright</a></li>
-              <li><a onclick="NCIAnalytics.FooterLink(this, 'Syndication');" href="https://www.cancer.gov/syndication">Syndication
-                Services</a></li>
-              <li><a onclick="NCIAnalytics.FooterLink(this, 'Linking');" href="https://www.cancer.gov/policies/linking">Website
-                Linking</a></li>
+              <li>Điện thoại: 024 9365524</li>
+              <li>Fax: 024 9365524</li>
+              <li>Email: vnnci2017@gmail.com</li>
             </ul>
           </div>
         </div>
-        <div class="site-footer__agencies">
-          <ul>
-            <li><a onclick="NCIAnalytics.FooterLink(this, 'HHS');" href="http://www.hhs.gov/">U.S. Department of Health
-              and Human Services</a></li>
-            <li><a onclick="NCIAnalytics.FooterLink(this, 'NIH');" href="http://www.nih.gov/">National Institutes of
-              Health</a></li>
-            <li><a onclick="NCIAnalytics.FooterLink(this, 'NCI');" href="https://www.cancer.gov/">National Cancer
-              Institute</a></li>
-            <li><a onclick="NCIAnalytics.FooterLink(this, 'USA.gov');" href="http://usa.gov/">USA.gov</a></li>
-          </ul>
-        </div>
-        <div class="site-footer__tagline">
-          <h4>NIH ... Turning Discovery Into Health <sup>®</sup></h4>
-        </div>
-        <a class="back-to-top" href="#top">TOP</a></div>
+        <a class="back-to-top" href="#top">Lên đầu</a>
+      </div>
 
     </div>
   </div>
