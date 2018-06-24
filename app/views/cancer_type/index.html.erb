@@ -25,16 +25,18 @@
   </div>
 
   <!-- CARD CONTAINER -->
+  <% alphabet_array = ['A', 'Ă', 'Â', 'B', 'C', 'D', 'Đ', 'E', 'Ê', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'Ô', 'Ơ', 'Q', 'R', 'S', 'T', 'U', 'Ư', 'V', 'X', 'Y'] %>
   <div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
     <div class="contentid-919848 slot-item only-SI">
       <div class="rawHtml">
         <div class="row">
           <div class="large-12 columns">
-            <p>Sử dụng bảng chữ cái để tìm thông tin về một loại ung thư cụ thể. (Danh sách bẳng <a href="/en/types">tiếng Anh</a>.)</p>
+            <p>Sử dụng bảng chữ cái để tìm thông tin về một loại ung thư cụ thể. (Danh sách bẳng
+              <a href="/en/types">tiếng Anh</a>.)</p>
             <div class="az-list">
               <ul>
                 <% cancer_letters = @cancer_types_alphabetical.keys %>
-                <% ('A'..'Z').each do |letter| %>
+                <% alphabet_array.each do |letter| %>
                   <% if cancer_letters.include?(letter) %>
                     <li><a href="#<%= letter.downcase %>"><%= letter %></a></li>
                   <% else %>
@@ -44,7 +46,8 @@
               </ul>
             </div>
             <div class="callout-box-right">
-              <p>Hiện tại có hơn 100 loại ung thư. Tên của loại ung thư được đặt theo mô hoặc cơ quan ung thư hình thành, nhưng đội khi chúng cũng được đặt theo tên tế bào tạo nên chúng. </p>
+              <p>Hiện tại có hơn 100 loại ung thư. Tên của loại ung thư được đặt theo mô hoặc cơ quan ung thư hình
+                thành, nhưng đội khi chúng cũng được đặt theo tên tế bào tạo nên chúng. </p>
             </div>
             <% @cancer_types_alphabetical.each do |letter, cancer_types| %>
               <h3 id="<%= letter.downcase %>" tabindex="0"><%= letter %></h3>

@@ -121,7 +121,8 @@
           </h2>
 
           <ul class="cancer-types">
-            <% ('A'..'Z').each do |letter| %>
+            <% alphabet_array = ['A', 'Ă', 'Â', 'B', 'C', 'D', 'Đ', 'E', 'Ê', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'Ô', 'Ơ', 'Q', 'R', 'S', 'T', 'U', 'Ư', 'V', 'X', 'Y'] %>
+            <% alphabet_array.each do |letter| %>
               <% if @available_letters.include?(letter) %>
                 <li><%= link_to letter, "/types/##{letter}" %></li>
               <% else %>
