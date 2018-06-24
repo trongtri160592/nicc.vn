@@ -2,11 +2,11 @@ class WelcomeController < ApplicationController
   def index
     if I18n.locale == :en
       cancer_types_alphabetical = CancerType.order(:name_english)
-                                      .group_by {|cancer_type| cancer_type.name_english[0].upcase}
+                                      .group_by {|cancer_type| cancer_type.name_english.strip[0].upcase}
       @available_letters = cancer_types_alphabetical.keys
     else
       cancer_types_alphabetical = CancerType.order(:name)
-                                      .group_by {|cancer_type| cancer_type.name[0].upcase}
+                                      .group_by {|cancer_type| cancer_type.name.strip[0].upcase}
       @available_letters = cancer_types_alphabetical.keys
     end
     @featured_news = News.where(featured: 1).first(3)
