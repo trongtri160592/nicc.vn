@@ -1,0 +1,87 @@
+<div class="row general-page-body-container collapse">
+  <div class="row">
+    <!--    SECTION NAVIGATION -->
+
+    <!--    END SECTION NAVIGATION -->
+    <div class="medium-9 columns contentzone" id="main" tabindex="0" role="main">
+      <!-- ********************************* BEGIN Page Content ********************************** -->
+      <article>
+
+        <!-- PUBLIC ARCHIVE BANNER -->
+        <div id="cgvPublicArchiveBannerSl" class="row collapse">
+          <div class="contentid-172410 slot-item only-SI large-12 columns">
+
+          </div>
+        </div>
+        <!-- END PUBLIC ARCHIVE BANNER -->
+
+
+        <!-- BANNER SLOT -->
+
+        <!-- END BANNER SLOT -->
+
+        <div class="resize-content">
+
+          <!-- PAGE TITLE -->
+          <h1><span>Search results</span></h1>
+
+          <!-- END PAGE TITLE -->
+
+
+          <div id="cgvBody">
+            <div class="contentid-16400 slot-item first-SI">
+            </div>
+            <div class="contentid-16400 slot-item last-SI">
+              <!-- Main Area -->
+              <div class="results">
+                <!-- Main Content Area -->
+                <!-- Results x-y of z for: Keyword -->
+                <div class="sitewide-results">
+                  <h4>
+                    <% if @search_results.size != 0 %>
+                      <span id="ctl34_lblTopResultsXofY">Results <span class="results-range"><%= (@search_results.offset + 1).to_s + '-' + (@search_results.offset + @search_results.size).to_s %></span> of <span class="results-num"><%= @search_results.total_entries %></span> for:</span>
+                    <% else %>
+                      <span>There's no results for:</span>
+                    <% end %>
+                    <span class="term"><span id="ctl34_lblTopResultsXofYKeyword"><%= params[:swKeyword] %></span></span>
+                  </h4>
+
+                  <!-- Error message, used to be ResultsView -->
+
+
+                  <div id="ctl34_rptResults">
+
+                    <div class="sitewide-list">
+                      <ul class="no-bullets">
+                        <% @search_results.each do |research_result| %>
+                          <li>
+                            <div>
+                              <% if research_result[0] == 'Cancer_type' %>
+                                <%= link_to research_result[2], cancer_type_detail_path(id: research_result[1]) %>
+                              <% elsif research_result[0] == 'News' %>
+                                <%= link_to research_result[2], news_details_path(id: research_result[1]) %>
+                              <% elsif research_result[0] == 'Research' %>
+                                <%= link_to research_result[2], research_details_path(id: research_result[1]) %>
+                              <% end %>
+                            </div>
+                            <div class="description">
+                              <%= Nokogiri::HTML.parse(research_result[3]).css('p').first.text.html_safe + "[...]" %>
+                            </div>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Main Area -->
+
+            </div>
+          </div>
+        </div>
+      </article>
+      <%= will_paginate @search_results, class: 'flickr_pagination' %>
+      <!-- ********************************* END Page Content ********************************** -->
+    </div> <!-- END Main -->
+  </div> <!-- END "row" -->
+</div>

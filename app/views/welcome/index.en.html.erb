@@ -135,7 +135,7 @@
           <ul class="cancer-types">
             <% ('A'..'Z').each do |letter| %>
               <% if @available_letters.include?(letter) %>
-                <li><%= link_to letter, "/types/##{letter}" %></li>
+                <li><%= link_to letter, "/en/types/##{letter}" %></li>
               <% else %>
                 <li><span><%= letter %></span></li>
               <% end %>
@@ -226,7 +226,7 @@
           <div class="contentid-941434 slot-item only-SI">
 
             <div class="feature-card cgvTopicPage">
-              <a href="/person">
+              <a href="<%= person_path %>">
                 <div class="image-hover">
                   <%= image_tag 'leadership.jpg', alt: "Lãnh đạo" %>
                 </div>

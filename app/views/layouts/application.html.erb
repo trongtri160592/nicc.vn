@@ -159,7 +159,7 @@
                   <% ResearchCategory.all.each do |category| %>
                     <li class="lvl-2 has-children">
                       <div class="nav-item-title">
-                        <%= link_to category.name, research_category_path(id: category.id) %>>
+                        <%= link_to category.name, research_category_path(id: category.id) %>
                       </div>
                     </li>
                   <% end %>
@@ -272,13 +272,11 @@
         <div class="contentid-911752 slot-item last-SI">
           <div class="rawHtml">
             <div class="search" role="search">
-              <form action="#" method="post" id="siteSearchForm" name="siteSearchForm" onsubmit="NCIAnalytics.SiteWideSearch(this);">
-                <label class="hidden" for="swKeyword">Search</label>
-                <input placeholder="Tìm kiếm" class="searchString ui-autocomplete-input" id="swKeyword" maxlength="255" name="swKeyword" onblur="bSearchBoxBool=false;" onfocus="bSearchBoxBool=true;" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" type="text">
-                <button class="searchSubmit" id="sitesearch" onclick="return siteSearchSubmit();" type="submit">
-                  <span class="hidden">Search</span>
-                </button>
-              </form>
+              <%= form_tag search_path, method: :get, id: 'siteSearchForm' do %>
+                <%= label_tag :swKeyword, 'Search', class: 'hidden' %>
+                <%= text_field_tag :swKeyword, params[:term], class: 'searchString ui-autocomplete-input', id: 'swKeyword', max_length: 255, placeholder: 'Tìm kiếm' %>
+                <%= submit_tag '<span class="hidden">Search</span>'.html_safe, id: 'sitesearch', class: 'searchSubmit' %>
+              <% end %>
             </div>
           </div>
         </div>

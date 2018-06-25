@@ -69,5 +69,10 @@ Rails.application.routes.draw do
     # About
     get '/about-us', to: 'about#summary', as: 'about_summary'
     get '/about-us/responsibilities', to: 'about#responsibilities', as: 'about_responsibilities'
+
+    # Search
+    get '/search(.:format)', to: 'search#result', as: 'search'
+
+    get '*path' => redirect('/')
   end
 end
