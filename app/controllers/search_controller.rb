@@ -68,7 +68,7 @@ class SearchController < ApplicationController
     # end
 
     params[:page] ||= 1
-    @search_results = Search.query_report(page: Integer(params[:page]), per_page: 1, swKeyword: params[:swKeyword])
+    @search_results = Search.query_report(page: Integer(params[:page]), per_page: 10, swKeyword: params[:swKeyword])
   end
 
 end
