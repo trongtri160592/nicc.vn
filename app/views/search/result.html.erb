@@ -39,7 +39,7 @@
                 <div class="sitewide-results">
                   <h4>
                     <% if @search_results.size != 0 %>
-                      <span id="ctl34_lblTopResultsXofY">Kết quả <span class="results-range"><%= (@search_results.offset + 1).to_s + '-' + (@search_results.offset + @search_results.size).to_s %></span> trong số <span class="results-num"><%= @search_results.total_entries %></span> kết quả cho:</span>
+                      <span id="ctl34_lblTopResultsXofY">Kết quả <span class="results-range"><%= (@search_results.offset + 1).to_s + '-' + (@search_results.offset + @search_results.size).to_s %></span> trong số <span class="results-num"><%= @search_results.total_count %></span> kết quả cho:</span>
                     <% else %>
                       <span>Không có kết quả nào cho:</span>
                     <% end %>
@@ -56,16 +56,16 @@
                         <% @search_results.each do |research_result| %>
                           <li>
                             <div>
-                              <% if research_result[0] == 'Cancer_type' %>
-                                <%= link_to research_result[2], cancer_type_detail_path(id: research_result[1]) %>
-                              <% elsif research_result[0] == 'News' %>
-                                <%= link_to research_result[2], news_details_path(id: research_result[1]) %>
-                              <% elsif research_result[0] == 'Research' %>
-                                <%= link_to research_result[2], research_details_path(id: research_result[1]) %>
+                              <% if research_result.searchable_type == 'Cancer_type' %>
+                                <%= link_to research_result.title, cancer_type_detail_path(id: research_result.searchable_id) %>
+                              <% elsif research_result.searchable_type == 'News' %>
+                                <%= link_to research_result.title, news_details_path(id: research_result.searchable_id) %>
+                              <% elsif research_result.searchable_type == 'Research' %>
+                                <%= link_to research_result.title, research_details_path(id: research_result.searchable_id) %>
                               <% end %>
                             </div>
                             <div class="description">
-                              <%= Nokogiri::HTML.parse(research_result[3]).css('p').first.text.html_safe + "[...]" %>
+                              <%= Nokogiri::HTML.parse(research_result.description).css('p').first.text.html_safe + "[...]" %>
                             </div>
                           </li>
                         <% end %>

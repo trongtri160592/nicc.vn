@@ -56,16 +56,16 @@
                         <% @search_results.each do |research_result| %>
                           <li>
                             <div>
-                              <% if research_result[0] == 'Cancer_type' %>
-                                <%= link_to research_result[2], cancer_type_detail_path(id: research_result[1]) %>
-                              <% elsif research_result[0] == 'News' %>
-                                <%= link_to research_result[2], news_details_path(id: research_result[1]) %>
-                              <% elsif research_result[0] == 'Research' %>
-                                <%= link_to research_result[2], research_details_path(id: research_result[1]) %>
+                              <% if research_result.searchable_type == 'Cancer_type' %>
+                                <%= link_to research_result.title_english, cancer_type_detail_path(id: research_result.searchable_id) %>
+                              <% elsif research_result.searchable_type == 'News' %>
+                                <%= link_to research_result.title_english, news_details_path(id: research_result.searchable_id) %>
+                              <% elsif research_result.searchable_type == 'Research' %>
+                                <%= link_to research_result.title_english, research_details_path(id: research_result.searchable_id) %>
                               <% end %>
                             </div>
                             <div class="description">
-                              <%= Nokogiri::HTML.parse(research_result[3]).css('p').first.text.html_safe + "[...]" %>
+                              <%= Nokogiri::HTML.parse(research_result.description_english).css('p').first.text.html_safe + "[...]" %>
                             </div>
                           </li>
                         <% end %>

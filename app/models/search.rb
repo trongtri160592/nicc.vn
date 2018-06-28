@@ -1,8 +1,8 @@
 class Search
-	# original SQL
-	def self.query_report_sql(keyword = '')
-	  @query_report_sql ||=
-		%(SELECT * FROM (
+  # original SQL
+  def self.query_report_sql(keyword = '')
+    @query_report_sql =
+        %(SELECT * FROM (
 			SELECT
 				cancer_type.id AS searchable_id,
 				'Cancer_type' AS searchable_type,
@@ -38,77 +38,81 @@ class Search
 			FROM research
 			) as search where relevance > 0 ORDER BY relevance DESC
 		)
-	end
+  end
 
-	# paginatable SQL
-	def self.query_report_paginate_sql(keyword)
-	  @query_report_paginate_sql ||=
-		%(
+  # paginatable SQL
+  def self.query_report_paginate_sql(keyword)
+    @query_report_paginate_sql =
+        %(
 		  SELECT *
 		  FROM (#{query_report_sql(keyword)}) AS paginatable
 		  LIMIT :limit OFFSET :offset
 		)
-	end
+  end
 
-	# count all records SQL
-	def self.query_report_total_count_sql(keyword: '')
-	  @query_report_total_count_sql ||=
-		%(
+  # count all records SQL
+  def self.query_report_total_count_sql(keyword: '')
+    @query_report_total_count_sql =
+        %(
 		  SELECT COUNT(*) AS count
 		  FROM (#{query_report_sql(keyword)}) AS paginatable
 		)
-	end
+  end
 
-	def self.query_report(page: 1, per_page: 10, swKeyword: '')
-	  @offset = offset(page, per_page)
-	  records =
-		Research.find_by_sql(
-		  [
-			query_report_paginate_sql(swKeyword),
-			{
-			  limit: per_page,
-			  offset: @offset
-			}
-		  ]
-		)
-	  records
-		.instance_variable_set(:@page, page)
-	  records
-		.instance_variable_set(:@per_page, per_page)
-	  records
-		.instance_variable_set(:@query_report_total_count_sql,
-							   query_report_total_count_sql)
+  def self.query_report(page: 1, per_page: 10, swKeyword: '')
+    @offset = offset(page, per_page)
+    records =
+        Research.find_by_sql(
+            [
+                query_report_paginate_sql(swKeyword),
+                {
+                    limit: per_page,
+                    offset: @offset
+                }
+            ]
+        )
+    records
+        .instance_variable_set(:@page, page)
+    records
+        .instance_variable_set(:@per_page, per_page)
+    records
+        .instance_variable_set(:@query_report_total_count_sql,
+                               query_report_total_count_sql(keyword: swKeyword))
 
-	  add_pagination_methods(records)
+    add_pagination_methods(records)
 
-	  records
-	end
+    records
+  end
 
-	def self.add_pagination_methods(records)
-	  records.instance_eval do
-		def total_count
-		  @total_count ||=
-			CancerType
-			.find_by_sql(@query_report_total_count_sql)
-			.first
-			.count
-		end
+  def self.add_pagination_methods(records)
+    records.instance_eval do
+      def total_count
+        @total_count ||=
+            Research.find_by_sql(@query_report_total_count_sql).first.count
+      end
 
-		def total_pages
-		  @total_pages ||= (total_count * 1.0 / @per_page).ceil.to_i
-		end
-		
-		def offset
-		  (@page - 1) * @per_page
-		end
-		
-	  end
-	end
+      def total_entries
+        total_count
+      end
 
-	private
+      def total_pages
+        @total_pages = (total_count * 1.0 / @per_page).ceil.to_i
+      end
 
-	def self.offset(page, per_page)
-	  (page - 1) * per_page
-	end
+      def offset
+        (@page - 1) * @per_page
+      end
+
+      def current_page
+        @page
+      end
+    end
+  end
+
+  private
+
+  def self.offset(page, per_page)
+    (page - 1) * per_page
+  end
 
 end
