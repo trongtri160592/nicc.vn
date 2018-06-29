@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "description_english"
     t.text "description"
     t.integer "is_common", limit: 1, default: 0, null: false
+    t.index ["name_english", "name"], name: "index2", type: :fulltext
   end
 
   create_table "event", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
@@ -27,16 +28,32 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "leadership", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "position", limit: 50
+    t.string "position_english", limit: 50
   end
 
-  create_table "news", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "title", limit: 45
+  create_table "news", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+    t.string "title"
     t.text "content"
+    t.text "content_english"
+    t.string "title_english"
+    t.timestamp "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.string "thumbnail"
+    t.integer "featured", limit: 1, default: 0
+    t.index ["title", "title_english"], name: "index2", type: :fulltext
   end
 
-  create_table "person", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "partner", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "logo", null: false
+    t.string "website"
+  end
+
+  create_table "person", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name", limit: 45
     t.integer "leadership_id", null: false
+    t.string "portrait"
+    t.text "background"
+    t.text "background_english"
     t.index ["leadership_id"], name: "fk_person_leadership_idx"
   end
 
@@ -44,9 +61,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "title", limit: 45
     t.text "description"
     t.integer "research_category_id", null: false
-    t.date "release_date", null: false
+    t.date "release_date"
     t.text "description_english"
     t.index ["research_category_id"], name: "fk_research_research_category1_idx"
+    t.index ["title"], name: "index3", type: :fulltext
   end
 
   create_table "research_category", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
