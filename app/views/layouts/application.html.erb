@@ -275,7 +275,7 @@
               <%= form_tag search_path, method: :get, id: 'siteSearchForm' do %>
                 <%= label_tag :swKeyword, 'Search', class: 'hidden' %>
                 <%= text_field_tag :swKeyword, params[:term], class: 'searchString ui-autocomplete-input', id: 'swKeyword', max_length: 255, placeholder: 'Tìm kiếm' %>
-                <%= submit_tag '<span class="hidden">Search</span>'.html_safe, id: 'sitesearch', class: 'searchSubmit' %>
+                <%= submit_tag '<span class="hidden">Search</span>'.html_safe, id: 'sitesearch', class: 'searchSubmit', name: nil %>
               <% end %>
             </div>
           </div>
