@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     # Create user
-    get '/signup', to: 'user#new'
-    post '/signup', to: 'user#create'
+    # get '/signup', to: 'user#new'
+    # post '/signup', to: 'user#create'
 
     # login, logout
     get '/admin', to: 'sessions#new'
