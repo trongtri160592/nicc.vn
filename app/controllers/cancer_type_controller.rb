@@ -4,10 +4,10 @@ class CancerTypeController < ApplicationController
 
   def index
     if I18n.locale == :en
-      @cancer_types_alphabetical = CancerType.all.order(:name_english)
+      @cancer_types_alphabetical = CancerType.where.not(name_english: [nil, '']).order(:name_english)
                                    .group_by{ |cancer_type| cancer_type.name_english.strip[0].upcase }
     else
-      @cancer_types_alphabetical = CancerType.order(:name)
+      @cancer_types_alphabetical = CancerType.where.not(name: [nil, '']).order(:name)
                                    .group_by{ |cancer_type| cancer_type.name.strip[0].upcase }
     end
   end
