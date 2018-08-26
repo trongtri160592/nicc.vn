@@ -6471,7 +6471,7 @@ button.nav-search:before {
 
 .site-footer {
     background: #123e57 url(/publishedcontent/images/images/design-elements/background-graphics/hexagon_molecular_structure_footer.__v15259683.png) no-repeat -120% 150px;
-    padding: 1em 0
+    padding: 0 0
 }
 
 .site-footer * {
@@ -6482,14 +6482,14 @@ button.nav-search:before {
 }
 
 .site-footer h2 {
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
     font-weight: 400;
-    margin-bottom: 1em
+    margin-bottom: 0em
 }
 
 .site-footer a {
-    font-weight: 700
+    font-weight: 500
 }
 
 .site-footer a:focus, .site-footer a:hover {
@@ -6498,7 +6498,7 @@ button.nav-search:before {
 }
 
 .related-resources .site-footer h6, .site-footer .related-resources h6, .site-footer h4 {
-    font-size: 16px
+    font-size: 14px
 }
 
 .site-footer__container {
@@ -6521,13 +6521,13 @@ button.nav-search:before {
 
 .site-footer__header h1 {
     font-family: Roboto, Arial, sans-serif;
-    font-size: 23px
+    font-size: 20px
 }
 
 .site-footer__header h1 span {
     font-family: Roboto, Arial, sans-serif;
     display: block;
-    font-size: 16px
+    font-size: 14px
 }
 
 .site-footer__nav {
@@ -6535,7 +6535,7 @@ button.nav-search:before {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin: 1em auto
+    margin: 0em auto
 }
 
 .site-footer__nav, .site-footer__nav ul {
@@ -6551,8 +6551,8 @@ button.nav-search:before {
 
 .site-footer__nav li {
     width: 100%;
-    margin-bottom: 1em;
-    line-height: 1.3em
+    margin-bottom: 0.5em;
+    line-height: 1em
 }
 
 .site-footer__icons {
@@ -6700,7 +6700,7 @@ button.nav-search:before {
     }
 
     .site-footer__header {
-        margin: .9375em
+        margin: .0em
     }
 
     .site-footer__header * {
@@ -6713,7 +6713,7 @@ button.nav-search:before {
 
     .site-footer__nav {
         max-width: 100%;
-        margin: .9375em;
+        margin: .0em;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -11343,7 +11343,7 @@ html[lang=es] .nav-menu .nav-item.item-6 {
         padding: 14px 7px 7.5px;
         margin: 0;
         border-bottom: 7px solid transparent;
-        font-size: 14px;
+        font-size: 13px;
         font-family: Roboto, Arial, sans-serif;
         text-transform: uppercase;
         text-align: center;
@@ -11468,6 +11468,14 @@ html[lang=es] .nav-menu .nav-item.item-6 {
 
     .sub-nav-group ul li a:focus, .sub-nav-group ul li a:hover {
         text-decoration: underline
+    }
+
+    .sub-nav-group-item {
+        color: #2f2f2f;
+    }
+
+    .sub-nav-group-item:focus, .sub-nav-group-item:hover {
+        text-decoration: underline;
     }
 
     .mega-menu-scroll {

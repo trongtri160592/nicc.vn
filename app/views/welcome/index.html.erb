@@ -4,10 +4,10 @@
   <div id="nvcgSlHeroHeader" class="row hero-slot">
     <div class="contentid-898668 slot-item only-SI large-12 columns hero">
       <div class="rawHtml">
-        <div class="row">
-          <div class="hero-text columns large-12">
-            <p>Viện ung thư quốc gia là trung tâm hàng đầu Việt Nam về nghiên cứu và điều trị ung thư</p></div>
-        </div>
+<!--        <div class="row">-->
+<!--          <div class="hero-text columns large-12">-->
+<!--            <p>Viện ung thư quốc gia là trung tâm hàng đầu Việt Nam về nghiên cứu và điều trị ung thư</p></div>-->
+<!--        </div>-->
         <picture>
           <!--            <source media="(max-width: 1024px)" srcset="/PublishedContent/Images/images/design-elements/heroes/Hero_image_home_tablet.__v1.jpg">-->
           <%= image_tag 'Hero_image_home_desktop.jpg' %>
@@ -67,7 +67,7 @@
                 <div class="image-hover">
                   <img src="<%= featured_news.thumbnail.url %>" alt="" style="width: 100%;">
                 </div>
-                <h3><%= featured_news.title %></h3>
+                <p><%= featured_news.title %></p>
               </a>
             </div>
 
@@ -85,7 +85,7 @@
       <div id="ctl35_nvcgSlLayoutGuideB" class="nvcgSlLayoutGuideB row guide-card guide-card--home flex-columns">
         <div class="contentid-896094 slot-item first-SI equalheight large-4 columns card gutter">
 
-          <h2>
+          <h2 style="color: #069;">
             Đề tài nghiên cứu
           </h2>
 
@@ -98,7 +98,7 @@
         </div>
         <div class="contentid-896095 slot-item equalheight large-4 columns card gutter">
 
-          <h2>
+          <h2 style="color: #069;">
             Giới thiệu
           </h2>
 
@@ -116,7 +116,7 @@
         </div>
         <div class="contentid-896096 slot-item last-SI equalheight large-4 columns card gutter">
 
-          <h2>
+          <h2 style="color: #069;">
             Tìm kiếm loại ung thư
           </h2>
 
@@ -136,59 +136,61 @@
     </div>
     <!-- END CARDS ROW -->
   </div>
-  <div class="contentid-1026939 slot-item">
-    <div class="rawHtml"><!-- Begin Social Media row -->
+<!--  <div class="contentid-1026939 slot-item">-->
+  <!-- Begin Social Media row -->
+<!--    <div class="rawHtml">-->
 
-      <div class="row social-media-title">
-        <h2>Mạng xã hội</h2>
-      </div>
-      <div class="social-media-row row">
-        <div class="social-media-card">
-          <div class="social-media-icon">
-            <a href="#"><%= image_tag 'twitter-circle-icon.svg', alt: 'Twitter logo' %> </a>
-          </div>
-          <div class="social-media-text">
-            <h3>
-              <a href="#">Twitter</a>
-            </h3>
-          </div>
-        </div>
-        <div class="social-media-card">
-          <div class="social-media-icon">
-            <a href="#"><%= image_tag 'facebook-circle-icon.svg', alt: 'Facebook logo' %></a>
-          </div>
-          <div class="social-media-text">
-            <h3>
-              <a href="#">Facebook</a>
-            </h3>
+<!--      <div class="row social-media-title">-->
+<!--        <h2>Mạng xã hội</h2>-->
+<!--      </div>-->
+<!--      <div class="social-media-row row">-->
+<!--        <div class="social-media-card">-->
+<!--          <div class="social-media-icon">-->
+<!--            <a href="#"><%#= image_tag 'twitter-circle-icon.svg', alt: 'Twitter logo' %> </a>-->
+<!--          </div>-->
+<!--          <div class="social-media-text">-->
+<!--            <h3>-->
+<!--              <a href="#">Twitter</a>-->
+<!--            </h3>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="social-media-card">-->
+<!--          <div class="social-media-icon">-->
+<!--            <a href="#"><%#= image_tag 'facebook-circle-icon.svg', alt: 'Facebook logo' %></a>-->
+<!--          </div>-->
+<!--          <div class="social-media-text">-->
+<!--            <h3>-->
+<!--              <a href="#">Facebook</a>-->
+<!--            </h3>-->
 
-          </div>
-        </div>
-        <div class="social-media-card">
-          <div class="social-media-icon">
-            <a href="#"><%= image_tag 'linkedin-circle-icon.svg', alt: 'Linkedin logo' %></a>
-          </div>
-          <div class="social-media-text">
-            <h3>
-              <a href="#">LinkedIn</a>
-            </h3>
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="social-media-card">-->
+<!--          <div class="social-media-icon">-->
+<!--            <a href="#"><%#= image_tag 'linkedin-circle-icon.svg', alt: 'Linkedin logo' %></a>-->
+<!--          </div>-->
+<!--          <div class="social-media-text">-->
+<!--            <h3>-->
+<!--              <a href="#">LinkedIn</a>-->
+<!--            </h3>-->
 
-          </div>
-        </div>
-        <div class="social-media-card">
-          <div class="social-media-icon">
-            <a href="#"><%= image_tag 'instagram-circle-icon.svg', alt: 'Instagram logo' %></a>
-          </div>
-          <div class="social-media-text">
-            <h3>
-              <a href="#">Instagram</a>
-            </h3>
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="social-media-card">-->
+<!--          <div class="social-media-icon">-->
+<!--            <a href="#"><%#= image_tag 'instagram-circle-icon.svg', alt: 'Instagram logo' %></a>-->
+<!--          </div>-->
+<!--          <div class="social-media-text">-->
+<!--            <h3>-->
+<!--              <a href="#">Instagram</a>-->
+<!--            </h3>-->
 
-          </div>
-        </div>
-      </div>
-      <!-- End Social Media row --></div>
-  </div>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      </div>-->
+  <!-- End Social Media row -->
+<!--  </div>-->
   <div class="contentid-896097 slot-item">
 
     <!-- BEGIN MULTIMEDIA, SECONDARY FEATURE ROW -->
@@ -198,7 +200,7 @@
           <div class="multimedia-feature-card $content_type">
             <figure class="video  ">
               <div id="ytplayer-mufb0Hx2438" class="flex-video widescreen" data-video-id="mufb0Hx2438">
-                <iframe allowfullscreen="" src="https://www.youtube.com/embed/TVSf25AIVrE" frameborder="0"></iframe>
+                <iframe allowfullscreen="" src="https://www.youtube.com/embed/n18vcuTislQ" frameborder="0"></iframe>
               </div>
             </figure>
             <p>Thông tin về viện ung thư quốc gia.</p>
@@ -213,7 +215,7 @@
                 <div class="image-hover">
                   <%= image_tag 'leadership.jpg', alt: "Lãnh đạo" %>
                 </div>
-                <h3>Lãnh đạo cấp cao</h3>
+                <h3>Ban lãnh đạo</h3>
                 <p>Thông tin về các lãnh đạo đương nhiệm và tiền nhiệm của viện.</p>
               </a>
             </div>
@@ -230,7 +232,7 @@
     <div class="rawHtml">
       <div class="row carousel-title">
         <div class="large-6 columns">
-          <h2>Đối tác</h2>
+          <h2 style="color: #069;">Đối tác</h2>
         </div>
         <div class="large-6 columns arrows arrows-for-other-nci-sites clearfix">
           <button type="button" class="previous">
