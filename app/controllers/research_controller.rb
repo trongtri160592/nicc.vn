@@ -75,6 +75,6 @@ class ResearchController < ApplicationController
   private
 
   def research_params
-    params.require(:research).permit(:title, :description, :description_english, :research_category_id)
+    params.require(:research).permit(:title, :title_english, :description, :description_english, :research_category_id)
   end
 end

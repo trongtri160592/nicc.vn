@@ -13,6 +13,9 @@
     <%= f.label :title, "Tiêu đề" %> </br>
     <%= f.text_field :title, class: "form-control" %> </br>
 
+    <%= f.label :title_english, "Title" %> </br>
+    <%= f.text_field :title_english, class: "form-control" %> </br>
+
     <%= f.label :research_category, "Phân loại nghiên cứu" %></br>
     <%= f.collection_select :research_category_id, ResearchCategory.all, :id, :name, {}, {class: "form_control"} %> </br>
 
