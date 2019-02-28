@@ -24,6 +24,10 @@
         <div class="list-group">
           <a class="list-group-item" href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Trang chủ</a>
           <a class="list-group-item
+            <% if manage_category == "about" %> active
+            <% end %>" href="/manage-about"><i class="fa fa-allergies fa-fw" aria-hidden="true"></i>&nbsp;
+            Giới thiệu</a>
+          <a class="list-group-item
             <% if manage_category == "type" %> active
             <% end %>" href="/manage-content"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp;
             Các loại ung thư</a>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_12_054806) do
+ActiveRecord::Schema.define(version: 2019_02_28_161154) do
 
   create_table "cancer_type", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name_english", limit: 500, null: false
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2019_01_12_054806) do
   create_table "event", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "title", limit: 45
     t.text "content"
+  end
+
+  create_table "introduction", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "responsibility"
+    t.text "responsibility_en"
+    t.text "summary"
+    t.text "summary_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "leadership", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|

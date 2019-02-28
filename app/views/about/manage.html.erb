@@ -1,0 +1,106 @@
+<% if !@introduction.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @introduction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+<div id="responsibility_hidden" style="display: none;">
+  <%= @introduction.responsibility %>
+</div>
+<div id="english_responsibility_hidden" style="display: none;">
+  <%= @introduction.responsibility_en %>
+</div>
+<div id="summary_hidden" style="display: none;">
+  <%= @introduction.summary %>
+</div>
+<div id="english_summary_hidden" style="display: none;">
+  <%= @introduction.summary_en %>
+</div>
+
+<div id="content-new-form">
+  <%= form_for @introduction, url: about_update_path, method: :post do |f| %>
+    <%= f.label :responsibility, "Chức năng và nhiệm vụ" %> </br>
+    <%= f.text_area :responsibility, class: "form-control" %> </br>
+
+    <%= f.label :responsibility_en, "Responsiblities" %> </br>
+    <%= f.text_area :responsibility_en, class: "form-control" %> </br>
+
+    <%= f.label :summary, "Giới thiệu chung" %> </br>
+    <%= f.text_area :summary, class: "form-control" %> </br>
+
+    <%= f.label :summary_en, "Summary" %> </br>
+    <%= f.text_area :summary_en, class: "content_editor" %> </br>
+
+    <%= f.submit "Cập nhật", class: "btn btn-primary", data: {disable_with: "Đang tải lên..."} %>
+    <script>
+      var responsibility = $("#responsibility_hidden").text();
+      var responsibility_en = $("#english_responsibility_hidden").text();
+      var summary = $("#summary_hidden").text();
+      var summary_en = $("#english_summary_hidden").text();
+      CKEDITOR.on('instanceReady', function (ev) {
+        CKEDITOR.instances['introduction[responsibility]'].setData(responsibility);
+        CKEDITOR.instances['introduction[responsibility_en]'].setData(responsibility_en);
+        CKEDITOR.instances['introduction[summary]'].setData(summary);
+        CKEDITOR.instances['introduction[summary_en]'].setData(summary_en);
+      });
+      CKEDITOR.replace('introduction[responsibility]', {
+        height: '400px',
+        language: 'vi',
+
+        stylesSet: [
+          {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+          {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+        ],
+
+        // Load the default contents.css file plus customizations for this sample.
+        contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+      });
+      CKEDITOR.replace('introduction[responsibility_en]', {
+        height: '400px',
+        language: 'vi',
+
+        stylesSet: [
+          {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+          {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+        ],
+
+        // Load the default contents.css file plus customizations for this sample.
+        contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+      });
+      CKEDITOR.replace('introduction[summary]', {
+        height: '400px',
+        language: 'vi',
+
+        stylesSet: [
+          {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+          {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+        ],
+
+        // Load the default contents.css file plus customizations for this sample.
+        contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+      });
+      CKEDITOR.replace('introduction[summary_en]', {
+        height: '400px',
+        language: 'vi',
+
+        stylesSet: [
+          {name: 'Narrow image', type: 'widget', widget: 'image', attributes: {'class': 'image-narrow'}},
+          {name: 'Wide image', type: 'widget', widget: 'image', attributes: {'class': 'image-wide'}}
+        ],
+
+        // Load the default contents.css file plus customizations for this sample.
+        contentsCss: [CKEDITOR.basePath + 'contents.css', 'http://sdk.ckeditor.com/samples/assets/css/widgetstyles.css'],
+
+      });
+
+    </script>
+  <% end %>
+</div>

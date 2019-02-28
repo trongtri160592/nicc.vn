@@ -69,6 +69,8 @@ Rails.application.routes.draw do
     # About
     get '/about-us', to: 'about#summary', as: 'about_summary'
     get '/about-us/responsibilities', to: 'about#responsibilities', as: 'about_responsibilities'
+    get '/manage-about', to: 'about#manage', as: 'about_manage'
+    post '/about/update', to: 'about#update', as: 'about_update'
 
     # Search
     get '/search(.:format)', to: 'search#result', as: 'search'
