@@ -47,6 +47,13 @@ Rails.application.routes.draw do
     get '/news/:id', to: 'news#details', as: 'news_details'
     get '/news/filter(/:year)', to: 'news#filter', as: 'news_filter'
 
+    # banner new, edit, update, destroy, index
+    get '/manage-banner', to: 'banner#index', as: 'banner_manage'
+    get '/banner/new', to: 'banner#new', as: 'banner_new'
+    post '/banner/new', to: 'banner#create', as: 'banner_create'
+    post '/banner/edit/:id', to: 'banner#update', as: 'banner_update'
+    delete '/banner/:id', to: 'banner#destroy', as: 'banner_destroy'
+
     # Human resources
     get '/manage-hr', to: 'person#manage', as: 'person_manage'
     get '/person/new', to: 'person#new', as: 'person_new'

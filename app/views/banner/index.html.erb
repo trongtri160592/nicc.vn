@@ -1,0 +1,24 @@
+<%= link_to ('<i class="fa fa-plus" aria-hidden="true"></i>').html_safe, banner_new_path, remote: true %> </br>
+<div class="banner-new-form"></div>
+<table class="table table-bordered table-striped">
+  <thead>.
+  <tr>
+    <th>Tên</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @banners.each do |banner| %>
+    <tr>
+      <td><%= banner.name %></td>
+      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/banner/edit/#{banner.id}", class: "btn btn-primary" %></td>
+      <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/banner/#{banner.id}", method: :delete, class: "btn btn-danger", confirm: "Bạn có chắc chắn muốn xóa '#{banner.name}'?" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<%= will_paginate @banners, class: "flickr_pagination" %>
