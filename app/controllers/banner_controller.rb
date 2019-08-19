@@ -14,6 +14,14 @@ class BannerController < ApplicationController
     end
   end
 
+  def edit
+    @banner = Banner.find_by_id(params[:id])
+    respond_to do |format|
+      format.html {}
+      format.js
+    end
+  end
+
   def create
     @banner = Banner.new(banner_params)
     if @banner.save
@@ -25,7 +33,7 @@ class BannerController < ApplicationController
 
   def update
     @banner = Banner.find_by_id(params[:id])
-    if @banner && @banner.update_attributes(cancer_type_params)
+    if @banner && @banner.update_attributes(banner_params)
       flash[:success] = "Bạn đã sửa đổi banner '#{@banner.name}' thành công"
     else
       flash[:danger] = "Bạn đã sửa đổi banner '#{@banner.name}' thất bại"

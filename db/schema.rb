@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_18_072010) do
+ActiveRecord::Schema.define(version: 2019_08_18_161947) do
 
   create_table "banner", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2019_08_18_072010) do
     t.text "description", limit: 4294967295
     t.integer "is_common", limit: 1, default: 0, null: false
     t.index ["name_english", "name"], name: "index2", type: :fulltext
+  end
+
+  create_table "course", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "name_english"
+    t.text "description"
+    t.text "description_english"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "event", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|

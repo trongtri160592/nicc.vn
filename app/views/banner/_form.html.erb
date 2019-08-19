@@ -1,13 +1,14 @@
 <div id="content-new-form">
   <%= form_for banner, url: (banner.new_record? ? banner_create_path : banner_update_path(banner.id)), method: :post do |f| %>
     <%= f.label :name, "Tên" %> </br>
-    <%= f.text_field :name, class: "form-control" %> </br>
+    <%= f.text_field :name, class: "form-control" %>
 
     <%= f.label :image, "Ảnh" %> </br>
-    <%= f.file_field :image, class: "control" %> </br>
+    <%= f.file_field :image, class: "control" %>
 
     <%= f.label :using, "Sử dụng" %>
     <%= f.check_box :using, {}, 1, 0 %> </br>
 
+    <%= f.submit "Áp dụng", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
   <% end %>
 </div>

@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     # banner new, edit, update, destroy, index
     get '/manage-banner', to: 'banner#index', as: 'banner_manage'
     get '/banner/new', to: 'banner#new', as: 'banner_new'
+    get '/banner/edit/:id', to: 'banner#edit', as: 'banner_edit'
     post '/banner/new', to: 'banner#create', as: 'banner_create'
     post '/banner/edit/:id', to: 'banner#update', as: 'banner_update'
     delete '/banner/:id', to: 'banner#destroy', as: 'banner_destroy'
@@ -72,6 +73,14 @@ Rails.application.routes.draw do
     get '/partner/edit/:id', to: 'partner#edit', as: 'partner_edit'
     post '/partner/edit/:id', to: 'partner#update'
     delete '/partner/:id', to: 'partner#destroy'
+
+    # Course
+    get '/manage-course', to: 'course#manage', as: 'course_manage'
+    get '/course/new', to: 'course#new', as: 'course_new'
+    post '/course/new', to: 'course#create'
+    get '/course/edit/:id', to: 'course#edit', as: 'course_edit'
+    post '/course/edit/:id', to: 'course#update'
+    delete '/course/:id', to: 'course#destroy'
 
     # About
     get '/about-us', to: 'about#summary', as: 'about_summary'

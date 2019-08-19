@@ -13,12 +13,14 @@
   <% @banners.each do |banner| %>
     <tr>
       <td><%= banner.name %></td>
-      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/banner/edit/#{banner.id}", class: "btn btn-primary" %></td>
+      <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/banner/edit/#{banner.id}", remote: true, class: "btn btn-primary" %></td>
       <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/banner/#{banner.id}", method: :delete, class: "btn btn-danger", confirm: "Bạn có chắc chắn muốn xóa '#{banner.name}'?" %></td>
     </tr>
   <% end %>
   </tbody>
 
 </table>
+
+<div id="banner-edit"></div>
 
 <%= will_paginate @banners, class: "flickr_pagination" %>

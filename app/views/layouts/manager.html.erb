@@ -11,8 +11,8 @@
 <body>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'/>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'/>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="/ckeditor/ckeditor.js"></script>
 <div class="container m-t-md">
   <div class="row">
@@ -48,6 +48,10 @@
              <% if manage_category == "partner" %> active
              <% end %>"
              href="/manage-partner"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Đối tác</a>
+          <a class="list-group-item
+             <% if manage_category == "course" %> active
+             <% end %>"
+             href="/manage-course"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp; Khóa học</a>
           <a class="list-group-item
              <% if manage_category == "banner" %> active
              <% end %>"
