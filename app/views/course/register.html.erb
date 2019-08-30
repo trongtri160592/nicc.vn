@@ -1,0 +1,156 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<article class="card-body mx-auto" style="max-width: 500px;">
+  <h4 class="card-title mt-3 text-center">Đăng ký khóa học</h4>
+  <p class="divider-text" style="margin-bottom: 1rem;">
+  </p>
+  <form>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+      </div>
+      <input name="" class="form-control" placeholder="Full name" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input name="" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+      </div>
+      <input name="" class="form-control" placeholder="Phone number" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+      </div>
+      <select class="form-control">
+        <option selected=""> Select job type</option>
+        <option>Designer</option>
+        <option>Manager</option>
+        <option>Accaunting</option>
+      </select>
+    </div> <!-- form-group end.// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Repeat password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->
+  </form>
+</article>
+
+<br><br>
+
+<style>
+  article {
+    margin: 0 auto;
+  }
+
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+  }
+
+  .btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+  }
+  .btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+  }
+
+   .input-group {
+     /*position: relative;*/
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     /*-ms-flex-wrap: wrap;*/
+     /*flex-wrap: wrap;*/
+     -webkit-box-align: stretch;
+     -ms-flex-align: stretch;
+     align-items: stretch;
+     width: 100%;
+   }
+
+  input[type=checkbox], input[type=file], input[type=radio], input[type=text], input[type=email], select {
+    margin: 0 0 0 0em;
+  }
+
+    .input-group-prepend {
+      margin-right: -1px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .input-group>.input-group-prepend>.input-group-text {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .input-group-text {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: .375rem .75rem;
+      margin-bottom: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #e9ecef;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+    }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+</style>

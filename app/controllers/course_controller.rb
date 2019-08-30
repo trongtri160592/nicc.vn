@@ -1,6 +1,6 @@
 class CourseController < ApplicationController
-  layout 'manager'
-  before_action :authorize
+  layout 'manager', except: [:register, :add_trainee]
+  before_action :authorize, except: [:register, :add_trainee]
 
   def manage
     @courses = Course.all
@@ -41,6 +41,19 @@ class CourseController < ApplicationController
     redirect_to course_manage_path
   end
 
+  def register
+    
+  end
+
+  def add_trainee
+    @trainee = Course.new(trainee_params)
+    if @trainee.save
+      redirect_to course_register_path, notice: "Cảm ơn bạn đã đăng ký, chúng tôi sẽ liên hệ với bạn sớm nhất có thể"
+    else
+      render 'register'
+    end
+  end
+
   protected
 
   def manage_category
@@ -51,5 +64,9 @@ class CourseController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :name_english, :description, :description_english)
+  end
+
+  def trainee_params
+    params.require(:trainee).permit(:name, :email, :phone, :job, :job_address)
   end
 end

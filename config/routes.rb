@@ -81,6 +81,7 @@ Rails.application.routes.draw do
     get '/course/edit/:id', to: 'course#edit', as: 'course_edit'
     post '/course/edit/:id', to: 'course#update'
     delete '/course/:id', to: 'course#destroy'
+    get '/course/register', to: 'course#register', as: 'course_register'
 
     # About
     get '/about-us', to: 'about#summary', as: 'about_summary'
