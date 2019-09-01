@@ -1,0 +1,19 @@
+$('#trainee-details').html(`
+<div class="modal" id="bannerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Thông tin chi tiết học viên</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" id="trainee-details-field">
+
+      </div>
+    </div>
+  </div>
+</div>
+`);
+$('#trainee-details-field').html("<%= escape_javascript(render :partial => 'course/trainee_details', locals: {trainee: @trainee}) %>");
+$('#bannerModal').modal('show');

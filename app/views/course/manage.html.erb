@@ -5,6 +5,7 @@
     <th>Tên khóa học</th>
     <th></th>
     <th></th>
+    <th>Danh sách học viên</th>
   </tr>
   </thead>
 
@@ -14,6 +15,7 @@
       <td><%= course.name %></td>
       <td><%= link_to ("<i class='fa fa-pencil-square'></i>&nbsp;Sửa").html_safe, "/course/edit/#{course.id}", class: "btn btn-primary" %></td>
       <td><%= link_to ("<i class='fa fa-trash'></i></i>&nbsp;Xóa").html_safe, "/course/#{course.id}", method: :delete, class: "btn btn-danger", confirm: "Có phải bạn muốn xóa '#{course.name}'?" %></td>
+      <td><%= link_to "Xem", trainee_list_path(id: course.id)%></td>
     </tr>
   <% end %>
   </tbody>

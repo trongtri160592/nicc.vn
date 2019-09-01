@@ -1,0 +1,28 @@
+<div class="">
+  <b>Danh sách học viên khóa học "<%= @course.name %>"</b>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>.
+  <tr>
+    <th>Tên học viên</th>
+    <th>Email</th>
+    <th>Số điện thoại</th>
+    <th>Chi tiết</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @trainees.each do |trainee| %>
+    <tr>
+      <td><%= trainee.name %></td>
+      <td><%= trainee.email %></td>
+      <td><%= trainee.phone %></td>
+      <td><%= link_to "Xem", trainee_details_path(id: trainee.id), remote: true %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<div id="trainee-details">
+</div>

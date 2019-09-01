@@ -42,16 +42,31 @@ class CourseController < ApplicationController
   end
 
   def register
-    
+    @trainee = Trainee.new
   end
 
   def add_trainee
-    @trainee = Course.new(trainee_params)
-    if @trainee.save
-      redirect_to course_register_path, notice: "Cảm ơn bạn đã đăng ký, chúng tôi sẽ liên hệ với bạn sớm nhất có thể"
+    course_id = trainee_params[:courses]
+    _course = Course.find(course_id)
+    if _course
+      @trainee = Trainee.new(trainee_params.except(:courses))
+      @trainee.courses = [_course]
+      if @trainee.save
+        flash[:success] = "Chúc mừng bạn đã đăng ký thành công khóa học \"#{_course.name}\""
+      end
     else
-      render 'register'
+      flash[:error] = 'Khóa học bạn đăng ký không tồn tại'
     end
+    render 'register'
+  end
+
+  def list_trainee
+    @course = Course.find(params[:id])
+    @trainees = @course.trainees
+  end
+
+  def trainee_details
+    @trainee = Trainee.find(params[:id])
   end
 
   protected
@@ -67,6 +82,6 @@ class CourseController < ApplicationController
   end
 
   def trainee_params
-    params.require(:trainee).permit(:name, :email, :phone, :job, :job_address)
+    params.require(:trainee).permit(:name, :email, :phone, :job, :job_address, :courses)
   end
 end

@@ -1,54 +1,56 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <article class="card-body mx-auto" style="max-width: 500px;">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
   <h4 class="card-title mt-3 text-center">Đăng ký khóa học</h4>
   <p class="divider-text" style="margin-bottom: 1rem;">
   </p>
-  <form>
+  <%= form_with model: @trainee, url: course_register_path, local: true do |f| %>
+    <div class="error-message-field"><%= @trainee.errors[:name].any? ? @trainee.errors[:name][0] : '' %></div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="Full name" type="text">
+      <%= f.text_field :name, class: "form-control", placeholder: 'Họ và tên' %> </br>
     </div> <!-- form-group// -->
+    <div class="error-message-field"><%= @trainee.errors[:email].any? ? @trainee.errors[:email][0] : '' %></div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="Email address" type="email">
+      <%= f.text_field :email, class: "form-control", placeholder: 'Email' %> </br>
     </div> <!-- form-group// -->
+    <div class="error-message-field"><%= @trainee.errors[:phone].any? ? @trainee.errors[:phone][0] : '' %></div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="Phone number" type="text">
+      <%= f.number_field :phone, class: "form-control", placeholder: 'Số điện thoại' %> </br>
     </div> <!-- form-group// -->
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-tasks"></i> </span>
+      </div>
+      <%= f.text_field :job, class: "form-control", placeholder: 'Nghề nghiệp' %> </br>
+    </div> <!-- form-group end.// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-building"></i> </span>
       </div>
-      <select class="form-control">
-        <option selected=""> Select job type</option>
-        <option>Designer</option>
-        <option>Manager</option>
-        <option>Accaunting</option>
-      </select>
-    </div> <!-- form-group end.// -->
-    <div class="form-group input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-      </div>
-      <input class="form-control" placeholder="Create password" type="password">
+      <%= f.text_field :job_address, class: "form-control", placeholder: 'Nơi công tác' %> </br>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        <span class="input-group-text"> <i class="fas fa-chalkboard-teacher"></i> </span>
       </div>
-      <input class="form-control" placeholder="Repeat password" type="password">
+      <%= f.select :courses, Course.all.collect { |p| [p.name, p.id]}, class: "form-control", placeholder: 'Khóa học' %> </br>
     </div> <!-- form-group// -->
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+      <%= f.button "Đăng ký", type: :submit, class: "btn btn-primary btn-lock", id: "upload", data: {disable_with: "Đang gửi thông tin..."} %>
     </div> <!-- form-group// -->
-  </form>
+    <div></div>
+  <% end %>
 </article>
 
 <br><br>
@@ -80,13 +82,8 @@
     z-index: 1;
   }
 
-  .btn-facebook {
-    background-color: #405D9D;
-    color: #fff;
-  }
-  .btn-twitter {
-    background-color: #42AEEC;
-    color: #fff;
+  .btn-lock {
+    width: 100%;
   }
 
    .input-group {
@@ -102,7 +99,7 @@
      width: 100%;
    }
 
-  input[type=checkbox], input[type=file], input[type=radio], input[type=text], input[type=email], select {
+  input[type=checkbox], input[type=file], input[type=radio], input[type=text], input[type=email], input[type=number], select {
     margin: 0 0 0 0em;
   }
 
@@ -140,6 +137,23 @@
   .form-group {
     margin-bottom: 1rem;
   }
+
+  .field_with_errors {
+    width: 100%;
+    display: inline;
+  }
+
+  .error-message-field {
+    color: red;
+    font-size: 9px;
+  }
+
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
   .form-control {
     display: block;
     width: 100%;
@@ -153,4 +167,5 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
+
 </style>

@@ -34,3 +34,19 @@ en:
   will_paginate:
     previous_label: "Previous"
     next_label: "Next"
+  activerecord:
+    attributes:
+      trainee:
+        name: "Họ và tên"
+        email: "Email"
+        phone: "Số điện thoại"
+    errors:
+      models:
+        trainee:
+          attributes:
+            name:
+              blank: "không được để trống"
+            email:
+              blank: "không được để trống"
+            phone:
+              blank: "không được để trống"

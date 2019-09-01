@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   def index
+    @banner = Banner.find_by(using: 1)
+
     if I18n.locale == :en
       cancer_types_alphabetical = CancerType.where.not(name_english: [nil, '']).order(:name_english)
                                       .group_by {|cancer_type| cancer_type.name_english.strip[0].upcase}

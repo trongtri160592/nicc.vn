@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped">
+  <thead>.
+  <tr>
+    <th>Tên học viên</th>
+    <th>Email</th>
+    <th>Số điện thoại</th>
+    <th>Khóa học</th>
+    <th>Nghề nghiệp</th>
+    <th>Nơi công tác</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= trainee.name %></td>
+      <td><%= trainee.email %></td>
+      <td><%= trainee.phone %></td>
+      <td><%= trainee.courses[0].name %></td>
+      <td><%= trainee.job %></td>
+      <td><%= trainee.job_address %></td>
+    </tr>
+  </tbody>
+
+</table>

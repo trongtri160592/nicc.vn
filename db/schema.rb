@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_155608) do
+ActiveRecord::Schema.define(version: 2019_09_01_032127) do
 
   create_table "banner", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -109,6 +109,15 @@ ActiveRecord::Schema.define(version: 2019_08_28_155608) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trainee_course", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "trainee_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_trainee_course_on_course_id"
+    t.index ["trainee_id"], name: "index_trainee_course_on_trainee_id"
+  end
+
   create_table "user", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "username", limit: 16, null: false
     t.string "email"
@@ -118,4 +127,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_155608) do
 
   add_foreign_key "person", "leadership", name: "fk_person_leadership"
   add_foreign_key "research", "research_category", name: "fk_research_research_category1"
+  add_foreign_key "trainee_course", "course"
+  add_foreign_key "trainee_course", "trainee"
 end
