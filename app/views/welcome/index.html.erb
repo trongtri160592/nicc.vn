@@ -279,7 +279,7 @@
 <div id="popupModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-<!--    <span class="close">&times;</span>-->
+    <span class="close">&times;</span>
     <div><%= link_to image_tag(@banner.image.url), course_register_url, target: '_blank' %></div>
   </div>
   <style>
@@ -318,15 +318,15 @@
 
     /* The Close Button */
     .close {
-      color: #aaa;
+      color: #FF0000;
       float: right;
-      font-size: 28px;
+      font-size: 40px;
       font-weight: bold;
     }
 
     .close:hover,
     .close:focus {
-      color: black;
+      color: #FF6666;
       text-decoration: none;
       cursor: pointer;
     }
@@ -340,10 +340,13 @@
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  var closePopup = function() {
+    return function(event) {
+        modal.style.display = "none";
     }
-  }
+  };
+  span.onclick = closePopup();
+  window.onclick = closePopup();
+
 </script>
 <% end %>
