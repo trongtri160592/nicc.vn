@@ -10,6 +10,12 @@
   </thead>
 
   <tbody>
+  <tr>
+    <td>Không đặt tên</td>
+    <td></td>
+    <td></td>
+    <td><%= link_to "Xem", trainee_list_path(id: 0)%></td>
+  </tr>
   <% @courses.each do |course| %>
     <tr>
       <td><%= course.name %></td>

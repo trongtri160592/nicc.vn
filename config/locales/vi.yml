@@ -33,6 +33,7 @@ vi:
   will_paginate:
     previous_label: "Trước"
     next_label: "Sau"
+    page_gap: "…"
   activerecord:
     attributes:
       trainee:

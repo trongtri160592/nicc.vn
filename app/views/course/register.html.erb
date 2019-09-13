@@ -1,4 +1,3 @@
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <article class="card-body mx-auto" style="max-width: 500px;">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
@@ -6,6 +5,9 @@
   <h4 class="card-title mt-3 text-center">Đăng ký khóa học</h4>
   <p class="divider-text" style="margin-bottom: 1rem;">
   </p>
+  <% if !@trainee %>
+  <% @trainee = Trainee.new %>
+  <% end %>
   <%= form_with model: @trainee, url: course_register_path, local: true do |f| %>
     <div class="error-message-field"><%= @trainee.errors[:name].any? ? @trainee.errors[:name][0] : '' %></div>
     <div class="form-group input-group">
@@ -44,13 +46,14 @@
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fas fa-chalkboard-teacher"></i> </span>
       </div>
-      <%= f.select :courses, Course.all.collect { |p| [p.name, p.id]}, class: "form-control", placeholder: 'Khóa học' %> </br>
+      <%= f.select :courses, Course.all.collect {|p| [p.name, p.id]}, class: "form-control", placeholder: 'Khóa học' %> </br>
     </div> <!-- form-group// -->
     <div class="form-group">
       <%= f.button "Đăng ký", type: :submit, class: "btn btn-primary btn-lock", id: "upload", data: {disable_with: "Đang gửi thông tin..."} %>
     </div> <!-- form-group// -->
     <div></div>
   <% end %>
+
 </article>
 
 <br><br>
@@ -66,12 +69,14 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
+
   .divider-text span {
     padding: 7px;
     font-size: 12px;
     position: relative;
     z-index: 2;
   }
+
   .divider-text:after {
     content: "";
     position: absolute;
@@ -86,54 +91,55 @@
     width: 100%;
   }
 
-   .input-group {
-     /*position: relative;*/
-     display: -webkit-box;
-     display: -ms-flexbox;
-     display: flex;
-     /*-ms-flex-wrap: wrap;*/
-     /*flex-wrap: wrap;*/
-     -webkit-box-align: stretch;
-     -ms-flex-align: stretch;
-     align-items: stretch;
-     width: 100%;
-   }
+  .input-group {
+    /*position: relative;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*-ms-flex-wrap: wrap;*/
+    /*flex-wrap: wrap;*/
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+  }
 
   input[type=checkbox], input[type=file], input[type=radio], input[type=text], input[type=email], input[type=number], select {
     margin: 0 0 0 0em;
   }
 
-    .input-group-prepend {
-      margin-right: -1px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
+  .input-group-prepend {
+    margin-right: -1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
-    .input-group>.input-group-prepend>.input-group-text {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+  .input-group > .input-group-prepend > .input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-    .input-group-text {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: .375rem .75rem;
-      margin-bottom: 0;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #495057;
-      text-align: center;
-      white-space: nowrap;
-      background-color: #e9ecef;
-      border: 1px solid #ced4da;
-      border-radius: .25rem;
-    }
+  .input-group-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+  }
+
   .form-group {
     margin-bottom: 1rem;
   }
@@ -165,7 +171,7 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   }
 
 </style>

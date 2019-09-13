@@ -17,4 +17,5 @@
 //= require Common
 //= require ContentPage
 //= require HomePage
+//= require fontawesome
 

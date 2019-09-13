@@ -47,22 +47,26 @@ class CourseController < ApplicationController
 
   def add_trainee
     course_id = trainee_params[:courses]
-    _course = Course.find(course_id)
+    _course = Course.find_by(id: course_id)
+    @trainee = Trainee.new(trainee_params.except(:courses))
     if _course
-      @trainee = Trainee.new(trainee_params.except(:courses))
       @trainee.courses = [_course]
-      if @trainee.save
-        flash[:success] = "Chúc mừng bạn đã đăng ký thành công khóa học \"#{_course.name}\""
-      end
-    else
-      flash[:error] = 'Khóa học bạn đăng ký không tồn tại'
     end
+
+    if @trainee.save
+      flash[:success] = "Chúc mừng bạn đã đăng ký thành công khóa học"
+    end
+
     render 'register'
   end
 
   def list_trainee
-    @course = Course.find(params[:id])
-    @trainees = @course.trainees
+    @course = Course.find_by(id: params[:id])
+    if @course
+      @trainees = @course.trainees
+    else
+      @trainees = Trainee.includes(:trainee_courses).where(trainee_course: {course_id: nil})
+    end
   end
 
   def trainee_details
