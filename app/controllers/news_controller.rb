@@ -3,7 +3,7 @@ class NewsController < ApplicationController
   before_action :authorize, except: [:index, :details, :filter]
 
   def index
-    @news_arr = News.paginate(:page => params[:page], :per_page => 7)
+    @news_arr = News.order('created_at DESC').paginate(:page => params[:page], :per_page => 7)
   end
 
   def details
