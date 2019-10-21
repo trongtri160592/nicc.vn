@@ -95,6 +95,11 @@ Rails.application.routes.draw do
     # Search
     get '/search(.:format)', to: 'search#result', as: 'search'
 
+    # Gallery
+    get '/gallery', to: 'gallery#index', as: 'gallery'
+    post '/gallery/image/new', to: 'gallery#new_image', as: 'image_new'
+    post '/gallery/video/new', to: 'gallery#new_video', as: 'video_new'
+
     get '*path' => redirect('/')
   end
 end

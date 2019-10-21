@@ -50,3 +50,7 @@ vi:
               blank: "không được để trống"
             phone:
               blank: "không được để trống"
+
+  errors:
+    messages:
+      extension_whitelist_error: "Ban không thể upload %{extension} files, file được phép upload: %{allowed_types}"

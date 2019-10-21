@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_01_032127) do
+ActiveRecord::Schema.define(version: 2019_10_06_132859) do
 
   create_table "banner", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 2019_09_01_032127) do
   create_table "event", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "title", limit: 45
     t.text "content"
+  end
+
+  create_table "image", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "introduction", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,6 +129,12 @@ ActiveRecord::Schema.define(version: 2019_09_01_032127) do
     t.string "email"
     t.string "password_digest", null: false
     t.timestamp "create_time", default: -> { "CURRENT_TIMESTAMP" }
+  end
+
+  create_table "video", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "person", "leadership", name: "fk_person_leadership"

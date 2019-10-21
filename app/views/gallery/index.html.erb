@@ -1,0 +1,63 @@
+<% if @image && !@image.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @video && !@video.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @video.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+  <div id="image-new-form" class="col-6">
+    <%= form_with model: @image, url: image_new_path, local: true do |f| %>
+      <%= f.label :image, "Ảnh" %> </br>
+      <%= f.file_field :image %> </br>
+      <%= f.submit "Tải lên", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+    <% end %>
+  </div>
+  <div id="image-new-form" class="col-6">
+    <%= form_with model: @video, url: video_new_path, local: true do |f| %>
+      <%= f.label :video, "Video" %> </br>
+      <%= f.file_field :video %> </br>
+
+      <%= f.submit "Tải lên", class: "btn btn-primary", id: "upload", data: {disable_with: "Đang tải lên..."} %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <h2>Ảnh</h2>
+  <% @images.each do |image| %>
+    <div class="col-xs-3 col-sm-3">
+      <a href=<%= image.image.url %> data-lightbox="image-gallery" class="gallery-image"><img class="example-image" src="<%= image.image.url %>"/></a>
+    </div>
+  <% end %>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+  <h2>Video</h2>
+  <% @videos.each do |video| %>
+    <div class="col-xs-4 col-sm-4">
+      <video class="example-video" controls style="width: 100%;">
+        <source src="<%= video.video.url %>" type="video/mp4">
+      </video>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  .gallery-image {
+    width: 25%;
+  }
+</style>

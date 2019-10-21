@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require lightbox-plus-jquery.min
+//= require lightbox.min
 //= require rails-ujs
 //= require activestorage
 //= require jquery
@@ -18,4 +20,5 @@
 //= require ContentPage
 //= require HomePage
 //= require fontawesome
+//= require jquery.lazyload
 
