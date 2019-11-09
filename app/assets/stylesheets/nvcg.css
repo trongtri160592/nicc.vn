@@ -6805,6 +6805,10 @@ button.nav-search:before {
     color: #2b7bba
 }
 
+.feature-card.cgvTopicPage p {
+    color: white;
+}
+
 .main-content a:focus, .main-content a:hover {
     text-decoration: underline
 }
